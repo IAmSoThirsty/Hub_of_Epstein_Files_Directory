@@ -12,8 +12,8 @@ Welcome to the Hub of Epstein Files Directory. This table of contents provides a
 
 ### Quick Links
 
-- **Glossary** - Understanding terminology and concepts
-- **Character Directory** - Key individuals and their roles
+- **[Glossary](glossary.md)** - Understanding terminology and concepts
+- **[Character Directory](character-directory.md)** - Key individuals and their roles
 - **Search** - Use GitHub search or AI agents to find specific information
 
 ## How to Use This Directory
