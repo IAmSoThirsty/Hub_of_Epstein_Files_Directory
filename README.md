@@ -1,5 +1,4 @@
 # Hub of Epstein Files Directory
-
 This repository serves as a comprehensive directory and organizational hub for Epstein-related files and documentation.
 
 ## Quick Navigation
