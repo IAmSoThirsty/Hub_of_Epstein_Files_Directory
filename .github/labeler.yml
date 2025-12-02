@@ -26,10 +26,10 @@ readme:
   - changed-files:
     - any-glob-to-any-file: 'README.md'
 
-# GitHub configuration changes
+# GitHub configuration changes (excluding workflows)
 github-config:
   - changed-files:
-    - any-glob-to-any-file: '.github/**'
+    - any-glob-to-any-file: ['.github/*.yml', '.github/*.md']
 
 # Workflow changes
 workflow:
