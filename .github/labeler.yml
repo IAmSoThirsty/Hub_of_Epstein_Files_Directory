@@ -1,0 +1,37 @@
+# Configuration for the labeler action
+# https://github.com/actions/labeler
+
+# Documentation changes
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: ['**/*.md', '!.github/**']
+
+# Glossary updates
+glossary:
+  - changed-files:
+    - any-glob-to-any-file: 'glossary.md'
+
+# Character directory updates
+character-directory:
+  - changed-files:
+    - any-glob-to-any-file: 'character-directory.md'
+
+# Table of contents updates
+table-of-contents:
+  - changed-files:
+    - any-glob-to-any-file: 'table-of-contents.md'
+
+# README updates
+readme:
+  - changed-files:
+    - any-glob-to-any-file: 'README.md'
+
+# GitHub configuration changes
+github-config:
+  - changed-files:
+    - any-glob-to-any-file: '.github/**'
+
+# Workflow changes
+workflow:
+  - changed-files:
+    - any-glob-to-any-file: '.github/workflows/**'
