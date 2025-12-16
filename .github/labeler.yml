@@ -1,0 +1,4 @@
+documentation:
+  - '**/*.md'
+source:
+  - 'src/**/*'
