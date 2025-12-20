@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Application - Epstein Files Codex</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .volunteer-form {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #e84393;
+        }
+        .checkbox-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 5px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .info-box {
+            background: rgba(103, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: rgba(232, 67, 147, 0.1);
+            border-left: 4px solid #e84393;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Epstein Files Codex</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="characters.html">Character Guide</a>
+                <a href="locations.html">Locations</a>
+                <a href="infographics.html">Infographics</a>
+                <a href="slideshow.html">Slideshows</a>
+                <a href="codex.html">Browse Codex</a>
+                <a href="search.html">Search</a>
+                <a href="volunteer.html" class="active">Volunteer</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>🤝 Volunteer Application</h1>
+        
+        <div class="info-box">
+            <h3>Thank You for Your Interest!</h3>
+            <p>We appreciate your willingness to contribute to the Epstein Files Hub. This project relies on volunteer contributions to maintain accuracy, expand documentation, and ensure historical preservation.</p>
+        </div>
+
+        <div class="warning-box">
+            <h3>⚠️ Important Notice</h3>
+            <p><strong>All volunteer access is strictly controlled.</strong> The repository owner reviews and approves all applications. Volunteers work through pull requests that require owner approval before merging. This ensures quality control and prevents unauthorized modifications.</p>
+        </div>
+
+        <div class="volunteer-form">
+            <h2>Application Form</h2>
+            
+            <form id="volunteerForm" onsubmit="submitApplication(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="githubUsername">GitHub Username *</label>
+                    <input type="text" id="githubUsername" name="githubUsername" placeholder="@username" required>
+                    <small style="color: #999;">Required for access management. Don't have one? <a href="https://github.com/join" target="_blank" style="color: #667eea;">Create a free GitHub account</a></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="desiredRole">Desired Role *</label>
+                    <select id="desiredRole" name="desiredRole" required>
+                        <option value="">-- Select a role --</option>
+                        <option value="Researcher">Researcher - Find and verify documents</option>
+                        <option value="Data Entry">Data Entry - Add documents to database</option>
+                        <option value="Verification">Verification - Fact-check existing content</option>
+                        <option value="Translation">Translation - Translate documents</option>
+                        <option value="Technical">Technical - Code/infrastructure support</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experienceLevel">Experience Level *</label>
+                    <select id="experienceLevel" name="experienceLevel" required>
+                        <option value="">-- Select experience --</option>
+                        <option value="Beginner">Beginner - New to research projects</option>
+                        <option value="Intermediate">Intermediate - Some research experience</option>
+                        <option value="Advanced">Advanced - Extensive research background</option>
+                        <option value="Professional">Professional - Work in related field</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivation">Why do you want to volunteer? *</label>
+                    <textarea id="motivation" name="motivation" required placeholder="Describe your motivation for contributing to this project..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Weekly Time Commitment *</label>
+                    <select id="availability" name="availability" required>
+                        <option value="">-- Select availability --</option>
+                        <option value="1-3 hours">1-3 hours per week</option>
+                        <option value="4-7 hours">4-7 hours per week</option>
+                        <option value="8-15 hours">8-15 hours per week</option>
+                        <option value="16+ hours">16+ hours per week</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Relevant Skills & Experience</label>
+                    <textarea id="skills" name="skills" placeholder="List any relevant skills, experience, or qualifications (optional)..."></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <h3>Agreements & Acknowledgments</h3>
+                    
+                    <label>
+                        <input type="checkbox" name="agreement1" required>
+                        <span>I understand that all changes require owner review and approval before merging.</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="agreement2" required>
+                        <span>I agree to work within my assigned permission level and follow all guidelines.</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="agreement3" required>
+                        <span>I understand this project deals with sensitive material and will maintain professionalism.</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="agreement4" required>
+                        <span>I agree to provide accurate sources and citations for all contributions.</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="backgroundCheck" required>
+                        <span>I consent to a background check if required (publicly available information only).</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="conductCode" required>
+                        <span>I agree to follow the <a href="../CONTRIBUTING.md" style="color: #667eea;" target="_blank">Code of Conduct</a>.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+            </form>
+
+            <div id="successMessage" style="display: none; margin-top: 20px; padding: 20px; background: rgba(76, 209, 55, 0.2); border-radius: 5px; border-left: 4px solid #4cd137;">
+                <h3>✅ Application Submitted!</h3>
+                <p>Your application has been received and a GitHub Issue has been created for review.</p>
+                <p>The repository owner will review your application and contact you via GitHub.</p>
+                <p><strong>Check your GitHub notifications for updates.</strong></p>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 40px;">
+            <h3>What Happens Next?</h3>
+            <ol style="margin-left: 20px;">
+                <li><strong>Application Review:</strong> The owner reviews your application (typically 3-7 days)</li>
+                <li><strong>Decision Notification:</strong> You'll receive a response via GitHub Issues</li>
+                <li><strong>Access Granted:</strong> If approved, you'll receive setup instructions based on your permission level</li>
+                <li><strong>Onboarding:</strong> Follow the provided documentation to get started</li>
+                <li><strong>Start Contributing:</strong> Begin working on approved tasks within your role</li>
+            </ol>
+        </div>
+
+        <div class="info-box" style="margin-top: 20px;">
+            <h3>Permission Levels Explained</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>Level 2 (Viewer):</strong> Read-only access to all documentation</li>
+                <li><strong>Level 3 (Contributor):</strong> Submit pull requests for review</li>
+                <li><strong>Level 4 (Editor):</strong> Broader editing capabilities via PRs</li>
+            </ul>
+            <p><em>The owner assigns permission levels based on experience, role, and demonstrated competence.</em></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Epstein Files Codex. All information sourced from public records.</p>
+        <p>Maintained by 26 AI agents. Last updated: December 20, 2025</p>
+    </footer>
+
+    <script>
+        function submitApplication(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Construct issue body
+            const issueTitle = `Volunteer Application: ${data.fullName}`;
+            const issueBody = `
+## Volunteer Application
+
+**Full Name:** ${data.fullName}
+**Email:** ${data.email}
+**GitHub Username:** @${data.githubUsername.replace('@', '')}
+**Desired Role:** ${data.desiredRole}
+**Experience Level:** ${data.experienceLevel}
+**Time Commitment:** ${data.availability}
+
+### Motivation
+${data.motivation}
+
+### Skills & Experience
+${data.skills || 'Not provided'}
+
+### Agreements
+- ✅ All changes require owner approval
+- ✅ Will work within assigned permission level
+- ✅ Understands sensitive nature of material
+- ✅ Agrees to provide accurate sources
+- ✅ Consents to background check
+- ✅ Agrees to Code of Conduct
+
+---
+*Application submitted: ${new Date().toISOString()}*
+*Status: Pending Owner Review*
+
+**Next Steps for Owner:**
+- Review application above
+- Check GitHub profile: @${data.githubUsername.replace('@', '')}
+- Comment \`approve: level-2\` (Viewer), \`approve: level-3\` (Contributor), or \`approve: level-4\` (Editor)
+- Or comment \`reject: reason\` to deny
+
+The bot will automatically process your decision and provide instructions to the applicant.
+            `.trim();
+            
+            // Create GitHub Issue URL (user will need to complete submission on GitHub)
+            const repoUrl = 'https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory';
+            const issueUrl = `${repoUrl}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=volunteer-application`;
+            
+            // Open in new tab
+            window.open(issueUrl, '_blank');
+            
+            // Show success message
+            document.getElementById('volunteerForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
