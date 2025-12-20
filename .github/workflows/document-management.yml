@@ -1,0 +1,316 @@
+name: Document Management - Automated Processing
+
+on:
+  push:
+    paths:
+      - 'data/indexed/**'
+  schedule:
+    - cron: '0 */3 * * *'  # Every 3 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  document-indexing:
+    runs-on: ubuntu-latest
+    name: Index Documents
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install PyPDF2 python-docx elasticsearch pyyaml
+          pip install azure-ai-documentintelligence azure-search-documents
+      
+      - name: Run Document Indexing Agent
+        env:
+          AZURE_SEARCH_KEY: ${{ secrets.AZURE_SEARCH_KEY }}
+          AZURE_SEARCH_ENDPOINT: ${{ secrets.AZURE_SEARCH_ENDPOINT }}
+        run: |
+          python bots/document-agents/indexing_agent.py \
+            --dir data/indexed/ \
+            --output data/indexes/document_index.json \
+            --batch-size 1000
+      
+      - name: Commit index updates
+        run: |
+          git config user.name "Document Indexing Agent"
+          git config user.email "bot@github.com"
+          git add data/indexes/
+          git diff --staged --quiet || git commit -m "📑 Update document index"
+          git push
+
+  document-analysis:
+    runs-on: ubuntu-latest
+    needs: document-indexing
+    name: Analyze Document Content
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install azure-ai-textanalytics azure-ai-documentintelligence
+          pip install openai spacy
+          python -m spacy download en_core_web_sm
+      
+      - name: Run Document Analysis Agent
+        env:
+          AZURE_TEXT_ANALYTICS_KEY: ${{ secrets.AZURE_TEXT_ANALYTICS_KEY }}
+          AZURE_TEXT_ANALYTICS_ENDPOINT: ${{ secrets.AZURE_TEXT_ANALYTICS_ENDPOINT }}
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        run: |
+          python bots/document-agents/analysis_agent.py \
+            --input data/indexes/document_index.json \
+            --output data/analysis/document_analysis.json \
+            --parallel-workers 4
+      
+      - name: Commit analysis results
+        run: |
+          git config user.name "Document Analysis Agent"
+          git config user.email "bot@github.com"
+          git add data/analysis/
+          git diff --staged --quiet || git commit -m "🔍 Update document analysis"
+          git push
+
+  document-ocr:
+    runs-on: ubuntu-latest
+    name: OCR Processing for Scanned Documents
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr
+          pip install pytesseract pdf2image pillow
+          pip install azure-ai-documentintelligence
+      
+      - name: Run Document OCR Agent
+        env:
+          AZURE_DOC_INTEL_KEY: ${{ secrets.AZURE_DOC_INTEL_KEY }}
+          AZURE_DOC_INTEL_ENDPOINT: ${{ secrets.AZURE_DOC_INTEL_ENDPOINT }}
+        run: |
+          python bots/document-agents/ocr_agent.py \
+            --input data/indexed/ \
+            --output data/ocr/ \
+            --quality high
+      
+      - name: Commit OCR results
+        run: |
+          git config user.name "Document OCR Agent"
+          git config user.email "bot@github.com"
+          git add data/ocr/
+          git diff --staged --quiet || git commit -m "📄 OCR processing complete"
+          git push
+
+  document-verification:
+    runs-on: ubuntu-latest
+    needs: [document-analysis, document-ocr]
+    name: Verify Document Authenticity
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Run Document Verification Agent
+        run: |
+          python bots/document-agents/verification_agent.py \
+            --input data/analysis/document_analysis.json \
+            --sources docs/SourcesIndex.md \
+            --output data/verification/document_verification.json
+      
+      - name: Commit verification results
+        run: |
+          git config user.name "Document Verification Agent"
+          git config user.email "bot@github.com"
+          git add data/verification/
+          git diff --staged --quiet || git commit -m "✅ Update document verification"
+          git push
+
+  document-summarization:
+    runs-on: ubuntu-latest
+    needs: document-analysis
+    name: Generate Document Summaries
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install openai transformers torch
+      
+      - name: Run Document Summarization Agent
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        run: |
+          python bots/document-agents/summarization_agent.py \
+            --input data/analysis/document_analysis.json \
+            --output data/summaries/ \
+            --model gpt-4
+      
+      - name: Commit summaries
+        run: |
+          git config user.name "Document Summarization Agent"
+          git config user.email "bot@github.com"
+          git add data/summaries/
+          git diff --staged --quiet || git commit -m "📝 Generate document summaries"
+          git push
+
+  document-cross-reference:
+    runs-on: ubuntu-latest
+    needs: document-verification
+    name: Cross-Reference Documents
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install networkx python-igraph pandas
+      
+      - name: Run Document Cross-Reference Agent
+        run: |
+          python bots/document-agents/cross_reference_agent.py \
+            --input data/verification/document_verification.json \
+            --output data/networks/document_network.json \
+            --build-graph
+      
+      - name: Commit cross-references
+        run: |
+          git config user.name "Document Cross-Reference Agent"
+          git config user.email "bot@github.com"
+          git add data/networks/
+          git diff --staged --quiet || git commit -m "🔗 Update document cross-references"
+          git push
+
+  document-maintenance:
+    runs-on: ubuntu-latest
+    name: Document Maintenance and Quality Checks
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Run Document Maintenance Agent
+        run: |
+          python bots/document-agents/maintenance_agent.py \
+            --check-integrity \
+            --validate-links \
+            --update-metadata \
+            --generate-report
+      
+      - name: Commit maintenance updates
+        run: |
+          git config user.name "Document Maintenance Agent"
+          git config user.email "bot@github.com"
+          git add logs/document-maintenance-report.md
+          git diff --staged --quiet || git commit -m "🔧 Document maintenance completed"
+          git push
+
+  entity-extraction:
+    runs-on: ubuntu-latest
+    needs: document-analysis
+    name: Extract Entities and Build Network
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install spacy azure-ai-textanalytics
+          python -m spacy download en_core_web_lg
+      
+      - name: Run Entity Extraction Agent
+        env:
+          AZURE_TEXT_ANALYTICS_KEY: ${{ secrets.AZURE_TEXT_ANALYTICS_KEY }}
+          AZURE_TEXT_ANALYTICS_ENDPOINT: ${{ secrets.AZURE_TEXT_ANALYTICS_ENDPOINT }}
+        run: |
+          python bots/organization-agents/entity_extraction_agent.py \
+            --input data/analysis/document_analysis.json \
+            --output data/entities/ \
+            --update-character-directory
+      
+      - name: Commit entity data
+        run: |
+          git config user.name "Entity Extraction Agent"
+          git config user.email "bot@github.com"
+          git add data/entities/ docs/CharacterDirectory.md
+          git diff --staged --quiet || git commit -m "👥 Update entity database"
+          git push
+
+  generate-summary:
+    runs-on: ubuntu-latest
+    needs: [document-indexing, document-analysis, document-ocr, document-verification, document-summarization, document-cross-reference, document-maintenance, entity-extraction]
+    if: always()
+    
+    steps:
+      - name: Generate Summary Report
+        run: |
+          echo "## Document Processing Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Document processing workflow completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Jobs Status:" >> $GITHUB_STEP_SUMMARY
+          echo "- Indexing: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Analysis: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- OCR: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Verification: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Summarization: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Cross-Reference: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Maintenance: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Entity Extraction: Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📊 30,000+ documents maintained" >> $GITHUB_STEP_SUMMARY

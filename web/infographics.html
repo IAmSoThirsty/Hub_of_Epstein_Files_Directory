@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographics - Epstein Files Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Epstein Files Hub</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Character Guide</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="infographics.html" class="active">Infographics</a></li>
+                <li><a href="slideshow.html">Slideshows</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Visual Infographics</h1>
+            <p>Data visualizations, timelines, and relationship maps</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="info-box">
+            <h3>📊 About These Infographics</h3>
+            <p>These visual representations help understand complex relationships, timelines, and patterns in the Epstein case. All data is sourced from public court documents and verified sources.</p>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-controls">
+                <select id="category-filter" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="timeline">Timelines</option>
+                    <option value="network">Network Maps</option>
+                    <option value="location">Location Maps</option>
+                    <option value="financial">Financial Flows</option>
+                    <option value="legal">Legal Proceedings</option>
+                    <option value="travel">Travel Patterns</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="infographics-grid">
+            <h2>Timeline Visualizations</h2>
+            
+            <article class="infographic-card" data-category="timeline">
+                <div class="infographic-header">
+                    <h3>📅 Complete Case Timeline (1990s-2024)</h3>
+                    <span class="infographic-tag">Timeline</span>
+                    <span class="infographic-tag">Interactive</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Interactive timeline visualization</p>
+                        <p class="preview-note">Shows major events, investigations, court filings, and outcomes from 1990s to present</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>A comprehensive interactive timeline showing all major events in chronological order. Includes investigations, arrests, court proceedings, document releases, and media coverage.</p>
+                    
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Filterable by event type (legal, investigation, media)</li>
+                        <li>Zoomable from decades to specific dates</li>
+                        <li>Links to source documents for each event</li>
+                        <li>Color-coded by significance and category</li>
+                    </ul>
+                    
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li>Court filings and dockets</li>
+                        <li>Law enforcement records</li>
+                        <li>Verified news reports</li>
+                        <li>Government documents</li>
+                    </ul>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('timeline-complete')">View Interactive Timeline</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('timeline-complete')">Download PDF</button>
+                </div>
+            </article>
+
+            <article class="infographic-card" data-category="timeline">
+                <div class="infographic-header">
+                    <h3>⚖️ Legal Timeline - Court Proceedings</h3>
+                    <span class="infographic-tag">Timeline</span>
+                    <span class="infographic-tag">Legal</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Legal proceedings timeline</p>
+                        <p class="preview-note">Tracks all court cases, filings, verdicts, and appeals</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Focused timeline of legal proceedings including criminal cases (federal and state) and civil litigation. Shows relationships between different cases and their outcomes.</p>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('timeline-legal')">View Timeline</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('timeline-legal')">Download</button>
+                </div>
+            </article>
+
+            <h2>Network & Relationship Maps</h2>
+
+            <article class="infographic-card" data-category="network">
+                <div class="infographic-header">
+                    <h3>🕸️ Connection Network Map</h3>
+                    <span class="infographic-tag">Network</span>
+                    <span class="infographic-tag">Interactive</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Interactive network visualization</p>
+                        <p class="preview-note">Shows connections between individuals, organizations, and locations</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>An interactive network diagram showing documented relationships between individuals, organizations, and locations mentioned in court documents. Node size indicates frequency of mentions; connection thickness shows strength of documented relationship.</p>
+                    
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Interactive nodes - click for detailed info</li>
+                        <li>Filterable by relationship type</li>
+                        <li>Zoom and pan functionality</li>
+                        <li>Time slider to show network evolution</li>
+                        <li>Direct links to source documents</li>
+                    </ul>
+                    
+                    <h4>Relationship Types</h4>
+                    <ul>
+                        <li>Business/Financial</li>
+                        <li>Personal/Social</li>
+                        <li>Property/Location</li>
+                        <li>Legal (plaintiff, defendant, witness)</li>
+                        <li>Organizational</li>
+                    </ul>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('network-map')">Explore Network</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('network-map')">Download</button>
+                </div>
+            </article>
+
+            <article class="infographic-card" data-category="network">
+                <div class="infographic-header">
+                    <h3>🏢 Organizational Chart</h3>
+                    <span class="infographic-tag">Network</span>
+                    <span class="infographic-tag">Business</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Business and organizational structure</p>
+                        <p class="preview-note">Shows corporate entities, foundations, and their relationships</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Hierarchical visualization of Epstein's business entities, foundations, and trusts. Shows ownership structures, key personnel, and inter-entity relationships based on public records and court documents.</p>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('org-chart')">View Chart</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('org-chart')">Download</button>
+                </div>
+            </article>
+
+            <h2>Geographic & Location Maps</h2>
+
+            <article class="infographic-card" data-category="location">
+                <div class="infographic-header">
+                    <h3>🗺️ Property & Location Map</h3>
+                    <span class="infographic-tag">Geographic</span>
+                    <span class="infographic-tag">Interactive</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Interactive world map</p>
+                        <p class="preview-note">Shows all documented properties and significant locations</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Interactive world map showing all properties owned by Epstein, significant locations mentioned in court documents, and locations referenced in investigations. Click markers for detailed information about each location.</p>
+                    
+                    <h4>Location Categories</h4>
+                    <ul>
+                        <li>🔴 Primary Properties (residences)</li>
+                        <li>🔵 Investigation Sites</li>
+                        <li>🟢 Related Locations</li>
+                        <li>🟡 Travel Destinations</li>
+                        <li>⚫ Legal Venues (courts, jails)</li>
+                    </ul>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('location-map')">Explore Map</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('location-map')">Download</button>
+                </div>
+            </article>
+
+            <article class="infographic-card" data-category="travel">
+                <div class="infographic-header">
+                    <h3>✈️ Flight Pattern Visualization</h3>
+                    <span class="infographic-tag">Travel</span>
+                    <span class="infographic-tag">Data Viz</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Flight routes and patterns</p>
+                        <p class="preview-note">Based on publicly released flight logs</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Visualization of flight routes based on publicly available flight logs. Shows frequency of routes, common destinations, and travel patterns over time. Includes passenger information where available in public documents.</p>
+                    
+                    <h4>Data Includes</h4>
+                    <ul>
+                        <li>Flight routes and frequencies</li>
+                        <li>Departure and arrival locations</li>
+                        <li>Time periods of travel</li>
+                        <li>Aircraft information</li>
+                        <li>Passenger manifests (public records)</li>
+                    </ul>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('flight-patterns')">View Visualization</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('flight-patterns')">Download</button>
+                </div>
+            </article>
+
+            <h2>Financial Visualizations</h2>
+
+            <article class="infographic-card" data-category="financial">
+                <div class="infographic-header">
+                    <h3>💰 Financial Flow Diagram</h3>
+                    <span class="infographic-tag">Financial</span>
+                    <span class="infographic-tag">Data Viz</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Money flow visualization</p>
+                        <p class="preview-note">Based on financial records from court exhibits</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Sankey diagram showing financial flows between entities based on banking records, wire transfers, and financial documents entered as court exhibits. Shows flow of funds through various accounts, entities, and jurisdictions.</p>
+                    
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li>Court exhibit financial records</li>
+                        <li>Banking documents</li>
+                        <li>Wire transfer records</li>
+                        <li>Corporate filings</li>
+                        <li>Property transaction records</li>
+                    </ul>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('financial-flow')">View Diagram</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('financial-flow')">Download</button>
+                </div>
+            </article>
+
+            <article class="infographic-card" data-category="financial">
+                <div class="infographic-header">
+                    <h3>🏠 Property Portfolio Timeline</h3>
+                    <span class="infographic-tag">Financial</span>
+                    <span class="infographic-tag">Timeline</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Property acquisitions over time</p>
+                        <p class="preview-note">Shows purchases, sales, and values</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Timeline visualization of property acquisitions and disposals, showing purchase dates, prices (where public), and current status. Based on property records and court documents.</p>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('property-timeline')">View Timeline</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('property-timeline')">Download</button>
+                </div>
+            </article>
+
+            <h2>Legal Proceedings Visualizations</h2>
+
+            <article class="infographic-card" data-category="legal">
+                <div class="infographic-header">
+                    <h3>⚖️ Case Relationships Diagram</h3>
+                    <span class="infographic-tag">Legal</span>
+                    <span class="infographic-tag">Network</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Legal case connections</p>
+                        <p class="preview-note">Shows relationships between criminal and civil cases</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Diagram showing relationships between various legal proceedings: criminal cases (federal and state), civil lawsuits, appeals, and related matters. Shows how evidence and testimony flow between cases.</p>
+                    
+                    <h4>Case Categories</h4>
+                    <ul>
+                        <li>Federal Criminal Cases</li>
+                        <li>State Criminal Cases</li>
+                        <li>Civil Litigation</li>
+                        <li>Appeals</li>
+                        <li>Forfeiture Actions</li>
+                        <li>Estate Proceedings</li>
+                    </ul>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('case-diagram')">View Diagram</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('case-diagram')">Download</button>
+                </div>
+            </article>
+
+            <article class="infographic-card" data-category="legal">
+                <div class="infographic-header">
+                    <h3>📄 Document Release Timeline</h3>
+                    <span class="infographic-tag">Legal</span>
+                    <span class="infographic-tag">Timeline</span>
+                </div>
+                <div class="infographic-preview">
+                    <div class="preview-placeholder">
+                        <p>Document unsealing timeline</p>
+                        <p class="preview-note">Tracks when documents became public</p>
+                    </div>
+                </div>
+                <div class="infographic-description">
+                    <h4>Description</h4>
+                    <p>Timeline showing when various court documents were unsealed and made public. Includes number of pages released, key revelations, and media impact.</p>
+                </div>
+                <div class="infographic-actions">
+                    <button class="btn btn-primary" onclick="viewInfographic('doc-releases')">View Timeline</button>
+                    <button class="btn btn-secondary" onclick="downloadInfographic('doc-releases')">Download</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="custom-viz-section">
+            <h2>Request Custom Visualization</h2>
+            <p>Need a specific data visualization or infographic? Submit a request with details about what you'd like to see.</p>
+            <form id="viz-request-form" class="request-form">
+                <div class="form-group">
+                    <label for="viz-type">Visualization Type:</label>
+                    <select id="viz-type" name="viz-type" required>
+                        <option value="">Select type...</option>
+                        <option value="timeline">Timeline</option>
+                        <option value="network">Network/Relationship Map</option>
+                        <option value="geographic">Geographic Map</option>
+                        <option value="financial">Financial Visualization</option>
+                        <option value="statistical">Statistical Analysis</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="viz-description">Description:</label>
+                    <textarea id="viz-description" name="description" rows="4" placeholder="Describe what you'd like to visualize..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="data-sources">Suggested Data Sources:</label>
+                    <textarea id="data-sources" name="sources" rows="2" placeholder="What documents or data should be included?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+        </section>
+
+        <section class="methodology-section">
+            <h3>Methodology & Data Integrity</h3>
+            <p>All visualizations are based on verified public records. Our process:</p>
+            <ol>
+                <li><strong>Source Verification:</strong> All data comes from court documents, government records, or verified sources</li>
+                <li><strong>Multiple Source Confirmation:</strong> Key facts are confirmed across multiple sources</li>
+                <li><strong>Transparent Citations:</strong> Every data point links to its source</li>
+                <li><strong>Regular Updates:</strong> Visualizations are updated as new documents are released</li>
+                <li><strong>Peer Review:</strong> Complex visualizations undergo community review</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Epstein Files Hub. Public domain content.</p>
+            <p><a href="index.html">Home</a> | <a href="methodology.html">Methodology</a> | <a href="sources.html">Sources</a></p>
+        </div>
+    </footer>
+
+    <script src="js/infographics.js"></script>
+</body>
+</html>
