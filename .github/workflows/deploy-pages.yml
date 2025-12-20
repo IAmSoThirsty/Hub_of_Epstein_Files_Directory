@@ -1,0 +1,102 @@
+# GitHub Pages Deployment Configuration
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Copy web files to root
+        run: |
+          mkdir -p _site
+          cp -r web/* _site/
+          cp -r docs _site/docs
+          
+      - name: Create sitemap
+        run: |
+          cat > _site/sitemap.xml << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/</loc>
+              <priority>1.0</priority>
+            </url>
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/search.html</loc>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/characters.html</loc>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/locations.html</loc>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/codex.html</loc>
+              <priority>0.8</priority>
+            </url>
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/infographics.html</loc>
+              <priority>0.7</priority>
+            </url>
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/slideshow.html</loc>
+              <priority>0.7</priority>
+            </url>
+            <url>
+              <loc>https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/upload.html</loc>
+              <priority>0.6</priority>
+            </url>
+          </urlset>
+          EOF
+          
+      - name: Create robots.txt
+        run: |
+          cat > _site/robots.txt << EOF
+          User-agent: *
+          Allow: /
+          
+          Sitemap: https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/sitemap.xml
+          EOF
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
