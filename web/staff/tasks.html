@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Assignment - Staff Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 80px auto 20px;
+            padding: 0 20px;
+        }
+        .staff-nav {
+            background: #161b22;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e74c3c;
+        }
+        .staff-nav h1 {
+            margin: 0;
+            color: #e74c3c;
+            font-size: 1.5em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background: #21262d;
+        }
+        .nav-links a.active {
+            background: #e74c3c;
+        }
+        .tasks-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .agent-category {
+            background: #161b22;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .agent-category h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        .agent-item {
+            background: #21262d;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .agent-item:hover {
+            background: #30363d;
+            transform: translateX(5px);
+        }
+        .agent-item.selected {
+            background: #e74c3c;
+            color: white;
+        }
+        .agent-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .agent-status {
+            font-size: 0.85em;
+            color: #888;
+        }
+        .agent-queue {
+            font-size: 0.85em;
+            color: #3498db;
+            margin-top: 5px;
+        }
+        .task-form {
+            background: #161b22;
+            border-radius: 8px;
+            padding: 20px;
+            position: sticky;
+            top: 100px;
+        }
+        .task-form h3 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            color: #ecf0f1;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 4px;
+            color: #ecf0f1;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .priority-selector {
+            display: flex;
+            gap: 10px;
+        }
+        .priority-option {
+            flex: 1;
+            padding: 12px 8px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .priority-option.low {
+            background: #27ae60;
+        }
+        .priority-option.medium {
+            background: #f39c12;
+        }
+        .priority-option.high {
+            background: #e74c3c;
+        }
+        .priority-option.selected {
+            border-color: white;
+            transform: scale(1.05);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #c0392b;
+        }
+        .submit-btn:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        .queue-view {
+            margin-top: 20px;
+            padding: 15px;
+            background: #0d1117;
+            border-radius: 8px;
+        }
+        .queue-item {
+            padding: 10px;
+            background: #161b22;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            border-left: 4px solid #3498db;
+        }
+        .queue-item.priority-high {
+            border-left-color: #e74c3c;
+        }
+        .queue-item.priority-medium {
+            border-left-color: #f39c12;
+        }
+        .queue-item.priority-low {
+            border-left-color: #27ae60;
+        }
+        .info-banner {
+            background: #1f6feb;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="staff-nav">
+        <h1>📋 Staff Portal - Task Assignment</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chat.html">Chat</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="bulletin.html">Bulletin</a>
+            <a href="agents.html">AI Agents</a>
+            <a href="tasks.html" class="active">Tasks</a>
+            <a href="../index.html" class="logout">Exit</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Task Assignment System</h2>
+        
+        <div class="info-banner">
+            <strong>📋 How it works:</strong> Select an agent from your category, describe the task, set priority, and submit. Tasks queue up and agents process them in order based on priority.
+        </div>
+
+        <div class="tasks-container">
+            <div class="agents-panel">
+                <h3>Select Agent by Category</h3>
+                
+                <!-- Document Agents -->
+                <div class="agent-category">
+                    <h3>📄 Document Agents</h3>
+                    <div class="agent-item" data-agent="doc-indexing">
+                        <div class="agent-name">Document Indexing Agent</div>
+                        <div class="agent-status">Status: Active | Capacity: 6,000/day</div>
+                        <div class="agent-queue">Queue: 3 tasks pending</div>
+                    </div>
+                    <div class="agent-item" data-agent="ocr">
+                        <div class="agent-name">OCR Processing Agent</div>
+                        <div class="agent-status">Status: Active | Capacity: 5,000/day</div>
+                        <div class="agent-queue">Queue: 1 task pending</div>
+                    </div>
+                    <div class="agent-item" data-agent="doc-analysis">
+                        <div class="agent-name">Document Analysis Agent</div>
+                        <div class="agent-status">Status: Active | Capacity: 3,000/day</div>
+                        <div class="agent-queue">Queue: 5 tasks pending</div>
+                    </div>
+                    <div class="agent-item" data-agent="summarization">
+                        <div class="agent-name">Summarization Agent</div>
+                        <div class="agent-status">Status: Active | Capacity: 10,000/day</div>
+                        <div class="agent-queue">Queue: 0 tasks pending</div>
+                    </div>
+                </div>
+
+                <!-- Image Agents -->
+                <div class="agent-category">
+                    <h3>🖼️ Image Agents</h3>
+                    <div class="agent-item" data-agent="img-indexing">
+                        <div class="agent-name">Image Indexing Agent</div>
+                        <div class="agent-status">Status: Active | Capacity: 10,000/day</div>
+                        <div class="agent-queue">Queue: 2 tasks pending</div>
+                    </div>
+                    <div class="agent-item" data-agent="img-analysis">
+                        <div class="agent-name">Image Analysis Agent</div>
+                        <div class="agent-status">Status: Active | Capacity: 5,000/day</div>
+                        <div class="agent-queue">Queue: 6 tasks pending</div>
+                    </div>
+                </div>
+
+                <!-- QC Agents -->
+                <div class="agent-category">
+                    <h3>✅ Quality Control Agents</h3>
+                    <div class="agent-item" data-agent="fact-checking">
+                        <div class="agent-name">Fact-Checking Agent</div>
+                        <div class="agent-status">Status: Active</div>
+                        <div class="agent-queue">Queue: 5 tasks pending</div>
+                    </div>
+                    <div class="agent-item" data-agent="source-verification">
+                        <div class="agent-name">Source Verification Agent</div>
+                        <div class="agent-status">Status: Active</div>
+                        <div class="agent-queue">Queue: 3 tasks pending</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <div class="task-form">
+                    <h3>Create New Task</h3>
+                    
+                    <div class="form-group">
+                        <label>Selected Agent:</label>
+                        <input type="text" id="selected-agent" readonly placeholder="Select an agent from the left">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Task Title:</label>
+                        <input type="text" id="task-title" placeholder="Brief description of the task">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Task Description:</label>
+                        <textarea id="task-description" placeholder="Detailed task instructions, file paths, requirements, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Priority Level:</label>
+                        <div class="priority-selector">
+                            <div class="priority-option low" data-priority="low">
+                                <strong>Low</strong><br>
+                                <small>When available</small>
+                            </div>
+                            <div class="priority-option medium selected" data-priority="medium">
+                                <strong>Medium</strong><br>
+                                <small>Normal</small>
+                            </div>
+                            <div class="priority-option high" data-priority="high">
+                                <strong>High</strong><br>
+                                <small>ASAP</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estimated Volume:</label>
+                        <input type="number" id="task-volume" placeholder="e.g., 100 documents" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Target Completion:</label>
+                        <input type="date" id="task-deadline">
+                    </div>
+
+                    <button class="submit-btn" id="submit-task" disabled>Submit Task</button>
+                </div>
+
+                <div class="queue-view">
+                    <h4>Your Recent Tasks</h4>
+                    <div id="recent-tasks">
+                        <div class="queue-item priority-high">
+                            <strong>Process FBI Vault PDFs</strong> → Document Analysis Agent<br>
+                            <small>Priority: High | Status: In Progress | ETA: 2 hours</small>
+                        </div>
+                        <div class="queue-item priority-medium">
+                            <strong>Index new images batch</strong> → Image Indexing Agent<br>
+                            <small>Priority: Medium | Status: Queued | Position: 3</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/tasks.js"></script>
+</body>
+</html>

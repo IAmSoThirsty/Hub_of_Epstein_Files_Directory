@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - Staff Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 0 20px;
+        }
+        .staff-nav {
+            background: #161b22;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e74c3c;
+        }
+        .staff-nav h1 {
+            margin: 0;
+            color: #e74c3c;
+            font-size: 1.5em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background: #21262d;
+        }
+        .nav-links a.active {
+            background: #e74c3c;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        .calendar-day-header {
+            background: #e74c3c;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .calendar-day {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 100px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .calendar-day:hover {
+            background: #21262d;
+        }
+        .calendar-day.today {
+            border: 2px solid #e74c3c;
+        }
+        .day-number {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .availability-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #95a5a6;
+        }
+        .availability-indicator.available {
+            background: #27ae60;
+        }
+        .availability-indicator.busy {
+            background: #e74c3c;
+        }
+        .availability-indicator.partial {
+            background: #f39c12;
+        }
+        .availability-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #161b22;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .availability-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #161b22;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            z-index: 1000;
+            min-width: 400px;
+            display: none;
+        }
+        .availability-modal.active {
+            display: block;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+            display: none;
+        }
+        .modal-overlay.active {
+            display: block;
+        }
+        .availability-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .availability-option {
+            padding: 15px;
+            background: #21262d;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .availability-option:hover {
+            transform: scale(1.05);
+        }
+        .availability-option.selected {
+            border-color: white;
+        }
+        .availability-option.available {
+            background: #27ae60;
+        }
+        .availability-option.busy {
+            background: #e74c3c;
+        }
+        .availability-option.partial {
+            background: #f39c12;
+        }
+        .availability-option.off {
+            background: #95a5a6;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 4px;
+            color: #ecf0f1;
+            box-sizing: border-box;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .modal-actions button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-save {
+            background: #27ae60;
+            color: white;
+        }
+        .btn-cancel {
+            background: #95a5a6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="staff-nav">
+        <h1>📅 Staff Portal - Calendar</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chat.html">Chat</a>
+            <a href="calendar.html" class="active">Calendar</a>
+            <a href="bulletin.html">Bulletin</a>
+            <a href="agents.html">AI Agents</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="../index.html" class="logout">Exit</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="calendar-header">
+            <button onclick="previousMonth()">← Previous</button>
+            <h2 id="current-month">December 2024</h2>
+            <button onclick="nextMonth()">Next →</button>
+        </div>
+
+        <div class="availability-legend">
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #27ae60;"></div>
+                <span>Available</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #f39c12;"></div>
+                <span>Partially Available</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #e74c3c;"></div>
+                <span>Busy</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #95a5a6;"></div>
+                <span>Off</span>
+            </div>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="calendar-day-header">Sun</div>
+            <div class="calendar-day-header">Mon</div>
+            <div class="calendar-day-header">Tue</div>
+            <div class="calendar-day-header">Wed</div>
+            <div class="calendar-day-header">Thu</div>
+            <div class="calendar-day-header">Fri</div>
+            <div class="calendar-day-header">Sat</div>
+            <!-- Calendar days will be generated by JavaScript -->
+            <div id="calendar-days"></div>
+        </div>
+    </div>
+
+    <!-- Availability Modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+    <div class="availability-modal" id="availability-modal">
+        <h3>Set Availability for <span id="modal-date"></span></h3>
+        
+        <div class="availability-options">
+            <div class="availability-option available" data-status="available">
+                <strong>✅ Available</strong><br>
+                <small>Fully available</small>
+            </div>
+            <div class="availability-option partial" data-status="partial">
+                <strong>⏰ Partial</strong><br>
+                <small>Limited hours</small>
+            </div>
+            <div class="availability-option busy" data-status="busy">
+                <strong>🔴 Busy</strong><br>
+                <small>Unavailable</small>
+            </div>
+            <div class="availability-option off" data-status="off">
+                <strong>🏖️ Off</strong><br>
+                <small>Day off</small>
+            </div>
+        </div>
+
+        <div class="form-group" id="time-fields" style="display: none;">
+            <label>Time Range:</label>
+            <input type="time" id="start-time" placeholder="Start time">
+            <input type="time" id="end-time" placeholder="End time" style="margin-top: 10px;">
+        </div>
+
+        <div class="form-group">
+            <label>Notes (optional):</label>
+            <textarea id="availability-notes" placeholder="e.g., Conference call 2-4 PM" rows="3"></textarea>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-save" onclick="saveAvailability()">Save</button>
+            <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedDate = null;
+        let selectedStatus = 'available';
+        let currentMonth = 11; // December (0-indexed)
+        let currentYear = 2024;
+
+        function generateCalendar() {
+            const daysContainer = document.getElementById('calendar-days');
+            daysContainer.innerHTML = '';
+            
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const today = new Date();
+            
+            // Empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day';
+                emptyDay.style.visibility = 'hidden';
+                daysContainer.appendChild(emptyDay);
+            }
+            
+            // Calendar days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day';
+                const date = new Date(currentYear, currentMonth, day);
+                
+                if (date.toDateString() === today.toDateString()) {
+                    dayDiv.classList.add('today');
+                }
+                
+                dayDiv.innerHTML = `
+                    <div class="day-number">${day}</div>
+                    <div class="availability-indicator" data-status="none"></div>
+                `;
+                
+                dayDiv.onclick = () => openModal(date);
+                daysContainer.appendChild(dayDiv);
+            }
+            
+            document.getElementById('current-month').textContent = 
+                new Date(currentYear, currentMonth).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        }
+
+        function openModal(date) {
+            selected Date = date;
+            document.getElementById('modal-date').textContent = 
+                date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('modal-overlay').classList.add('active');
+            document.getElementById('availability-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.remove('active');
+            document.getElementById('availability-modal').classList.remove('active');
+        }
+
+        // Availability option selection
+        document.querySelectorAll('.availability-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.availability-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedStatus = this.dataset.status;
+                
+                // Show time fields for partial availability
+                document.getElementById('time-fields').style.display = 
+                    selectedStatus === 'partial' ? 'block' : 'none';
+            });
+        });
+
+        function saveAvailability() {
+            const notes = document.getElementById('availability-notes').value;
+            const startTime = document.getElementById('start-time').value;
+            const endTime = document.getElementById('end-time').value;
+            
+            console.log('Saving availability:', {
+                date: selectedDate,
+                status: selectedStatus,
+                startTime,
+                endTime,
+                notes
+            });
+            
+            alert(`✅ Availability saved for ${selectedDate.toLocaleDateString()}!\n\nStatus: ${selectedStatus}\n${notes ? 'Notes: ' + notes : ''}`);
+            closeModal();
+            
+            // Update calendar indicator
+            updateCalendarIndicator(selectedDate, selectedStatus);
+        }
+
+        function updateCalendarIndicator(date, status) {
+            const dayElements = document.querySelectorAll('.calendar-day');
+            const dayOfMonth = date.getDate();
+            const targetDay = dayElements[date.getDay() + dayOfMonth - 1];
+            
+            if (targetDay) {
+                const indicator = targetDay.querySelector('.availability-indicator');
+                indicator.className = `availability-indicator ${status}`;
+            }
+        }
+
+        function previousMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar();
+        }
+
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar();
+        }
+
+        // Initialize
+        generateCalendar();
+    </script>
+</body>
+</html>

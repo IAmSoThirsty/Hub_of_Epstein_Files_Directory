@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshows - Epstein Files Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Epstein Files Hub</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Character Guide</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="infographics.html">Infographics</a></li>
+                <li><a href="slideshow.html" class="active">Slideshows</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Document Slideshows</h1>
+            <p>Curated presentations of documents, evidence, and chronological events</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="info-box">
+            <h3>🎬 About These Slideshows</h3>
+            <p>These curated presentations provide context and narrative to complex collections of documents. Each slideshow includes annotations, explanations, and source citations.</p>
+            <p><strong>Content Warning:</strong> Some slideshows contain references to serious crimes. Viewer discretion is advised.</p>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-controls">
+                <select id="category-filter" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="overview">Case Overviews</option>
+                    <option value="legal">Legal Proceedings</option>
+                    <option value="investigation">Investigations</option>
+                    <option value="evidence">Evidence Collections</option>
+                    <option value="timeline">Timeline Stories</option>
+                    <option value="analysis">Analysis & Context</option>
+                </select>
+                <select id="length-filter" class="filter-select">
+                    <option value="all">All Lengths</option>
+                    <option value="short">Short (< 20 slides)</option>
+                    <option value="medium">Medium (20-50 slides)</option>
+                    <option value="long">Long (> 50 slides)</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="slideshows-grid">
+            <h2>Case Overview Slideshows</h2>
+
+            <article class="slideshow-card" data-category="overview" data-length="medium">
+                <div class="slideshow-header">
+                    <h3>📚 Complete Case Overview: 2005-2024</h3>
+                    <span class="slideshow-tag">Overview</span>
+                    <span class="slideshow-tag">45 slides</span>
+                    <span class="slideshow-tag">Essential</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Comprehensive overview of the entire case from inception to present</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>A comprehensive presentation covering the entire Epstein case from the initial 2005 investigation through current proceedings. Includes key documents, timeline events, major figures, and outcomes.</p>
+                    
+                    <h4>What's Included</h4>
+                    <ul>
+                        <li>Introduction and background (slides 1-5)</li>
+                        <li>Initial investigation 2005-2008 (slides 6-12)</li>
+                        <li>2008 plea agreement and aftermath (slides 13-18)</li>
+                        <li>Renewed investigation 2015-2019 (slides 19-27)</li>
+                        <li>2019 arrest and death (slides 28-35)</li>
+                        <li>Ghislaine Maxwell case (slides 36-40)</li>
+                        <li>Ongoing matters (slides 41-45)</li>
+                    </ul>
+                    
+                    <h4>Key Documents Featured</h4>
+                    <ul>
+                        <li>Investigation reports</li>
+                        <li>Court filings</li>
+                        <li>News coverage</li>
+                        <li>Timeline graphics</li>
+                    </ul>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 25-30 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                    <span>✅ Verified Sources</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('overview-complete')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('overview-complete')">Download PDF</button>
+                </div>
+            </article>
+
+            <article class="slideshow-card" data-category="overview" data-length="short">
+                <div class="slideshow-header">
+                    <h3>⚡ Quick Start Guide</h3>
+                    <span class="slideshow-tag">Overview</span>
+                    <span class="slideshow-tag">15 slides</span>
+                    <span class="slideshow-tag">Beginner</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Essential information for newcomers</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>A condensed introduction to the Epstein case covering the most essential facts, key individuals, and major legal outcomes. Perfect for those new to the case.</p>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 10 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('quick-start')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('quick-start')">Download PDF</button>
+                </div>
+            </article>
+
+            <h2>Legal Proceedings Slideshows</h2>
+
+            <article class="slideshow-card" data-category="legal" data-length="medium">
+                <div class="slideshow-header">
+                    <h3>⚖️ Federal Prosecution: SDNY 2019</h3>
+                    <span class="slideshow-tag">Legal</span>
+                    <span class="slideshow-tag">35 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Documents from the 2019 federal case</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Detailed presentation of the 2019 federal prosecution in the Southern District of New York, from arrest through aftermath. Includes indictment, court filings, and key evidence.</p>
+                    
+                    <h4>Contents</h4>
+                    <ul>
+                        <li>Arrest at Teterboro Airport</li>
+                        <li>Indictment documents</li>
+                        <li>Bail hearings</li>
+                        <li>Search warrant results</li>
+                        <li>Victim statements</li>
+                        <li>Aftermath and investigations</li>
+                    </ul>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 20 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('federal-2019')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('federal-2019')">Download PDF</button>
+                </div>
+            </article>
+
+            <article class="slideshow-card" data-category="legal" data-length="long">
+                <div class="slideshow-header">
+                    <h3>⚖️ Ghislaine Maxwell Trial: Complete Coverage</h3>
+                    <span class="slideshow-tag">Legal</span>
+                    <span class="slideshow-tag">65 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Comprehensive coverage of the Maxwell trial</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Complete documentation of the Ghislaine Maxwell criminal trial from indictment through sentencing. Includes charges, evidence, testimony summaries, verdict, and sentencing.</p>
+                    
+                    <h4>Major Sections</h4>
+                    <ul>
+                        <li>Arrest and charges (2020)</li>
+                        <li>Pre-trial proceedings</li>
+                        <li>Trial testimony (November-December 2021)</li>
+                        <li>Verdict and conviction</li>
+                        <li>Sentencing (June 2022)</li>
+                        <li>Appeals process</li>
+                    </ul>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 40 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('maxwell-trial')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('maxwell-trial')">Download PDF</button>
+                </div>
+            </article>
+
+            <article class="slideshow-card" data-category="legal" data-length="medium">
+                <div class="slideshow-header">
+                    <h3>📄 Civil Litigation Overview</h3>
+                    <span class="slideshow-tag">Legal</span>
+                    <span class="slideshow-tag">30 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Civil cases and settlements</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Overview of civil litigation including lawsuits against Epstein's estate, Maxwell, and others. Covers settlements, document unsealing battles, and ongoing cases.</p>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 18 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('civil-litigation')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('civil-litigation')">Download PDF</button>
+                </div>
+            </article>
+
+            <h2>Investigation Slideshows</h2>
+
+            <article class="slideshow-card" data-category="investigation" data-length="medium">
+                <div class="slideshow-header">
+                    <h3>🔍 Palm Beach Investigation (2005-2008)</h3>
+                    <span class="slideshow-tag">Investigation</span>
+                    <span class="slideshow-tag">28 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">The original investigation that started it all</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Detailed look at the Palm Beach Police Department investigation that began in 2005, including evidence collection, victim interviews, and the subsequent state and federal investigations.</p>
+                    
+                    <h4>Key Topics</h4>
+                    <ul>
+                        <li>Initial complaint and investigation start</li>
+                        <li>Evidence gathering and search warrants</li>
+                        <li>Victim interviews</li>
+                        <li>State prosecution decision</li>
+                        <li>Federal investigation involvement</li>
+                        <li>Grand jury proceedings</li>
+                        <li>Plea agreement controversy</li>
+                    </ul>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 17 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('palm-beach-investigation')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('palm-beach-investigation')">Download PDF</button>
+                </div>
+            </article>
+
+            <article class="slideshow-card" data-category="investigation" data-length="short">
+                <div class="slideshow-header">
+                    <h3>🔍 FBI Evidence Collection</h3>
+                    <span class="slideshow-tag">Investigation</span>
+                    <span class="slideshow-tag">22 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Evidence recovered in 2019 raids</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Documentation of FBI evidence collection operations in 2019, including search warrants at Manhattan townhouse, Little St. James island, and other locations.</p>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 13 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('fbi-evidence')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('fbi-evidence')">Download PDF</button>
+                </div>
+            </article>
+
+            <h2>Evidence & Document Collections</h2>
+
+            <article class="slideshow-card" data-category="evidence" data-length="medium">
+                <div class="slideshow-header">
+                    <h3>✈️ Flight Logs Analysis</h3>
+                    <span class="slideshow-tag">Evidence</span>
+                    <span class="slideshow-tag">38 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Analysis of publicly released flight logs</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Comprehensive analysis of publicly available flight logs showing travel patterns, frequent destinations, and passenger information where available in public records.</p>
+                    
+                    <h4>Analysis Includes</h4>
+                    <ul>
+                        <li>Flight frequency and routes</li>
+                        <li>Common destinations</li>
+                        <li>Time period analysis</li>
+                        <li>Passenger manifests (public records)</li>
+                        <li>Aircraft information</li>
+                        <li>Correlation with other evidence</li>
+                    </ul>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 22 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('flight-logs')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('flight-logs')">Download PDF</button>
+                </div>
+            </article>
+
+            <article class="slideshow-card" data-category="evidence" data-length="medium">
+                <div class="slideshow-header">
+                    <h3>🏠 Property Records Deep Dive</h3>
+                    <span class="slideshow-tag">Evidence</span>
+                    <span class="slideshow-tag">32 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Complete property portfolio analysis</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Detailed examination of all known properties owned by Epstein, including purchase records, property details, usage patterns, and their role in investigations.</p>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 19 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('property-records')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('property-records')">Download PDF</button>
+                </div>
+            </article>
+
+            <h2>Timeline Stories</h2>
+
+            <article class="slideshow-card" data-category="timeline" data-length="long">
+                <div class="slideshow-header">
+                    <h3>📅 Decade by Decade: 1990s-2020s</h3>
+                    <span class="slideshow-tag">Timeline</span>
+                    <span class="slideshow-tag">55 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Comprehensive chronological narrative</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>A chronological journey through the Epstein case from the 1990s to present day, organized by decade with detailed context for each major event.</p>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 35 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('decade-timeline')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('decade-timeline')">Download PDF</button>
+                </div>
+            </article>
+
+            <h2>Analysis & Context</h2>
+
+            <article class="slideshow-card" data-category="analysis" data-length="medium">
+                <div class="slideshow-header">
+                    <h3>🔬 Legal Framework Explained</h3>
+                    <span class="slideshow-tag">Analysis</span>
+                    <span class="slideshow-tag">25 slides</span>
+                </div>
+                <div class="slideshow-preview">
+                    <div class="preview-placeholder">
+                        <div class="slide-preview-img">[Preview Image]</div>
+                        <p class="preview-caption">Understanding the legal concepts</p>
+                    </div>
+                </div>
+                <div class="slideshow-description">
+                    <h4>Description</h4>
+                    <p>Educational presentation explaining the legal framework, charges, procedures, and terminology used in the case. Helps contextualize court documents and proceedings.</p>
+                </div>
+                <div class="slideshow-meta">
+                    <span>⏱️ Est. Time: 15 minutes</span>
+                    <span>📅 Last Updated: December 2024</span>
+                </div>
+                <div class="slideshow-actions">
+                    <button class="btn btn-primary" onclick="startSlideshow('legal-framework')">Start Slideshow</button>
+                    <button class="btn btn-secondary" onclick="downloadSlideshow('legal-framework')">Download PDF</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="custom-slideshow-section">
+            <h2>Request Custom Slideshow</h2>
+            <p>Need a slideshow focused on a specific aspect of the case? Submit a request describing what you'd like to see.</p>
+            <form id="slideshow-request-form" class="request-form">
+                <div class="form-group">
+                    <label for="slideshow-topic">Topic:</label>
+                    <input type="text" id="slideshow-topic" name="topic" placeholder="e.g., Virgin Islands civil case" required>
+                </div>
+                <div class="form-group">
+                    <label for="slideshow-description">Description:</label>
+                    <textarea id="slideshow-description" name="description" rows="4" placeholder="Describe what aspects you'd like covered..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="slideshow-length">Preferred Length:</label>
+                    <select id="slideshow-length" name="length">
+                        <option value="short">Short (10-20 slides)</option>
+                        <option value="medium" selected>Medium (20-40 slides)</option>
+                        <option value="long">Long (40+ slides)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+        </section>
+
+        <section class="usage-notes">
+            <h3>Using These Slideshows</h3>
+            <ul>
+                <li><strong>Navigation:</strong> Use arrow keys or on-screen controls to advance slides</li>
+                <li><strong>Citations:</strong> Each slide includes source citations for verification</li>
+                <li><strong>Download:</strong> PDFs available for offline viewing and sharing</li>
+                <li><strong>Updates:</strong> Slideshows are regularly updated as new documents are released</li>
+                <li><strong>Accessibility:</strong> All slideshows include alt text and transcripts</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Epstein Files Hub. Public domain content.</p>
+            <p><a href="index.html">Home</a> | <a href="privacy.html">Privacy</a> | <a href="disclaimer.html">Disclaimer</a></p>
+        </div>
+    </footer>
+
+    <script src="js/slideshow.js"></script>
+</body>
+</html>

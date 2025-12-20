@@ -1,0 +1,51 @@
+name: Update Search Index (Free Tier)
+
+on:
+  push:
+    paths:
+      - 'data/**'
+      - 'scripts/generate-search-index.py'
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Generate search index
+        run: |
+          python scripts/generate-search-index.py
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet web/js/search-index.js || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add web/js/search-index.js web/js/search-stats.json web/js/search-metadata.json
+          git commit -m "🔍 Update search index [automated]"
+          git push
+      
+      - name: Summary
+        run: |
+          echo "### Search Index Update Complete ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** Index regenerated successfully" >> $GITHUB_STEP_SUMMARY
+          echo "**Cost:** \$0 (Free tier)" >> $GITHUB_STEP_SUMMARY
+          echo "**Next deployment:** GitHub Pages will auto-deploy in 1-2 minutes" >> $GITHUB_STEP_SUMMARY

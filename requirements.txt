@@ -1,0 +1,35 @@
+# Python Requirements for Epstein Files Hub
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+requests>=2.28.0
+
+# PDF processing
+PyPDF2>=3.0.0
+pytesseract>=0.3.10
+Pillow>=9.0.0
+pdf2image>=1.16.0
+
+# Wikipedia and source expansion
+feedparser>=6.0.10
+
+# Optional: For enhanced functionality
+# Uncomment if needed
+
+# Flask for local web server
+# flask>=2.3.0
+
+# Advanced PDF processing
+# pdfplumber>=0.9.0
+# pymupdf>=1.22.0
+
+# OCR improvements
+# opencv-python>=4.7.0
+
+# Data analysis
+# pandas>=2.0.0
+# numpy>=1.24.0
+
+# Testing
+# pytest>=7.3.0
+# pytest-cov>=4.1.0

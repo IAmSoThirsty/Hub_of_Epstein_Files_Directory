@@ -1,0 +1,19 @@
+{
+  "generated_at": "2025-12-20T07:53:58.588673",
+  "version": "1.0.0",
+  "index_type": "client-side",
+  "search_library": "lunr.js",
+  "features": [
+    "full-text search",
+    "filter by date",
+    "filter by location",
+    "filter by redaction status",
+    "filter by document type",
+    "relevance scoring"
+  ],
+  "performance": {
+    "estimated_load_time": "< 500ms",
+    "search_time": "< 100ms",
+    "supports_offline": true
+  }
+}

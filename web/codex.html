@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse the Codex - Epstein Files Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Epstein Files Codex</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Character Guide</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="infographics.html">Infographics</a></li>
+                <li><a href="slideshow.html">Slideshows</a></li>
+                <li><a href="codex.html" class="active">Browse Codex</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>The Epstein Files Codex</h1>
+            <p>Browse 30,000+ documents and 20,000+ images, organized and maintained by AI agents</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="codex-stats">
+            <div class="stats-banner">
+                <div class="stat-item">
+                    <span class="stat-number">30,000+</span>
+                    <span class="stat-label">Text Documents</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20,000+</span>
+                    <span class="stat-label">Images & Photos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">26</span>
+                    <span class="stat-label">AI Agents</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Maintained</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-box">
+            <h3>📖 About the Codex</h3>
+            <p>The Epstein Files Codex is a meticulously organized archive of all publicly available documents, court filings, photographs, and evidence related to the Epstein case. Our team of 26 AI agents works continuously to index, verify, cross-reference, and present this information in an accessible format.</p>
+            <p><strong>All content is AI-curated and organized</strong> from verified public sources including court documents, government records, and credible media reports.</p>
+        </section>
+
+        <section class="browse-categories">
+            <h2>Browse by Category</h2>
+            <div class="categories-grid">
+                <article class="category-card" data-category="legal">
+                    <div class="category-icon">⚖️</div>
+                    <h3>Legal Documents</h3>
+                    <p class="category-count">8,500+ documents</p>
+                    <ul class="category-subcategories">
+                        <li>Court Filings & Dockets</li>
+                        <li>Indictments & Charges</li>
+                        <li>Trial Transcripts</li>
+                        <li>Depositions</li>
+                        <li>Motions & Orders</li>
+                        <li>Appeals</li>
+                        <li>Settlements</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('legal')">Browse Legal Docs →</button>
+                </article>
+
+                <article class="category-card" data-category="financial">
+                    <div class="category-icon">💰</div>
+                    <h3>Financial Records</h3>
+                    <p class="category-count">4,200+ documents</p>
+                    <ul class="category-subcategories">
+                        <li>Banking Documents</li>
+                        <li>Wire Transfers</li>
+                        <li>Corporate Filings</li>
+                        <li>Trust Documents</li>
+                        <li>Property Records</li>
+                        <li>Tax Records</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('financial')">Browse Financial Records →</button>
+                </article>
+
+                <article class="category-card" data-category="travel">
+                    <div class="category-icon">✈️</div>
+                    <h3>Flight Logs & Travel</h3>
+                    <p class="category-count">2,800+ documents</p>
+                    <ul class="category-subcategories">
+                        <li>Flight Manifests</li>
+                        <li>Passenger Logs</li>
+                        <li>Aircraft Records</li>
+                        <li>Travel Itineraries</li>
+                        <li>Customs Documents</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('travel')">Browse Travel Records →</button>
+                </article>
+
+                <article class="category-card" data-category="property">
+                    <div class="category-icon">🏠</div>
+                    <h3>Property Documents</h3>
+                    <p class="category-count">1,500+ documents</p>
+                    <ul class="category-subcategories">
+                        <li>Deeds & Titles</li>
+                        <li>Property Transactions</li>
+                        <li>Building Permits</li>
+                        <li>Architectural Plans</li>
+                        <li>Inspection Reports</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('property')">Browse Property Docs →</button>
+                </article>
+
+                <article class="category-card" data-category="investigation">
+                    <div class="category-icon">🔍</div>
+                    <h3>Investigation Records</h3>
+                    <p class="category-count">5,600+ documents</p>
+                    <ul class="category-subcategories">
+                        <li>Police Reports</li>
+                        <li>FBI Documents</li>
+                        <li>Search Warrants</li>
+                        <li>Evidence Logs</li>
+                        <li>Witness Statements</li>
+                        <li>Forensic Reports</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('investigation')">Browse Investigation Files →</button>
+                </article>
+
+                <article class="category-card" data-category="communications">
+                    <div class="category-icon">📧</div>
+                    <h3>Communications</h3>
+                    <p class="category-count">3,400+ documents</p>
+                    <ul class="category-subcategories">
+                        <li>Email Correspondence</li>
+                        <li>Text Messages</li>
+                        <li>Phone Records</li>
+                        <li>Letters</li>
+                        <li>Memos</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('communications')">Browse Communications →</button>
+                </article>
+
+                <article class="category-card" data-category="media">
+                    <div class="category-icon">📰</div>
+                    <h3>Media & Press</h3>
+                    <p class="category-count">2,000+ articles</p>
+                    <ul class="category-subcategories">
+                        <li>News Articles</li>
+                        <li>Investigative Reports</li>
+                        <li>Press Releases</li>
+                        <li>Interviews</li>
+                        <li>Documentary Materials</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('media')">Browse Media Coverage →</button>
+                </article>
+
+                <article class="category-card" data-category="images">
+                    <div class="category-icon">🖼️</div>
+                    <h3>Image Archive</h3>
+                    <p class="category-count">20,000+ images</p>
+                    <ul class="category-subcategories">
+                        <li>Evidence Photographs</li>
+                        <li>Property Images</li>
+                        <li>Document Scans</li>
+                        <li>Location Photos</li>
+                        <li>Court Exhibits</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="browseCategory('images')">Browse Image Archive →</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="browse-timeline">
+            <h2>Browse by Time Period</h2>
+            <div class="timeline-periods">
+                <div class="period-card">
+                    <h3>1990s - Early Period</h3>
+                    <p>Background and early activities</p>
+                    <button class="btn btn-secondary" onclick="browsePeriod('1990s')">Browse →</button>
+                </div>
+                <div class="period-card">
+                    <h3>2000-2008 - Investigation & Prosecution</h3>
+                    <p>Initial investigation, plea agreement</p>
+                    <button class="btn btn-secondary" onclick="browsePeriod('2000-2008')">Browse →</button>
+                </div>
+                <div class="period-card">
+                    <h3>2008-2015 - Aftermath</h3>
+                    <p>Post-conviction period, civil cases begin</p>
+                    <button class="btn btn-secondary" onclick="browsePeriod('2008-2015')">Browse →</button>
+                </div>
+                <div class="period-card">
+                    <h3>2015-2019 - Renewed Investigation</h3>
+                    <p>Media investigations, renewed scrutiny</p>
+                    <button class="btn btn-secondary" onclick="browsePeriod('2015-2019')">Browse →</button>
+                </div>
+                <div class="period-card">
+                    <h3>2019 - Arrest & Death</h3>
+                    <p>Federal charges, death in custody</p>
+                    <button class="btn btn-secondary" onclick="browsePeriod('2019')">Browse →</button>
+                </div>
+                <div class="period-card">
+                    <h3>2020-Present - Ongoing</h3>
+                    <p>Maxwell trial, civil litigation, document releases</p>
+                    <button class="btn btn-secondary" onclick="browsePeriod('2020-present')">Browse →</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="browse-jurisdiction">
+            <h2>Browse by Jurisdiction</h2>
+            <div class="jurisdiction-grid">
+                <div class="jurisdiction-card">
+                    <h4>🏛️ Federal - SDNY</h4>
+                    <p>Southern District of New York</p>
+                    <p class="doc-count">12,000+ documents</p>
+                    <button class="btn btn-secondary" onclick="browseJurisdiction('sdny')">Browse →</button>
+                </div>
+                <div class="jurisdiction-card">
+                    <h4>🏛️ Federal - Florida</h4>
+                    <p>Southern District of Florida</p>
+                    <p class="doc-count">3,500+ documents</p>
+                    <button class="btn btn-secondary" onclick="browseJurisdiction('florida')">Browse →</button>
+                </div>
+                <div class="jurisdiction-card">
+                    <h4>🏛️ Virgin Islands</h4>
+                    <p>USVI Superior Court</p>
+                    <p class="doc-count">2,800+ documents</p>
+                    <button class="btn btn-secondary" onclick="browseJurisdiction('usvi')">Browse →</button>
+                </div>
+                <div class="jurisdiction-card">
+                    <h4>🏛️ Civil Cases</h4>
+                    <p>Various jurisdictions</p>
+                    <p class="doc-count">8,200+ documents</p>
+                    <button class="btn btn-secondary" onclick="browseJurisdiction('civil')">Browse →</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-collections">
+            <h2>Featured Collections</h2>
+            <p>AI-curated document collections on specific topics</p>
+            
+            <div class="collections-list">
+                <article class="collection-card">
+                    <h3>📋 Complete Case Timeline Documents</h3>
+                    <p>Chronologically organized documents from 2005 to present</p>
+                    <span class="collection-size">15,000+ documents</span>
+                    <button class="btn btn-primary" onclick="viewCollection('timeline')">View Collection →</button>
+                </article>
+
+                <article class="collection-card">
+                    <h3>📋 Ghislaine Maxwell Trial</h3>
+                    <p>All documents related to the Maxwell criminal trial</p>
+                    <span class="collection-size">2,400+ documents</span>
+                    <button class="btn btn-primary" onclick="viewCollection('maxwell-trial')">View Collection →</button>
+                </article>
+
+                <article class="collection-card">
+                    <h3>📋 Property & Location Evidence</h3>
+                    <p>Documents and images related to all properties</p>
+                    <span class="collection-size">4,200+ items</span>
+                    <button class="btn btn-primary" onclick="viewCollection('properties')">View Collection →</button>
+                </article>
+
+                <article class="collection-card">
+                    <h3>📋 Financial Network Analysis</h3>
+                    <p>Banking, wire transfers, and corporate documents</p>
+                    <span class="collection-size">5,800+ documents</span>
+                    <button class="btn btn-primary" onclick="viewCollection('financial')">View Collection →</button>
+                </article>
+
+                <article class="collection-card">
+                    <h3>📋 Unsealed Court Documents (2021-2024)</h3>
+                    <p>Recently unsealed documents from various proceedings</p>
+                    <span class="collection-size">3,600+ documents</span>
+                    <button class="btn btn-primary" onclick="viewCollection('unsealed')">View Collection →</button>
+                </article>
+
+                <article class="collection-card">
+                    <h3>📋 Victim Testimony & Statements</h3>
+                    <p>Court testimony and victim statements (anonymized)</p>
+                    <span class="collection-size">1,200+ documents</span>
+                    <button class="btn btn-primary" onclick="viewCollection('testimony')">View Collection →</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="ai-curation">
+            <h2>AI-Assisted Navigation</h2>
+            <p>Our AI agents can help you find specific information within the codex</p>
+            
+            <div class="ai-features-grid">
+                <div class="ai-feature">
+                    <h4>🤖 Document Summaries</h4>
+                    <p>Every document includes an AI-generated summary</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>🔗 Cross-References</h4>
+                    <p>Automatic links between related documents</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>👥 Entity Extraction</h4>
+                    <p>All names, places, and organizations automatically tagged</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>📊 Visual Connections</h4>
+                    <p>Network graphs showing relationships</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>✅ Source Verification</h4>
+                    <p>Every document includes verification status</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>📅 Timeline Integration</h4>
+                    <p>Documents linked to timeline events</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-additions">
+            <h2>Recently Added to Codex</h2>
+            <div class="recent-items">
+                <div class="recent-item">
+                    <span class="item-date">Dec 19, 2024</span>
+                    <span class="item-type">Court Document</span>
+                    <p class="item-title">Additional unsealed documents - Civil Case ABC-123</p>
+                    <button class="btn-sm" onclick="viewDocument('doc-123')">View →</button>
+                </div>
+                <div class="recent-item">
+                    <span class="item-date">Dec 18, 2024</span>
+                    <span class="item-type">Analysis</span>
+                    <p class="item-title">AI-generated cross-reference report - Financial networks</p>
+                    <button class="btn-sm" onclick="viewDocument('analysis-456')">View →</button>
+                </div>
+                <div class="recent-item">
+                    <span class="item-date">Dec 17, 2024</span>
+                    <span class="item-type">Image Collection</span>
+                    <p class="item-title">Property photographs - Little St. James (500 images)</p>
+                    <button class="btn-sm" onclick="viewCollection('lsj-photos')">View →</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="quality-notice">
+            <h3>📊 Quality & Verification</h3>
+            <p>All documents in the codex are:</p>
+            <ul>
+                <li>✅ <strong>Verified from public sources</strong> - Court records, government documents, credible media</li>
+                <li>✅ <strong>AI-indexed and cross-referenced</strong> - 26 specialized agents maintain the collection</li>
+                <li>✅ <strong>Continuously updated</strong> - New documents added as they become available</li>
+                <li>✅ <strong>Metadata-enriched</strong> - Dates, people, locations, and categories automatically tagged</li>
+                <li>✅ <strong>Source-cited</strong> - Every document links to its original source</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Epstein Files Codex. Public domain content.</p>
+            <p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="methodology.html">Methodology</a></p>
+        </div>
+    </footer>
+
+    <script src="js/codex.js"></script>
+</body>
+</html>

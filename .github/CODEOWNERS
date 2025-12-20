@@ -1,0 +1,24 @@
+# Code Owners - Requires review from owner for all changes
+# This ensures only @IAmSoThirsty can approve and merge changes
+
+# All files require owner review
+* @IAmSoThirsty
+
+# Critical infrastructure files require owner review
+/.github/ @IAmSoThirsty
+/.github/workflows/ @IAmSoThirsty
+/scripts/ @IAmSoThirsty
+/bots/ @IAmSoThirsty
+/docs/ @IAmSoThirsty
+
+# Data files require owner review
+/data/ @IAmSoThirsty
+
+# Web interface requires owner review
+/web/ @IAmSoThirsty
+
+# Configuration files require owner review
+*.yml @IAmSoThirsty
+*.yaml @IAmSoThirsty
+*.json @IAmSoThirsty
+*.md @IAmSoThirsty
