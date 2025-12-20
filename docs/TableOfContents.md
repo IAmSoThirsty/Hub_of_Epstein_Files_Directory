@@ -171,6 +171,14 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines on:
 - Document viewer
 - Mobile-responsive design
 
+### Azure Setup & Costs
+- [Azure Infrastructure Guide](Azure-Infrastructure.md) - Complete setup instructions
+- [Azure Cost Reduction Guide](Azure-Cost-Reduction.md) - **Save 50-96% on costs**
+  - Full Production: $1,360/month
+  - Optimized: $675/month (50% off)
+  - Budget: $200/month (85% off)
+  - Free/Minimal: $0-50/month (96% off)
+
 ### Workflows
 - Automated indexing
 - Content validation

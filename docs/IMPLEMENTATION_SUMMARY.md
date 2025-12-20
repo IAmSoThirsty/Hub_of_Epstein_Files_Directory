@@ -206,34 +206,78 @@ Storage & Databases
 
 ## Cost Estimates
 
-### Azure Infrastructure (Monthly)
+### 💰 Multiple Cost Tiers Available
+
+For complete cost reduction strategies, see **[Azure-Cost-Reduction.md](Azure-Cost-Reduction.md)**
+
+| Tier | Monthly | Annual | Features | Best For |
+|------|---------|--------|----------|----------|
+| **Full Production** | $1,360 | $16,320 | All features, GPT-4 | Enterprise |
+| **Optimized** ⭐ | $675 | $8,100 | All features, GPT-3.5 | Production |
+| **Budget** | $200 | $2,400 | Core features | Development |
+| **Free/Minimal** | $0-50 | $0-600 | Static site | Personal |
+
+### Full Production Tier ($1,360/month)
 
 | Service | Cost |
 |---------|------|
-| Cognitive Search | $250 |
+| Cognitive Search (S1) | $250 |
 | Computer Vision | $100 |
 | Document Intelligence | $150 |
-| OpenAI Service | $500 |
+| OpenAI Service (GPT-4) | $500 |
 | Blob Storage | $50 |
-| Functions | $200 |
+| Functions (Premium) | $200 |
 | App Service | $55 |
 | DevOps | $40 |
 | Monitor | $50 |
 | Key Vault | $5 |
-| **Total** | **$1,400/month** |
+| **Total** | **$1,360/month** |
 
-### Optimized Setup (Monthly)
+### Optimized Tier ($675/month) - ⭐ RECOMMENDED
 
-| Optimization | Savings |
-|--------------|---------|
-| Use GitHub Pages | -$55 |
-| Reduce OpenAI usage | -$200 |
-| Consumption plan | -$150 |
-| **Optimized Total** | **$1,100/month** |
+| Service | Cost | Optimization |
+|---------|------|--------------|
+| Cognitive Search (Basic) | $75 | Downgrade tier |
+| Computer Vision | $30 | Batching + caching |
+| Document Intelligence | $50 | Process only new docs |
+| OpenAI (GPT-3.5-turbo) | $150 | Use cheaper model |
+| Blob Storage | $20 | Lifecycle management |
+| Functions (Consumption) | $50 | Pay per use |
+| GitHub Pages | $0 | Free hosting |
+| GitHub Actions | $0 | Free CI/CD |
+| Monitor (Free tier) | $0 | Free tier |
+| Key Vault | $5 | Keep secure |
+| **Total** | **$675/month** | **50% savings** |
 
-### Free Alternative
+### Budget Tier ($200/month)
 
-Use GitHub Pages + client-side search → **$0-50/month**
+- Azure Blob Storage: $20
+- Azure OpenAI (minimal): $100
+- Azure Functions (minimal): $50
+- Misc (networking): $30
+- GitHub Pages: FREE
+- Client-side search: FREE
+- **Total: $200/month (85% savings)**
+
+### Free/Minimal Tier ($0-50/month)
+
+- GitHub Pages: FREE
+- GitHub Actions: FREE
+- Cloudflare CDN: FREE
+- Algolia Search (free tier): FREE
+- Client-side search: FREE
+- API usage (light): $0-50
+- **Total: $0-50/month (96%+ savings)**
+
+### How to Reduce Costs
+
+See **[Azure-Cost-Reduction.md](Azure-Cost-Reduction.md)** for:
+- Detailed optimization strategies
+- Code examples for efficiency
+- Caching implementations
+- Batch processing techniques
+- Free service alternatives
+- Step-by-step cost reduction guide
 
 ---
 

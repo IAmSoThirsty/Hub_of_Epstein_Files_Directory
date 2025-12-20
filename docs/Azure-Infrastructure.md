@@ -181,6 +181,16 @@ Breakdown:
 
 **Optimized Monthly Cost: ~$1,100**
 
+### 💰 Significant Cost Reduction Options
+
+For detailed strategies to reduce costs by 50-96%, see **[Azure-Cost-Reduction.md](Azure-Cost-Reduction.md)**
+
+Quick comparison:
+- **Full Production:** $1,360/month (all features)
+- **Optimized:** $675/month (50% reduction, excellent performance)
+- **Budget:** $200/month (85% reduction, good performance)
+- **Free/Minimal:** $0-50/month (96%+ reduction, static site)
+
 ## Deployment Steps
 
 ### Step 1: Create Azure Resources
