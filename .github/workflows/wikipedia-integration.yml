@@ -1,0 +1,63 @@
+name: Wikipedia Data Integration
+
+on:
+  # Run weekly on Sundays at 3 AM UTC
+  schedule:
+    - cron: '0 3 * * 0'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+  
+  # Run on push to main (for testing)
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/fetch-wikipedia-data.py'
+
+jobs:
+  fetch-wikipedia:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests
+      
+      - name: Fetch Wikipedia data
+        run: |
+          python scripts/fetch-wikipedia-data.py
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -n "$(git status --porcelain data/wikipedia/)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/wikipedia/
+          git commit -m "Update Wikipedia data - $(date +'%Y-%m-%d')"
+          git push
+      
+      - name: Update search index
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          python scripts/generate-search-index.py
+          git add web/js/search-index.js web/js/search-stats.json web/js/search-metadata.json
+          git commit -m "Update search index with Wikipedia data"
+          git push

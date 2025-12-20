@@ -10,6 +10,9 @@ pytesseract>=0.3.10
 Pillow>=9.0.0
 pdf2image>=1.16.0
 
+# Wikipedia and source expansion
+feedparser>=6.0.10
+
 # Optional: For enhanced functionality
 # Uncomment if needed
 
