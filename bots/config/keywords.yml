@@ -1,0 +1,148 @@
+# Keywords for Epstein-Related Content Detection
+
+high_priority:
+  # Primary subjects
+  - "Jeffrey Epstein"
+  - "Ghislaine Maxwell"
+  - "Jean-Luc Brunel"
+  
+  # Key locations
+  - "Little St. James"
+  - "Little Saint James"
+  - "Great St. James"
+  - "Great Saint James"
+  - "Zorro Ranch"
+  
+  # Key documents/evidence
+  - "flight logs"
+  - "flight manifest"
+  - "black book"
+  - "visitor log"
+  
+  # Legal terms
+  - "non-prosecution agreement"
+  - "plea agreement 2008"
+  - "SDNY"
+  - "Southern District of New York"
+
+medium_priority:
+  # Locations
+  - "Palm Beach"
+  - "Virgin Islands"
+  - "U.S. Virgin Islands"
+  - "USVI"
+  - "Manhattan townhouse"
+  - "East 71st Street"
+  - "New Mexico ranch"
+  - "Paris apartment"
+  
+  # Organizations
+  - "Epstein Foundation"
+  - "GEMS"
+  - "Interlochen"
+  - "Mar-a-Lago"
+  
+  # Legal/Investigation
+  - "Palm Beach Police"
+  - "FBI investigation"
+  - "Department of Justice"
+  - "DOJ"
+  - "plea deal"
+  - "sex trafficking"
+  - "solicitation"
+  
+  # Aircraft
+  - "Lolita Express"
+  - "N-number"
+  - "Boeing 727"
+  - "Gulfstream"
+
+low_priority:
+  # General terms (need context)
+  - "private island"
+  - "flight"
+  - "passenger"
+  - "massage"
+  - "underage"
+  - "victim"
+  - "witness"
+  - "testimony"
+  - "deposition"
+  - "settlement"
+  - "sealed documents"
+  - "financier"
+
+entities:
+  # Entity types to detect
+  person_indicators:
+    - "Mr."
+    - "Ms."
+    - "Mrs."
+    - "Dr."
+    - "defendant"
+    - "plaintiff"
+    - "witness"
+    - "Jane Doe"
+    - "John Doe"
+  
+  location_indicators:
+    - "Island"
+    - "Ranch"
+    - "Estate"
+    - "Residence"
+    - "Property"
+    - "Avenue"
+    - "Street"
+    - "Boulevard"
+  
+  organization_indicators:
+    - "Foundation"
+    - "LLC"
+    - "Inc"
+    - "Corporation"
+    - "Trust"
+    - "Department"
+    - "Police"
+    - "Court"
+
+date_patterns:
+  # Important time periods
+  - "199[0-9]"  # 1990s
+  - "200[0-9]"  # 2000s
+  - "201[0-9]"  # 2010s
+  - "202[0-4]"  # 2020-2024
+  
+legal_document_indicators:
+  - "CASE NO"
+  - "FILED"
+  - "SEALED"
+  - "EXHIBIT"
+  - "PLAINTIFF"
+  - "DEFENDANT"
+  - "DEPOSITION"
+  - "AFFIDAVIT"
+  - "COURT"
+  - "JUDGE"
+  - "ATTORNEY"
+  - "COUNSEL"
+
+negative_indicators:
+  # Terms that suggest document is NOT relevant
+  - "recipe"
+  - "cookbook"
+  - "unrelated case"
+  - "different matter"
+  
+context_phrases:
+  # Phrases that indicate relevance when found together
+  high_context:
+    - ["Jeffrey Epstein", "flight"]
+    - ["Ghislaine Maxwell", "victim"]
+    - ["Little St. James", "visit"]
+    - ["Palm Beach", "investigation"]
+    - ["plea agreement", "2008"]
+  
+  medium_context:
+    - ["Virgin Islands", "property"]
+    - ["private island", "passenger"]
+    - ["flight log", "manifest"]
