@@ -41,6 +41,7 @@ This repository serves as a comprehensive directory and organizational hub for E
 | Document | Description |
 |----------|-------------|
 | [FREE_TIER_SETUP.md](docs/FREE_TIER_SETUP.md) | **Complete free tier setup guide** |
+| [PUBLIC_FILES_INTEGRATION.md](docs/PUBLIC_FILES_INTEGRATION.md) | **Fetch FBI/DOJ files guide** |
 | [COST_COMPARISON.md](docs/COST_COMPARISON.md) | Cost tier comparison |
 | [Azure-Cost-Reduction.md](docs/Azure-Cost-Reduction.md) | Cost optimization strategies |
 | [Bot-Usage-Guide.md](docs/Bot-Usage-Guide.md) | 26 AI agents documentation |
