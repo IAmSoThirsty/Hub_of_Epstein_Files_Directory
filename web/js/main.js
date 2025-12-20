@@ -154,7 +154,9 @@ function exportResults(format) {
 }
 
 function viewDocument(docId) {
-    window.location.href = `document.html?id=${docId}`;
+    // In production: open document viewer
+    alert(`Document ${docId} viewer will open here. Integration with document storage pending.`);
+    // window.location.href = `codex.html#document-${docId}`;
 }
 
 function setView(viewType) {
