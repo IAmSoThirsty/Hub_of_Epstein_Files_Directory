@@ -25,12 +25,14 @@ Free:              $0-50/month  ░░░░░░░░░░░░░░░░
 - ✅ You have budget constraints
 - ✅ You want 85% cost savings
 
-### Choose **Free ($0-50/month)** if:
+### Choose **Free ($0-50/month)** if: ⭐ **SELECTED**
 - ✅ This is a personal/community project
 - ✅ You can work with static site
 - ✅ You don't need real-time AI processing
 - ✅ You want maximum cost savings
 - ✅ You're comfortable with technical setup
+
+**📖 Setup Guide:** See [FREE_TIER_SETUP.md](FREE_TIER_SETUP.md) for complete instructions
 
 ## 📊 Feature Comparison
 
