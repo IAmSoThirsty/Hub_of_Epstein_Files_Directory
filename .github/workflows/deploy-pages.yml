@@ -35,7 +35,9 @@ jobs:
         run: |
           mkdir -p _site
           cp -r web/* _site/
-          cp -r docs _site/docs
+          if [ -d docs ]; then
+            cp -r docs _site/docs
+          fi
           
       - name: Create sitemap
         run: |
