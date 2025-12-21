@@ -38,6 +38,9 @@ jobs:
           if [ -d docs ]; then
             cp -r docs _site/docs
           fi
+          if [ -f CONTRIBUTING.md ]; then
+            cp CONTRIBUTING.md _site/
+          fi
           
       - name: Create sitemap
         run: |
