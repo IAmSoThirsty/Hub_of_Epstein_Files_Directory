@@ -130,7 +130,7 @@ class PDFAnalyzer:
     def _extract_text(self, file_path: str) -> str:
         """Extract text from PDF file."""
         try:
-            import PyPDF2
+            import pypdf as PyPDF2
             
             with open(file_path, 'rb') as f:
                 reader = PyPDF2.PdfReader(f)
@@ -249,7 +249,7 @@ class PDFAnalyzer:
     def _extract_metadata(self, file_path: str) -> Dict:
         """Extract metadata from PDF file."""
         try:
-            import PyPDF2
+            import pypdf as PyPDF2
             
             with open(file_path, 'rb') as f:
                 reader = PyPDF2.PdfReader(f)

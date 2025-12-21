@@ -69,7 +69,7 @@ python scripts/process-pdfs.py --input data/public_files/fbi_vault
 ```
 
 **Features:**
-- Text extraction (PyPDF2)
+- Text extraction (pypdf)
 - OCR for scanned docs (Tesseract)
 - Metadata extraction (dates, locations, case numbers)
 - Search-ready JSON output
@@ -82,7 +82,7 @@ python scripts/process-pdfs.py --input data/public_files/fbi_vault
 
 **Requirements:**
 ```bash
-pip install PyPDF2 pytesseract pillow pdf2image
+pip install pypdf pytesseract pillow pdf2image
 
 # Ubuntu/Debian
 sudo apt-get install tesseract-ocr poppler-utils
@@ -151,7 +151,7 @@ All scripts can run automatically via GitHub Actions:
 ### Python Packages
 ```
 requests>=2.28.0
-PyPDF2>=3.0.0
+pypdf>=3.9.0
 pytesseract>=0.3.10
 Pillow>=9.0.0
 pdf2image>=1.16.0
