@@ -19,7 +19,16 @@ pip --version
 git --version
 
 # Install Azure CLI (optional, for Azure services)
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+# Download installation script
+curl -sL https://aka.ms/InstallAzureCLIDeb -o /tmp/install-azure-cli.sh
+# Review the script before executing
+less /tmp/install-azure-cli.sh
+# Execute if safe
+sudo bash /tmp/install-azure-cli.sh
+
+# Or install via package manager (recommended)
+# Ubuntu/Debian:
+# sudo apt-get install azure-cli
 ```
 
 ---
@@ -128,11 +137,13 @@ EOF
 
 ### Load Environment Variables
 ```bash
-# Add to ~/.bashrc or ~/.zshrc
-export $(cat .env | xargs)
-
-# Or use python-dotenv
+# Recommended: Use python-dotenv
 pip install python-dotenv
+
+# Or manually load (safer than export $(cat .env | xargs))
+set -a
+source .env
+set +a
 ```
 
 ---
