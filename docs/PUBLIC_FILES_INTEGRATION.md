@@ -105,7 +105,7 @@ python scripts/generate-search-index.py --include-processed
 
 ```bash
 # Install Python dependencies
-pip install requests PyPDF2 pytesseract pillow pdf2image
+pip install requests pypdf pytesseract pillow pdf2image
 
 # Install system dependencies (Ubuntu/Debian)
 sudo apt-get update
@@ -465,7 +465,7 @@ python -c "import pytesseract; print('OCR ready')"
 - CourtListener: https://www.courtlistener.com/
 
 **Tools:**
-- PyPDF2: https://pypdf2.readthedocs.io/
+- pypdf: https://pypdf.readthedocs.io/
 - Tesseract: https://github.com/tesseract-ocr/tesseract
 - PDF.js: https://mozilla.github.io/pdf.js/
 
