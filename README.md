@@ -4,7 +4,6 @@
 
 This repository serves as a comprehensive directory and organizational hub for Epstein-related files and documentation with a full web interface, automated workflows, and AI agent infrastructure.
 
-**🎉 FREE TIER IMPLEMENTED - $0/month hosting costs!**
 **🆕 WIKIPEDIA INTEGRATION - Comprehensive data on dates, times, locations, characters!**
 **🔍 SAFE SOURCE EXPANSION - 5+ official sources monitored daily!**
 
@@ -12,7 +11,7 @@ This repository serves as a comprehensive directory and organizational hub for E
 
 ## 🚀 Quick Start
 
-**Website:** https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/
+**Website:** 
 
 **Features:**
 - 🔍 Advanced search with 15+ filters
@@ -23,8 +22,6 @@ This repository serves as a comprehensive directory and organizational hub for E
 - 🤖 26 AI agents maintaining content
 - 🌐 Wikipedia data integration (weekly updates)
 - 📡 Automated source discovery (daily)
-
-**Cost: $0-50/month** (FREE tier selected)
 
 ---
 
@@ -39,7 +36,6 @@ Automatically fetches comprehensive data:
 
 **Script:** `scripts/fetch-wikipedia-data.py`
 **Schedule:** Weekly (Sundays)
-**Cost:** $0
 
 ### Safe Source Expansion ✅
 Monitors 5 official sources daily:
@@ -51,7 +47,6 @@ Monitors 5 official sources daily:
 
 **Script:** `scripts/safe-source-expander.py`
 **Schedule:** Daily discovery
-**Cost:** $0
 **Human approval:** Required
 
 ---
