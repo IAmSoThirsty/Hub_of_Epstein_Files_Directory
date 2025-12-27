@@ -12,10 +12,10 @@ from datetime import datetime
 import re
 
 try:
-    import PyPDF2
+    import pypdf as PyPDF2
     HAS_PYPDF = True
 except ImportError:
-    print("⚠️ PyPDF2 not installed. Install with: pip install PyPDF2")
+    print("⚠️ pypdf not installed. Install with: pip install pypdf")
     HAS_PYPDF = False
 
 try:
@@ -207,7 +207,7 @@ def main():
     
     if not HAS_PYPDF:
         print("⚠️ Missing required libraries!")
-        print("Install with: pip install PyPDF2 pytesseract pillow pdf2image")
+        print("Install with: pip install pypdf pytesseract pillow pdf2image")
         return
     
     processor = PDFProcessor()

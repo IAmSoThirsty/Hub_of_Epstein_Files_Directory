@@ -229,7 +229,7 @@ jobs:
 azure-ai-documentintelligence>=1.0.0
 azure-ai-textanalytics>=5.3.0
 openai>=1.0.0
-PyPDF2>=3.0.0
+pypdf>=3.9.0
 pdf2image>=1.16.0
 pytesseract>=0.3.10
 pillow>=10.0.0
