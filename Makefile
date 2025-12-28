@@ -154,16 +154,22 @@ clean: ## Clean temporary files and cache
 	@rm -rf cache/*
 	@echo "$(GREEN)Cleanup complete!$(NC)"
 
-clean-data: ## Clean processed data (WARNING: destructive)
+clean-data: ## Clean processed data (WARNING: destructive, use FORCE=1 to skip prompt)
 	@echo "$(YELLOW)⚠️  WARNING: This will delete all processed data!$(NC)"
-	@read -p "Are you sure? [y/N] " -n 1 -r; \
-	echo; \
-	if [[ $$REPLY =~ ^[Yy]$$ ]]; then \
+	@if [ "$(FORCE)" = "1" ]; then \
 		rm -rf data/processed/*; \
 		rm -rf data/wikipedia/*; \
 		echo "$(GREEN)Data cleaned!$(NC)"; \
 	else \
-		echo "$(BLUE)Cancelled.$(NC)"; \
+		read -p "Are you sure? [y/N] " -n 1 -r; \
+		echo; \
+		if [[ $$REPLY =~ ^[Yy]$$ ]]; then \
+			rm -rf data/processed/*; \
+			rm -rf data/wikipedia/*; \
+			echo "$(GREEN)Data cleaned!$(NC)"; \
+		else \
+			echo "$(BLUE)Cancelled.$(NC)"; \
+		fi; \
 	fi
 
 clean-all: clean clean-data docker-clean ## Clean everything (WARNING: destructive)
