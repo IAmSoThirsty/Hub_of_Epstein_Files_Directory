@@ -1,0 +1,75 @@
+# MANIFEST.in - Specifies which files to include in the package distribution
+
+# Include documentation
+include README.md
+include SETUP_GUIDE.md
+include QUICK_START.md
+include CONTRIBUTING.md
+include INSTALLATION.txt
+include LICENSE
+
+# Include requirements
+include requirements.txt
+include requirements-dev.txt
+
+# Include configuration templates
+include .env.example
+include setup.sh
+include verify-setup.py
+include Makefile
+
+# Include Docker files
+include Dockerfile
+include docker-compose.yml
+include .dockerignore
+
+# Include scripts
+recursive-include scripts *.py
+recursive-include scripts *.md
+
+# Include bots
+recursive-include bots *.py
+recursive-include bots *.md
+recursive-include bots *.json
+
+# Include web files
+recursive-include web *.html
+recursive-include web *.css
+recursive-include web *.js
+recursive-include web *.json
+
+# Include documentation
+recursive-include docs *.md
+recursive-include docs *.txt
+
+# Include workflows
+recursive-include .github *.yml
+recursive-include .github *.md
+
+# Exclude compiled Python files
+global-exclude __pycache__
+global-exclude *.py[cod]
+global-exclude *.so
+global-exclude .DS_Store
+
+# Exclude development and temporary files
+prune .venv
+prune venv
+prune ENV
+prune env
+prune .git
+prune .idea
+prune .vscode
+prune htmlcov
+prune .pytest_cache
+prune .mypy_cache
+prune dist
+prune build
+prune *.egg-info
+
+# Exclude data files (too large)
+prune data/public_files
+prune data/processed
+prune logs
+prune cache
+prune tmp
