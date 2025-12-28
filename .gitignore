@@ -19,11 +19,15 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+pip-log.txt
+pip-delete-this-directory.txt
 
 # Virtual environments
+.venv/
 venv/
 ENV/
 env/
+.Python
 
 # IDE
 .vscode/
@@ -31,14 +35,74 @@ env/
 *.swp
 *.swo
 *~
+.project
+.pydevproject
+.settings/
 
 # OS
 .DS_Store
 Thumbs.db
+*.bak
+*~
 
 # Logs
 *.log
+logs/*
+!logs/.gitkeep
 
 # Temporary files
 *.tmp
-tmp/
+tmp/*
+!tmp/.gitkeep
+cache/*
+!cache/.gitkeep
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Data files (large files that shouldn't be in repo)
+data/public_files/*
+data/processed/*
+data/wikipedia/*
+!data/**/.gitkeep
+
+# Test coverage
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+coverage.xml
+*.cover
+
+# Docker
+.dockerignore
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Node modules (if any JS dependencies)
+node_modules/
+
+# Package files
+*.tar.gz
+*.zip

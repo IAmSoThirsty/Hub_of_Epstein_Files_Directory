@@ -1,0 +1,2 @@
+# This file ensures the cache directory is tracked by Git
+# Actual cache files should not be committed (see .gitignore)

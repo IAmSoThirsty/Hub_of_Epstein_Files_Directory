@@ -1,0 +1,2 @@
+# This file ensures the tmp directory is tracked by Git
+# Actual temporary files should not be committed (see .gitignore)
