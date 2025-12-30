@@ -622,7 +622,7 @@ After completing setup, verify:
 
 ---
 
-**Last Updated**: December 28, 2024  
+**Last Updated**: December 28, 2025  
 **Version**: 1.0.0  
 **Maintainer**: IAmSoThirsty
 
