@@ -121,7 +121,7 @@ def main():
     print(f"\n{Colors.YELLOW}Optional System Commands:{Colors.NC}")
     tesseract = check_command("tesseract", "tesseract (OCR)")
     check_command("docker", "docker")
-    docker_compose = check_command("docker-compose", "docker-compose")
+    check_command("docker-compose", "docker-compose")
     
     # Required directories
     print(f"\n{Colors.YELLOW}Required Directories:{Colors.NC}")
