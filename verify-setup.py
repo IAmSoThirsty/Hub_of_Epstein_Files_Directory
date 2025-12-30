@@ -120,7 +120,7 @@ def main():
     # Optional system commands
     print(f"\n{Colors.YELLOW}Optional System Commands:{Colors.NC}")
     tesseract = check_command("tesseract", "tesseract (OCR)")
-    docker_available = check_command("docker", "docker")
+    check_command("docker", "docker")
     docker_compose = check_command("docker-compose", "docker-compose")
     
     # Required directories
