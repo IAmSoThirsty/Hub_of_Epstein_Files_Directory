@@ -5,7 +5,6 @@ Checks that all dependencies and required components are properly installed
 """
 
 import sys
-import os
 import subprocess
 from pathlib import Path
 
