@@ -23,12 +23,6 @@ setup(
     author_email="",
     url="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory",
     packages=find_packages(where='.', exclude=['tests', 'tests.*']),
-    py_modules=['scripts.fetch_public_files', 
-                'scripts.fetch_wikipedia_data',
-                'scripts.generate_search_index',
-                'scripts.manage_volunteer_access',
-                'scripts.process_pdfs',
-                'scripts.safe_source_expander'],
     install_requires=requirements,
     python_requires=">=3.8",
     classifiers=[
