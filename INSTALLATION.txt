@@ -222,7 +222,7 @@ GitHub Issues: https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/is
 GitHub Discussions: https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/discussions
 
 VERSION: 1.0.0
-LAST UPDATED: December 28, 2024
+LAST UPDATED: December 28, 2025
 MAINTAINER: IAmSoThirsty
 
 Ready to start? Run: ./setup.sh
