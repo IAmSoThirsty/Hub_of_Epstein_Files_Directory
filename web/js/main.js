@@ -224,6 +224,112 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Scroll progress indicator
+    const scrollProgress = document.querySelector('.scroll-progress');
+    if (scrollProgress) {
+        window.addEventListener('scroll', function() {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            scrollProgress.style.width = progress + '%';
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Parallax effect on scroll
+    window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            hero.style.opacity = 1 - (scrolled / 600);
+        }
+    });
+    
+    // Add cursor trail effect
+    let cursorTrails = [];
+    const maxTrails = 8;
+    
+    document.addEventListener('mousemove', function(e) {
+        // Create cursor trail element
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.left = e.clientX + 'px';
+        trail.style.top = e.clientY + 'px';
+        document.body.appendChild(trail);
+        
+        cursorTrails.push(trail);
+        
+        // Remove old trails
+        if (cursorTrails.length > maxTrails) {
+            const oldTrail = cursorTrails.shift();
+            oldTrail.remove();
+        }
+        
+        // Auto remove after animation
+        setTimeout(() => {
+            trail.style.opacity = '0';
+            setTimeout(() => trail.remove(), 500);
+        }, 500);
+    });
+    
+    // Enhanced stat counter animation
+    const stats = document.querySelectorAll('.stat-number');
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+    
+    const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const text = target.textContent;
+                const number = parseInt(text.replace(/\D/g, ''));
+                
+                if (!isNaN(number)) {
+                    animateValue(target, 0, number, 2000, text);
+                }
+                statsObserver.unobserve(target);
+            }
+        });
+    }, observerOptions);
+    
+    stats.forEach(stat => statsObserver.observe(stat));
+    
+    function animateValue(element, start, end, duration, originalText) {
+        const startTime = performance.now();
+        const suffix = originalText.replace(/[\d,]/g, '');
+        
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const current = Math.floor(progress * (end - start) + start);
+            
+            element.textContent = current.toLocaleString() + suffix;
+            
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+        
+        requestAnimationFrame(update);
+    }
 });
 
 // Save search preset
