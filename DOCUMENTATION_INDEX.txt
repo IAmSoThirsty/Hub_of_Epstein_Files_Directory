@@ -1,0 +1,155 @@
+# All Documentation Files
+==========================
+
+## Main Documentation
+
+1. README.md - Project overview and main entry point
+2. SETUP_GUIDE.md - Comprehensive setup instructions
+3. QUICK_START.md - Quick start guide for deployment
+4. INSTALLATION.txt - Plain text installation reference
+5. CONTRIBUTING.md - Contribution guidelines
+6. VISUAL_SUMMARY.md - Visual project summary
+
+## Setup & Configuration
+
+- setup.sh - Automated setup script
+- verify-setup.py - Installation verification tool
+- setup.py - Python package configuration
+- requirements.txt - Python dependencies
+- requirements-dev.txt - Development dependencies
+- .env.example - Environment variables template
+- Makefile - Common command shortcuts
+
+## Docker
+
+- Dockerfile - Container image definition
+- docker-compose.yml - Multi-service configuration
+- .dockerignore - Docker build optimization
+
+## Documentation Directory (docs/)
+
+### Setup & Deployment
+- FREE_TIER_SETUP.md - Free hosting setup guide
+- DEPLOYMENT_GUIDE.md - Deployment instructions
+- ACCESS_CONTROL_SETUP.md - Access control configuration
+- AUTOMATED_DISCOVERY.md - Automated discovery setup
+
+### Usage Guides
+- Bot-Usage-Guide.md - AI agents documentation (26 agents)
+- PUBLIC_FILES_INTEGRATION.md - Public files integration
+- SAFE_EXPANSION_GUIDE.md - Safe source expansion
+- STAFF_TASKS_AND_CALENDAR_GUIDE.md - Staff portal guide
+- VOLUNTEER_MANAGEMENT.md - Volunteer management
+
+### Reference
+- Glossary.md - Terms and definitions
+- CharacterDirectory.md - Key individuals (350+)
+- Timeline.md - Chronological events
+- TableOfContents.md - Main table of contents
+- SourcesIndex.md - Sources index
+
+### Architecture & Cost
+- Azure-Infrastructure.md - Azure infrastructure details
+- Azure-Cost-Reduction.md - Cost optimization strategies
+- COST_COMPARISON.md - Cost tier comparison
+- IMPLEMENTATION_SUMMARY.md - Implementation summary
+
+## Scripts Documentation
+
+- scripts/README.md - Scripts overview
+
+## Bots Documentation
+
+- bots/README.md - Bots overview
+- bots/SETUP.md - Bot setup instructions
+- bots/DEVELOPMENT.md - Bot development guide
+- bots/AGENT_INFRASTRUCTURE.md - Agent infrastructure
+
+## GitHub Documentation
+
+- .github/copilot-instructions.md - GitHub Copilot instructions
+- .github/CODEOWNERS - Code ownership
+- .github/PULL_REQUEST_TEMPLATE.md - PR template
+- .github/ISSUE_TEMPLATE/ - Issue templates
+
+## Quick Reference
+
+### For New Users
+1. Start with README.md
+2. Follow QUICK_START.md
+3. Refer to SETUP_GUIDE.md for details
+
+### For Developers
+1. Read CONTRIBUTING.md
+2. Install: ./setup.sh
+3. Verify: python verify-setup.py
+4. Commands: make help
+
+### For Deployment
+1. FREE_TIER_SETUP.md for GitHub Pages
+2. DEPLOYMENT_GUIDE.md for detailed steps
+3. Docker files for containerization
+
+### For AI Agents
+1. Bot-Usage-Guide.md - Usage instructions
+2. bots/SETUP.md - Setup guide
+3. bots/DEVELOPMENT.md - Development guide
+
+## File Purposes
+
+| File | Purpose |
+|------|---------|
+| README.md | Main project overview |
+| SETUP_GUIDE.md | Complete setup instructions |
+| QUICK_START.md | 5-minute quick start |
+| INSTALLATION.txt | Plain text reference |
+| CONTRIBUTING.md | How to contribute |
+| setup.sh | Automated setup script |
+| verify-setup.py | Check installation |
+| Makefile | Command shortcuts |
+| Dockerfile | Container definition |
+| docker-compose.yml | Service orchestration |
+
+## Documentation by Topic
+
+### Setup & Installation
+- SETUP_GUIDE.md
+- INSTALLATION.txt
+- setup.sh
+- verify-setup.py
+- requirements.txt
+
+### Docker & Containerization
+- Dockerfile
+- docker-compose.yml
+- .dockerignore
+
+### Python Package
+- setup.py
+- MANIFEST.in
+- requirements.txt
+- requirements-dev.txt
+
+### Configuration
+- .env.example
+- Makefile
+- .gitignore
+- .dockerignore
+
+### Deployment
+- FREE_TIER_SETUP.md
+- DEPLOYMENT_GUIDE.md
+- QUICK_START.md
+
+### Usage
+- Bot-Usage-Guide.md
+- PUBLIC_FILES_INTEGRATION.md
+- STAFF_TASKS_AND_CALENDAR_GUIDE.md
+
+### Reference
+- Glossary.md
+- CharacterDirectory.md
+- Timeline.md
+- SourcesIndex.md
+
+Last Updated: December 28, 2025

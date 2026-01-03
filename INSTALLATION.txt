@@ -1,0 +1,228 @@
+EPSTEIN FILES HUB - DEVELOPMENT ENVIRONMENT SETUP
+==================================================
+
+This repository is now fully equipped with:
+
+1. PYTHON VIRTUAL ENVIRONMENT (.venv)
+   - Automated setup via setup.sh
+   - All dependencies from requirements.txt
+   - Python 3.8+ support
+
+2. DOCKER INFRASTRUCTURE
+   - Dockerfile with multi-stage builds
+   - docker-compose.yml with 6 services
+   - Optimized for development and production
+
+3. PACKAGE MANAGEMENT
+   - setup.py for package installation
+   - requirements.txt with all dependencies
+   - Makefile with 40+ commands
+
+4. DIRECTORY STRUCTURE
+   - data/ - Data storage (public files, processed, wikipedia)
+   - logs/ - Application logs
+   - cache/ - Temporary cache
+   - tmp/ - Temporary files
+   - scripts/ - Python scripts
+   - bots/ - AI agents (26 total)
+   - web/ - Web interface
+   - docs/ - Documentation
+
+5. CONFIGURATION
+   - .env.example - Environment template
+   - .gitignore - Git ignore rules
+   - .dockerignore - Docker ignore rules
+
+6. DOCUMENTATION
+   - SETUP_GUIDE.md - Comprehensive setup guide
+   - README.md - Project overview
+   - QUICK_START.md - Quick start guide
+   - This file - Plain text reference
+
+QUICK START
+-----------
+
+1. Run automated setup:
+   ./setup.sh
+
+2. Verify installation:
+   python verify-setup.py
+
+3. View available commands:
+   make help
+
+4. Start using the tools:
+   make fetch-public-files
+   make generate-index
+   make serve
+
+MAKEFILE COMMANDS
+-----------------
+
+Setup & Installation:
+  make setup              - Run initial setup
+  make install            - Install dependencies
+  make verify             - Verify installation
+
+Data Processing:
+  make fetch-public-files - Fetch FBI Vault PDFs
+  make fetch-wikipedia    - Fetch Wikipedia data
+  make process-pdfs       - Process PDFs with OCR
+  make generate-index     - Generate search index
+  make fetch-all          - Run all data operations
+
+Docker:
+  make docker-build       - Build Docker images
+  make docker-up          - Start containers
+  make docker-down        - Stop containers
+  make docker-shell       - Open shell in container
+
+Development:
+  make serve              - Start web server (port 8080)
+  make format             - Format code with black
+  make lint               - Lint code with flake8
+  make test               - Run tests
+
+Cleanup:
+  make clean              - Clean temporary files
+  make clean-data         - Clean processed data
+  make clean-all          - Clean everything
+
+Information:
+  make help               - Show all commands
+  make info               - Show project info
+  make status             - Show system status
+
+DOCKER COMMANDS
+---------------
+
+Build and run:
+  docker-compose build
+  docker-compose up -d app
+  docker-compose exec app /bin/bash
+
+Run specific services:
+  docker-compose run --rm fetch-public-files
+  docker-compose run --rm process-pdfs
+  docker-compose run --rm generate-search-index
+
+Stop and clean:
+  docker-compose down
+  docker-compose down -v  # Also remove volumes
+
+PYTHON SCRIPTS
+--------------
+
+All scripts are in the scripts/ directory:
+
+1. fetch-public-files.py
+   - Fetches FBI Vault PDFs (22 files)
+   - Downloads DOJ flight logs
+   - Verifies file integrity with SHA-256
+
+2. fetch-wikipedia-data.py
+   - Fetches Wikipedia articles (15+)
+   - Extracts dates, locations, characters
+   - Generates profiles and timeline
+
+3. process-pdfs.py
+   - Extracts text from PDFs
+   - Performs OCR on scanned documents
+   - Extracts metadata
+
+4. generate-search-index.py
+   - Creates searchable index
+   - Works with Lunr.js
+   - Generates JSON index file
+
+5. safe-source-expander.py
+   - Monitors official sources
+   - Creates GitHub issues with findings
+   - Requires human approval
+
+6. manage-volunteer-access.py
+   - Manages volunteer permissions
+   - Processes applications
+   - Creates access controls
+
+DIRECTORY PURPOSES
+------------------
+
+data/
+  public_files/     - Downloaded public files (FBI, DOJ, etc.)
+  processed/        - Processed data (text, metadata, indexed)
+  wikipedia/        - Wikipedia data extracts
+
+scripts/            - Python automation scripts
+bots/               - 26 AI agents for processing
+web/                - Web interface (8 pages)
+docs/               - Project documentation
+logs/               - Application logs
+cache/              - Temporary cache
+tmp/                - Temporary files
+
+CONFIGURATION FILES
+-------------------
+
+.env                - Environment configuration (create from .env.example)
+requirements.txt    - Python dependencies
+setup.py            - Package configuration
+Dockerfile          - Docker image definition
+docker-compose.yml  - Docker services
+Makefile            - Command shortcuts
+.gitignore          - Git ignore rules
+
+REQUIREMENTS
+------------
+
+Required:
+  - Python 3.8+
+  - pip
+  - Git
+
+Optional:
+  - Docker & Docker Compose
+  - Tesseract OCR (for PDF processing)
+  - Make (for Makefile commands)
+
+System Requirements:
+  - OS: Linux, macOS, Windows (WSL2)
+  - RAM: 2GB minimum, 4GB recommended
+  - Disk: 5GB for full data processing
+  - Network: Internet for fetching files
+
+GETTING HELP
+------------
+
+1. Read SETUP_GUIDE.md for comprehensive instructions
+2. Run: python verify-setup.py
+3. Check: make info
+4. View logs: cat logs/*.log
+5. GitHub Issues: Report bugs or ask questions
+
+DOCUMENTATION FILES
+-------------------
+
+README.md              - Project overview
+SETUP_GUIDE.md        - Complete setup instructions
+QUICK_START.md        - Quick start guide
+CONTRIBUTING.md       - Contribution guidelines
+
+docs/
+  FREE_TIER_SETUP.md           - Free hosting setup
+  Bot-Usage-Guide.md          - AI agents documentation
+  PUBLIC_FILES_INTEGRATION.md - Public files guide
+  DEPLOYMENT_GUIDE.md         - Deployment instructions
+  ... and more (20+ docs)
+
+SUPPORT
+-------
+
+GitHub Issues: https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/issues
+GitHub Discussions: https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/discussions
+
+VERSION: 1.0.0
+LAST UPDATED: December 28, 2025
+MAINTAINER: IAmSoThirsty
+
+Ready to start? Run: ./setup.sh
