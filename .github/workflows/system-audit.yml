@@ -110,11 +110,10 @@ jobs:
             echo "No new audit reports to commit"
           else
             TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-            git commit -m "📋 System audit completed: $TIMESTAMP
-
-Status: ${{ steps.audit.outputs.overall_status || 'COMPLETED' }}
-Issues: ${{ steps.audit.outputs.total_issues || '0' }}
-Run: ${{ github.run_number }}"
+            STATUS="${{ steps.audit.outputs.overall_status || 'COMPLETED' }}"
+            ISSUES="${{ steps.audit.outputs.total_issues || '0' }}"
+            RUN="${{ github.run_number }}"
+            git commit -m "📋 System audit completed: $TIMESTAMP" -m "Status: $STATUS" -m "Issues: $ISSUES" -m "Run: $RUN"
             git push
           fi
       
@@ -124,38 +123,44 @@ Run: ${{ github.run_number }}"
         with:
           script: |
             const fs = require('fs');
-            
-            // Find latest markdown report
             const { execSync } = require('child_process');
             const latestMd = execSync('ls -t logs/system_audit_*.md | head -1').toString().trim();
             
             if (latestMd && fs.existsSync(latestMd)) {
               const report = fs.readFileSync(latestMd, 'utf8');
+              const runNumber = '${{ github.run_number }}';
+              const totalIssues = '${{ steps.audit.outputs.total_issues }}';
+              const repoName = '${{ github.repository }}';
+              const runId = '${{ github.run_id }}';
+              
+              const body = [
+                '## Critical System Audit Alert',
+                '',
+                '**Audit ID:** Run #' + runNumber,
+                '**Timestamp:** ' + new Date().toISOString(),
+                '**Status:** CRITICAL',
+                '**Total Issues:** ' + totalIssues,
+                '',
+                '### Action Required',
+                'The system audit has detected critical issues that require immediate attention.',
+                '',
+                '### Full Report',
+                '```',
+                report.substring(0, 60000),
+                '```',
+                '',
+                '### Artifacts',
+                'Download full reports from [GitHub Actions artifacts](https://github.com/' + repoName + '/actions/runs/' + runId + ').',
+                '',
+                '---',
+                '*This issue was created automatically by the System Audit Bot.*'
+              ].join('\n');
               
               await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 title: '🚨 CRITICAL: System Audit Detected Critical Issues',
-                body: `## Critical System Audit Alert
-
-**Audit ID:** Run #${{ github.run_number }}
-**Timestamp:** ${new Date().toISOString()}
-**Status:** CRITICAL
-**Total Issues:** ${{ steps.audit.outputs.total_issues }}
-
-### Action Required
-The system audit has detected critical issues that require immediate attention.
-
-### Full Report
-\`\`\`
-${report.substring(0, 60000)}
-\`\`\`
-
-### Artifacts
-Download full reports from [GitHub Actions artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}).
-
----
-*This issue was created automatically by the System Audit Bot.*`,
+                body: body,
                 labels: ['critical', 'audit', 'automated-alert', 'priority-high']
               });
             }
@@ -171,31 +176,39 @@ Download full reports from [GitHub Actions artifacts](https://github.com/${{ git
             
             if (latestMd && fs.existsSync(latestMd)) {
               const report = fs.readFileSync(latestMd, 'utf8');
+              const runNumber = '${{ github.run_number }}';
+              const totalIssues = '${{ steps.audit.outputs.total_issues }}';
+              const repoName = '${{ github.repository }}';
+              const runId = '${{ github.run_id }}';
+              
+              const body = [
+                '## System Audit Alert',
+                '',
+                '**Audit ID:** Run #' + runNumber,
+                '**Timestamp:** ' + new Date().toISOString(),
+                '**Status:** DEGRADED',
+                '**Total Issues:** ' + totalIssues,
+                '',
+                '### Action Recommended',
+                'The system audit has detected issues that should be addressed.',
+                '',
+                '### Report Summary',
+                '```',
+                report.substring(0, 30000),
+                '```',
+                '',
+                '### Full Reports',
+                'Download complete reports from [GitHub Actions artifacts](https://github.com/' + repoName + '/actions/runs/' + runId + ').',
+                '',
+                '---',
+                '*This issue was created automatically by the System Audit Bot.*'
+              ].join('\n');
               
               await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 title: '⚠️ System Audit Detected Issues',
-                body: `## System Audit Alert
-
-**Audit ID:** Run #${{ github.run_number }}
-**Timestamp:** ${new Date().toISOString()}
-**Status:** DEGRADED
-**Total Issues:** ${{ steps.audit.outputs.total_issues }}
-
-### Action Recommended
-The system audit has detected issues that should be addressed.
-
-### Report Summary
-\`\`\`
-${report.substring(0, 30000)}
-\`\`\`
-
-### Full Reports
-Download complete reports from [GitHub Actions artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}).
-
----
-*This issue was created automatically by the System Audit Bot.*`,
+                body: body,
                 labels: ['audit', 'automated-alert', 'needs-review']
               });
             }
@@ -268,7 +281,6 @@ Download complete reports from [GitHub Actions artifacts](https://github.com/${{
             
             if (latestMd && fs.existsSync(latestMd)) {
               const report = fs.readFileSync(latestMd, 'utf8');
-              // Extract executive summary
               const summaryMatch = report.match(/## EXECUTIVE SUMMARY[\s\S]*?(?=##|$)/);
               auditSummary = summaryMatch ? summaryMatch[0] : report.substring(0, 5000);
             }
@@ -286,55 +298,64 @@ Download complete reports from [GitHub Actions artifacts](https://github.com/${{
             }
             
             const weekNumber = Math.ceil((new Date() - new Date(new Date().getFullYear(), 0, 1)) / 604800000);
+            const year = new Date().getFullYear();
+            const date = new Date().toISOString().split('T')[0];
+            const runNumber = '${{ github.run_number }}';
+            const repoName = '${{ github.repository }}';
+            const runId = '${{ github.run_id }}';
+            
+            const body = [
+              '## Weekly Deep System Audit Report',
+              '',
+              '**Week:** ' + weekNumber + ' of ' + year,
+              '**Date:** ' + date,
+              '**Audit Run:** #' + runNumber,
+              '',
+              '---',
+              '',
+              '### Audit Summary',
+              '',
+              auditSummary,
+              '',
+              '---',
+              '',
+              '### Repository Statistics',
+              '',
+              '```',
+              repoStats,
+              '```',
+              '',
+              '---',
+              '',
+              '### Disk Usage',
+              '',
+              '```',
+              diskUsage,
+              '```',
+              '',
+              '---',
+              '',
+              '### Actions',
+              '',
+              '- [ ] Review audit findings',
+              '- [ ] Address any critical or degraded issues',
+              '- [ ] Update documentation if needed',
+              '- [ ] Plan capacity adjustments if required',
+              '',
+              '### Full Reports',
+              '',
+              'Download comprehensive reports from [GitHub Actions artifacts](https://github.com/' + repoName + '/actions/runs/' + runId + ').',
+              '',
+              '---',
+              '',
+              '*This weekly summary was generated automatically by the System Audit Bot.*'
+            ].join('\n');
             
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `📊 Weekly System Audit Summary - Week ${weekNumber}, ${new Date().getFullYear()}`,
-              body: `## Weekly Deep System Audit Report
-
-**Week:** ${weekNumber} of ${new Date().getFullYear()}
-**Date:** ${new Date().toISOString().split('T')[0]}
-**Audit Run:** #${{ github.run_number }}
-
----
-
-### Audit Summary
-
-${auditSummary}
-
----
-
-### Repository Statistics
-
-\`\`\`
-${repoStats}
-\`\`\`
-
----
-
-### Disk Usage
-
-\`\`\`
-${diskUsage}
-\`\`\`
-
----
-
-### Actions
-
-- [ ] Review audit findings
-- [ ] Address any critical or degraded issues
-- [ ] Update documentation if needed
-- [ ] Plan capacity adjustments if required
-
-### Full Reports
-
-Download comprehensive reports from [GitHub Actions artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}).
-
----
-
-*This weekly summary was generated automatically by the System Audit Bot.*`,
+              title: '📊 Weekly System Audit Summary - Week ' + weekNumber + ', ' + year,
+              body: body,
               labels: ['weekly-summary', 'audit', 'automated-report']
             });
       
