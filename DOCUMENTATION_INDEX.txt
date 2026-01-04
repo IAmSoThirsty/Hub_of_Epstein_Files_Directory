@@ -35,9 +35,10 @@
 - AUTOMATED_DISCOVERY.md - Automated discovery setup
 
 ### Usage Guides
-- Bot-Usage-Guide.md - AI agents documentation (26 agents)
+- Bot-Usage-Guide.md - AI agents documentation (27 agents)
 - PUBLIC_FILES_INTEGRATION.md - Public files integration
 - SAFE_EXPANSION_GUIDE.md - Safe source expansion
+- SYSTEM_AUDIT_GUIDE.md - System-wide audit and inspection
 - STAFF_TASKS_AND_CALENDAR_GUIDE.md - Staff portal guide
 - VOLUNTEER_MANAGEMENT.md - Volunteer management
 
@@ -144,6 +145,7 @@
 ### Usage
 - Bot-Usage-Guide.md
 - PUBLIC_FILES_INTEGRATION.md
+- SYSTEM_AUDIT_GUIDE.md
 - STAFF_TASKS_AND_CALENDAR_GUIDE.md
 
 ### Reference
@@ -152,4 +154,4 @@
 - Timeline.md
 - SourcesIndex.md
 
-Last Updated: December 28, 2025
+Last Updated: January 4, 2026
