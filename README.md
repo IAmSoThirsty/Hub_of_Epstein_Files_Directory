@@ -27,6 +27,19 @@ This repository serves as a comprehensive directory and organizational hub for E
 
 ## 🆕 Latest Features
 
+### System-Wide Audit & Inspection ✅ **NEW**
+Military-style comprehensive system auditing:
+- **9 Audit Sections**: Infrastructure, Agents, Data, Security, Workflows, Scripts, Web, Resources, Documentation
+- **Automated Monitoring**: Daily audits + weekly deep inspections
+- **Multiple Formats**: Markdown, JSON, Text reports
+- **Issue Detection**: Automatic GitHub Issues for critical findings
+- **Status Levels**: OPERATIONAL, WARNING, DEGRADED, CRITICAL
+
+**Command:** `make system-audit` or `make military-audit`
+**Script:** `scripts/system-audit.py`
+**Schedule:** Daily (6 AM UTC) + Weekly (Sundays)
+**Documentation:** [SYSTEM_AUDIT_GUIDE.md](docs/SYSTEM_AUDIT_GUIDE.md)
+
 ### Wikipedia Integration ✅
 Automatically fetches comprehensive data:
 - **Dates & Times**: Birth dates, event dates, timeline entries
@@ -70,6 +83,7 @@ Monitors 5 official sources daily:
 
 | Document | Description |
 |----------|-------------|
+| [SYSTEM_AUDIT_GUIDE.md](docs/SYSTEM_AUDIT_GUIDE.md) | **🆕 System-wide audit and inspection guide** |
 | [SAFE_EXPANSION_GUIDE.md](docs/SAFE_EXPANSION_GUIDE.md) | **🆕 Wikipedia & source expansion guide** |
 | [FREE_TIER_SETUP.md](docs/FREE_TIER_SETUP.md) | **Complete free tier setup guide** |
 | [PUBLIC_FILES_INTEGRATION.md](docs/PUBLIC_FILES_INTEGRATION.md) | **Fetch FBI/DOJ files guide** |
@@ -77,7 +91,7 @@ Monitors 5 official sources daily:
 | [AUTOMATED_DISCOVERY.md](docs/AUTOMATED_DISCOVERY.md) | Discovery capabilities |
 | [COST_COMPARISON.md](docs/COST_COMPARISON.md) | Cost tier comparison |
 | [Azure-Cost-Reduction.md](docs/Azure-Cost-Reduction.md) | Cost optimization strategies |
-| [Bot-Usage-Guide.md](docs/Bot-Usage-Guide.md) | 26 AI agents documentation |
+| [Bot-Usage-Guide.md](docs/Bot-Usage-Guide.md) | 27 AI agents documentation |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines |
 | [Glossary.md](docs/Glossary.md) | Terms and definitions |
 | [CharacterDirectory.md](docs/CharacterDirectory.md) | Key individuals |
@@ -106,14 +120,16 @@ GitHub Actions (FREE) → Automated index updates
 Git LFS (FREE) → Large file storage (1GB)
 ```
 
-### AI Agent Infrastructure (26 Agents)
+### AI Agent Infrastructure (27 Agents)
 - 7 Document agents (42K ops/day)
 - 5 Image agents (26K ops/day)
 - 3 Search agents (backend only)
 - 3 QC agents (fact-checking, verification)
 - 8 Support agents (organization, monitoring)
+- 1 Audit agent (continuous system inspection)
 
 **Total capacity:** 68,000+ operations/day
+**System Audits:** Daily automated + on-demand
 
 ---
 

@@ -211,3 +211,33 @@ status: ## Show system status
 	@echo ""
 	@echo "Recent logs:"
 	@ls -lht logs/ 2>/dev/null | head -5 || echo "  No logs found"
+
+# ============================================
+# System Audit and Inspection
+# ============================================
+
+system-audit: ## Run comprehensive system-wide audit
+	@echo "$(BLUE)Running system-wide audit...$(NC)"
+	@python scripts/system-audit.py --format markdown
+	@echo "$(GREEN)✓ Audit complete! Check logs/ directory for reports.$(NC)"
+
+system-audit-all: ## Run system audit with all report formats
+	@echo "$(BLUE)Running system-wide audit (all formats)...$(NC)"
+	@python scripts/system-audit.py --format all
+	@echo "$(GREEN)✓ Audit complete! Reports saved in logs/ directory.$(NC)"
+
+system-audit-json: ## Run system audit with JSON output
+	@echo "$(BLUE)Running system-wide audit (JSON)...$(NC)"
+	@python scripts/system-audit.py --format json
+	@echo "$(GREEN)✓ Audit complete! Check logs/ directory for JSON report.$(NC)"
+
+system-audit-quiet: ## Run system audit without console output
+	@echo "$(BLUE)Running system-wide audit (quiet mode)...$(NC)"
+	@python scripts/system-audit.py --format all --quiet
+	@echo "$(GREEN)✓ Audit complete! Reports saved in logs/ directory.$(NC)"
+
+audit-report: ## Alias for system-audit-all
+	@$(MAKE) system-audit-all
+
+military-audit: ## Military-style comprehensive system inspection (alias)
+	@$(MAKE) system-audit-all
