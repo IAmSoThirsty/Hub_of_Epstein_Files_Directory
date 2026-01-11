@@ -37,8 +37,9 @@ jobs:
       - name: Run linters
         run: |
           echo "Running code quality checks..."
-          black --check scripts/ || echo "Black formatting issues found"
-          flake8 scripts/ --max-line-length=120 || echo "Flake8 issues found"
+          black --check scripts/ --diff || true
+          flake8 scripts/ --max-line-length=120 --count --statistics || true
+        continue-on-error: true
       
       - name: Run unit tests
         run: |

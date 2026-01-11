@@ -5,7 +5,7 @@ Pytest configuration and shared fixtures for all tests.
 import os
 import tempfile
 from pathlib import Path
-from typing import Generator
+from collections.abc import Generator
 
 import pytest
 
