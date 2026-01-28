@@ -22,7 +22,7 @@ setup(
     author="IAmSoThirsty",
     author_email="",
     url="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory",
-    packages=find_packages(where='.', exclude=['tests', 'tests.*']),
+    packages=find_packages(where='.', exclude=['tests', 'tests.*', 'examples', 'examples.*']),
     install_requires=requirements,
     python_requires=">=3.8",
     classifiers=[
@@ -51,6 +51,7 @@ setup(
             'generate-search-index=scripts.generate_search_index:main',
             'process-pdfs=scripts.process_pdfs:main',
             'safe-source-expander=scripts.safe_source_expander:main',
+            'epstein-hub=epstein_files.cli:main',
         ],
     },
     include_package_data=True,
