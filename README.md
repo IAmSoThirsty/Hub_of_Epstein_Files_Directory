@@ -27,7 +27,37 @@ This repository serves as a comprehensive directory and organizational hub for E
 
 ## 🆕 Latest Features
 
-### System-Wide Audit & Inspection ✅ **NEW**
+### Sovereign Level Monolithic Dense Library ✅ **NEW**
+Comprehensive Python library for unified access to all functionality:
+- **Unified API**: Single `Hub` class for all operations
+- **Modular Architecture**: Core, Data, Search, Processing, Agents modules
+- **CLI Interface**: `epstein-hub` command for command-line usage
+- **Smart Caching**: Intelligent caching reduces redundant operations
+- **Context Manager**: Automatic resource management and cleanup
+- **Full Documentation**: Complete API docs, examples, and migration guide
+
+**Usage:**
+```python
+from epstein_files import Hub
+
+with Hub() as hub:
+    hub.fetch_public_files()
+    hub.process_documents()
+    hub.generate_search_index()
+```
+
+**Command Line:**
+```bash
+epstein-hub status    # Get system status
+epstein-hub pipeline  # Run full pipeline
+```
+
+**Documentation:**
+- [Library Documentation](docs/LIBRARY_DOCUMENTATION.md)
+- [Migration Guide](docs/MIGRATION_GUIDE.md)
+- [Examples](examples/)
+
+### System-Wide Audit & Inspection ✅
 Military-style comprehensive system auditing:
 - **9 Audit Sections**: Infrastructure, Agents, Data, Security, Workflows, Scripts, Web, Resources, Documentation
 - **Automated Monitoring**: Daily audits + weekly deep inspections
@@ -83,7 +113,9 @@ Monitors 5 official sources daily:
 
 | Document | Description |
 |----------|-------------|
-| [SYSTEM_AUDIT_GUIDE.md](docs/SYSTEM_AUDIT_GUIDE.md) | **🆕 System-wide audit and inspection guide** |
+| [LIBRARY_DOCUMENTATION.md](docs/LIBRARY_DOCUMENTATION.md) | **🆕 Sovereign level library API documentation** |
+| [MIGRATION_GUIDE.md](docs/MIGRATION_GUIDE.md) | **🆕 Guide to migrate from scripts to library** |
+| [SYSTEM_AUDIT_GUIDE.md](docs/SYSTEM_AUDIT_GUIDE.md) | System-wide audit and inspection guide |
 | [SAFE_EXPANSION_GUIDE.md](docs/SAFE_EXPANSION_GUIDE.md) | **🆕 Wikipedia & source expansion guide** |
 | [FREE_TIER_SETUP.md](docs/FREE_TIER_SETUP.md) | **Complete free tier setup guide** |
 | [PUBLIC_FILES_INTEGRATION.md](docs/PUBLIC_FILES_INTEGRATION.md) | **Fetch FBI/DOJ files guide** |
@@ -154,6 +186,54 @@ Git LFS (FREE) → Large file storage (1GB)
 ---
 
 ## 🔧 Setup Instructions
+
+### Option 1: Use the Library (Recommended)
+
+```bash
+# 1. Clone repository
+git clone https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory.git
+cd Hub_of_Epstein_Files_Directory
+
+# 2. Install library
+pip install -e .
+
+# 3. Use in Python
+python -c "from epstein_files import Hub; hub = Hub(); print(hub.get_status())"
+
+# 4. Or use CLI
+epstein-hub status
+epstein-hub pipeline
+```
+
+**Python Usage:**
+```python
+from epstein_files import Hub
+
+# Initialize hub
+hub = Hub()
+
+# Run operations
+hub.fetch_public_files()
+hub.process_documents()
+hub.generate_search_index()
+
+# Or run full pipeline
+hub.run_full_pipeline()
+```
+
+See [Library Documentation](docs/LIBRARY_DOCUMENTATION.md) for complete API reference.
+
+### Option 2: Use Scripts Directly
+
+```bash
+# 1. Run setup
+./setup.sh
+
+# 2. Use individual scripts
+python scripts/fetch-public-files.py
+python scripts/process-pdfs.py
+python scripts/generate-search-index.py
+```
 
 ### 1. Enable GitHub Pages (5 minutes)
 
