@@ -1,0 +1,448 @@
+{
+  "jeffrey_epstein": {
+    "name": "Jeffrey Edward Epstein",
+    "role": "Primary Subject",
+    "birth_date": "1953-01-20",
+    "death_date": "2019-08-10",
+    "nationality": "American",
+    "occupation": [
+      "Financier",
+      "Convicted Sex Offender"
+    ],
+    "key_locations": [
+      "Palm Beach",
+      "New York",
+      "Little St. James",
+      "Paris"
+    ],
+    "connections": [
+      "ghislaine_maxwell",
+      "jean_luc_brunel",
+      "leslie_wexner"
+    ],
+    "timeline": [
+      {
+        "date": "1953-01-20",
+        "event": "Born in Brooklyn, New York"
+      },
+      {
+        "date": "2008-06-30",
+        "event": "Pleaded guilty to state prostitution charges"
+      },
+      {
+        "date": "2019-07-06",
+        "event": "Arrested on federal sex trafficking charges"
+      },
+      {
+        "date": "2019-08-10",
+        "event": "Found dead in Manhattan jail cell"
+      }
+    ],
+    "related_documents": [
+      "fbi_vault_01",
+      "fbi_vault_02",
+      "indictment_2019"
+    ],
+    "images": [
+      "epstein_mugshot.jpg"
+    ],
+    "aliases": [
+      "Jeff Epstein"
+    ],
+    "summary": "American financier and convicted sex offender who cultivated relationships with powerful individuals before his arrest and death in 2019.",
+    "legal_status": "Deceased"
+  },
+  "ghislaine_maxwell": {
+    "name": "Ghislaine Maxwell",
+    "role": "Primary Subject",
+    "birth_date": "1961-12-25",
+    "nationality": [
+      "British",
+      "American",
+      "French"
+    ],
+    "occupation": [
+      "Socialite",
+      "Convicted Sex Trafficker"
+    ],
+    "key_locations": [
+      "New York",
+      "London",
+      "Little St. James"
+    ],
+    "connections": [
+      "jeffrey_epstein",
+      "robert_maxwell"
+    ],
+    "timeline": [
+      {
+        "date": "1961-12-25",
+        "event": "Born in Maisons-Laffitte, France"
+      },
+      {
+        "date": "2020-07-02",
+        "event": "Arrested in New Hampshire"
+      },
+      {
+        "date": "2021-12-29",
+        "event": "Convicted on 5 counts"
+      },
+      {
+        "date": "2022-06-28",
+        "event": "Sentenced to 20 years in prison"
+      }
+    ],
+    "related_documents": [
+      "maxwell_indictment",
+      "trial_transcripts"
+    ],
+    "images": [
+      "maxwell_arrest.jpg"
+    ],
+    "summary": "British socialite convicted of recruiting and grooming minors for Jeffrey Epstein.",
+    "legal_status": "Incarcerated"
+  },
+  "virginia_giuffre": {
+    "name": "Virginia Giuffre",
+    "role": "Victim & Witness",
+    "birth_date": "1983-08-09",
+    "nationality": "American",
+    "occupation": [
+      "Advocate"
+    ],
+    "key_locations": [
+      "Palm Beach",
+      "New York",
+      "London"
+    ],
+    "connections": [
+      "jeffrey_epstein",
+      "ghislaine_maxwell",
+      "prince_andrew"
+    ],
+    "timeline": [
+      {
+        "date": "1998",
+        "event": "Recruited by Maxwell at Mar-a-Lago"
+      },
+      {
+        "date": "2001",
+        "event": "Escaped from trafficking situation"
+      },
+      {
+        "date": "2015",
+        "event": "Filed civil suit against Maxwell"
+      },
+      {
+        "date": "2019",
+        "event": "Publicly spoke about experiences"
+      }
+    ],
+    "related_documents": [
+      "giuffre_deposition",
+      "prince_andrew_lawsuit"
+    ],
+    "summary": "One of the first victims to publicly speak about Epstein's trafficking network.",
+    "legal_status": "Advocate"
+  },
+  "prince_andrew": {
+    "name": "Prince Andrew, Duke of York",
+    "role": "Associate",
+    "birth_date": "1960-02-19",
+    "nationality": "British",
+    "occupation": [
+      "Royal Family Member"
+    ],
+    "key_locations": [
+      "London",
+      "New York"
+    ],
+    "connections": [
+      "jeffrey_epstein",
+      "ghislaine_maxwell",
+      "virginia_giuffre"
+    ],
+    "timeline": [
+      {
+        "date": "1999",
+        "event": "First met Jeffrey Epstein"
+      },
+      {
+        "date": "2010",
+        "event": "Photographed with Epstein in Central Park"
+      },
+      {
+        "date": "2019-11-16",
+        "event": "BBC Newsnight interview"
+      },
+      {
+        "date": "2022-02-15",
+        "event": "Settled lawsuit with Virginia Giuffre"
+      }
+    ],
+    "related_documents": [
+      "giuffre_v_andrew",
+      "bbc_interview_transcript"
+    ],
+    "images": [
+      "andrew_giuffre_photo.jpg"
+    ],
+    "summary": "Member of British Royal Family accused of sexual assault by Virginia Giuffre.",
+    "legal_status": "Settled civil case"
+  },
+  "leslie_wexner": {
+    "name": "Leslie Wexner",
+    "role": "Business Associate",
+    "birth_date": "1937-09-08",
+    "nationality": "American",
+    "occupation": [
+      "Businessman",
+      "Founder of L Brands"
+    ],
+    "key_locations": [
+      "New Albany, Ohio",
+      "New York"
+    ],
+    "connections": [
+      "jeffrey_epstein"
+    ],
+    "timeline": [
+      {
+        "date": "1980s",
+        "event": "Hired Epstein as financial advisor"
+      },
+      {
+        "date": "2019-08",
+        "event": "Issued statement distancing from Epstein"
+      },
+      {
+        "date": "2020",
+        "event": "Stepped down from L Brands"
+      }
+    ],
+    "related_documents": [
+      "wexner_statement"
+    ],
+    "summary": "Billionaire businessman who was Epstein's most prominent client.",
+    "legal_status": "Not charged"
+  },
+  "jean_luc_brunel": {
+    "name": "Jean-Luc Brunel",
+    "role": "Associate",
+    "birth_date": "1946-01-01",
+    "death_date": "2022-02-19",
+    "nationality": "French",
+    "occupation": [
+      "Model Scout",
+      "Agency Owner"
+    ],
+    "key_locations": [
+      "Paris",
+      "New York",
+      "Little St. James"
+    ],
+    "connections": [
+      "jeffrey_epstein",
+      "ghislaine_maxwell"
+    ],
+    "timeline": [
+      {
+        "date": "2020-12-16",
+        "event": "Arrested in Paris"
+      },
+      {
+        "date": "2022-02-19",
+        "event": "Found dead in Paris prison"
+      }
+    ],
+    "related_documents": [
+      "brunel_charges"
+    ],
+    "summary": "French modeling agent accused of supplying young women to Epstein.",
+    "legal_status": "Deceased"
+  },
+  "alan_dershowitz": {
+    "name": "Alan Dershowitz",
+    "role": "Legal Counsel",
+    "birth_date": "1938-09-01",
+    "nationality": "American",
+    "occupation": [
+      "Attorney",
+      "Law Professor"
+    ],
+    "key_locations": [
+      "Cambridge, MA",
+      "New York"
+    ],
+    "connections": [
+      "jeffrey_epstein"
+    ],
+    "timeline": [
+      {
+        "date": "2008",
+        "event": "Represented Epstein in plea deal"
+      },
+      {
+        "date": "2019",
+        "event": "Denied allegations by Virginia Giuffre"
+      }
+    ],
+    "related_documents": [
+      "2008_plea_agreement"
+    ],
+    "summary": "Harvard Law professor who represented Epstein and faced allegations.",
+    "legal_status": "Denied all allegations"
+  },
+  "alexander_acosta": {
+    "name": "Alexander Acosta",
+    "role": "Legal Personnel",
+    "birth_date": "1969-01-16",
+    "nationality": "American",
+    "occupation": [
+      "Prosecutor",
+      "Former US Secretary of Labor"
+    ],
+    "key_locations": [
+      "Miami",
+      "Washington DC"
+    ],
+    "connections": [
+      "jeffrey_epstein"
+    ],
+    "timeline": [
+      {
+        "date": "2007-2008",
+        "event": "As US Attorney, negotiated Epstein plea deal"
+      },
+      {
+        "date": "2019-07",
+        "event": "Resigned as Labor Secretary"
+      }
+    ],
+    "related_documents": [
+      "2008_plea_agreement",
+      "acosta_resignation"
+    ],
+    "summary": "Former prosecutor criticized for lenient Epstein plea deal.",
+    "legal_status": "Resigned"
+  },
+  "bill_clinton": {
+    "name": "William Jefferson Clinton",
+    "role": "Political Figure",
+    "birth_date": "1946-08-19",
+    "nationality": "American",
+    "occupation": [
+      "Former US President"
+    ],
+    "key_locations": [
+      "New York",
+      "Various international"
+    ],
+    "connections": [
+      "jeffrey_epstein"
+    ],
+    "timeline": [
+      {
+        "date": "2002-2003",
+        "event": "Multiple flights on Epstein's plane for Clinton Foundation work"
+      }
+    ],
+    "related_documents": [
+      "flight_logs"
+    ],
+    "summary": "Former US President who flew on Epstein's plane multiple times.",
+    "legal_status": "No charges"
+  },
+  "donald_trump": {
+    "name": "Donald Trump",
+    "role": "Political Figure",
+    "birth_date": "1946-06-14",
+    "nationality": "American",
+    "occupation": [
+      "Businessman",
+      "Former US President"
+    ],
+    "key_locations": [
+      "New York",
+      "Palm Beach"
+    ],
+    "connections": [
+      "jeffrey_epstein"
+    ],
+    "timeline": [
+      {
+        "date": "1990s-2000s",
+        "event": "Social connection in New York/Palm Beach"
+      },
+      {
+        "date": "2019",
+        "event": "Stated he was 'not a fan' of Epstein"
+      }
+    ],
+    "related_documents": [
+      "trump_statements"
+    ],
+    "summary": "Former US President who knew Epstein socially in New York.",
+    "legal_status": "No charges"
+  },
+  "sarah_kellen": {
+    "name": "Sarah Kellen",
+    "role": "Associate",
+    "summary": "Former assistant to Epstein"
+  },
+  "nadia_marcinkova": {
+    "name": "Nadia Marcinkova",
+    "role": "Associate",
+    "summary": "Former associate"
+  },
+  "adriana_ross": {
+    "name": "Adriana Ross",
+    "role": "Associate",
+    "summary": "Former assistant"
+  },
+  "lesley_groff": {
+    "name": "Lesley Groff",
+    "role": "Associate",
+    "summary": "Former executive assistant"
+  },
+  "juan_alessi": {
+    "name": "Juan Alessi",
+    "role": "Witness",
+    "summary": "Former house manager"
+  },
+  "kevin_spacey": {
+    "name": "Kevin Spacey",
+    "role": "Associate",
+    "summary": "Actor who flew on Epstein's plane"
+  },
+  "chris_tucker": {
+    "name": "Chris Tucker",
+    "role": "Associate",
+    "summary": "Actor who flew on Epstein's plane"
+  },
+  "naomi_campbell": {
+    "name": "Naomi Campbell",
+    "role": "Associate",
+    "summary": "Model connected to Epstein"
+  },
+  "ehud_barak": {
+    "name": "Ehud Barak",
+    "role": "Political Figure",
+    "summary": "Former Israeli PM"
+  },
+  "glenn_dubin": {
+    "name": "Glenn Dubin",
+    "role": "Business Associate",
+    "summary": "Hedge fund manager"
+  },
+  "eva_dubin": {
+    "name": "Eva Dubin",
+    "role": "Associate",
+    "summary": "Former Epstein girlfriend"
+  },
+  "steven_hoffenberg": {
+    "name": "Steven Hoffenberg",
+    "role": "Business Associate",
+    "summary": "Former business partner"
+  }
+}

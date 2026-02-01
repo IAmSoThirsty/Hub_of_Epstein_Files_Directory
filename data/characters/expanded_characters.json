@@ -1,0 +1,421 @@
+{
+  "jeffrey_epstein": {
+    "name": "Jeffrey Edward Epstein",
+    "role": "Primary Subject"
+  },
+  "ghislaine_maxwell": {
+    "name": "Ghislaine Maxwell",
+    "role": "Primary Subject"
+  },
+  "virginia_giuffre": {
+    "name": "Virginia Roberts Giuffre",
+    "role": "Victim & Witness"
+  },
+  "sarah_ransome": {
+    "name": "Sarah Ransome",
+    "role": "Victim & Witness"
+  },
+  "annie_farmer": {
+    "name": "Annie Farmer",
+    "role": "Victim & Witness"
+  },
+  "maria_farmer": {
+    "name": "Maria Farmer",
+    "role": "Victim & Witness"
+  },
+  "chauntae_davies": {
+    "name": "Chauntae Davies",
+    "role": "Victim & Witness"
+  },
+  "johanna_sjoberg": {
+    "name": "Johanna Sjoberg",
+    "role": "Victim & Witness"
+  },
+  "sarah_kellen": {
+    "name": "Sarah Kellen",
+    "role": "Associate"
+  },
+  "nadia_marcinkova": {
+    "name": "Nadia Marcinkova",
+    "role": "Associate"
+  },
+  "adriana_ross": {
+    "name": "Adriana Ross",
+    "role": "Associate"
+  },
+  "lesley_groff": {
+    "name": "Lesley Groff",
+    "role": "Associate"
+  },
+  "juan_alessi": {
+    "name": "Juan Alessi",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "rinaldo_rizzo": {
+    "name": "Rinaldo Rizzo",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "alan_dershowitz": {
+    "name": "Alan Dershowitz",
+    "role": "Legal Counsel"
+  },
+  "alexander_acosta": {
+    "name": "Alexander Acosta",
+    "role": "Legal Personnel"
+  },
+  "bradley_edwards": {
+    "name": "Bradley Edwards",
+    "role": "Legal Counsel"
+  },
+  "paul_cassell": {
+    "name": "Paul Cassell",
+    "role": "Legal Counsel"
+  },
+  "david_boies": {
+    "name": "David Boies",
+    "role": "Legal Counsel"
+  },
+  "roy_black": {
+    "name": "Roy Black",
+    "role": "Legal Counsel"
+  },
+  "leslie_wexner": {
+    "name": "Leslie Wexner",
+    "role": "Business Associate"
+  },
+  "glenn_dubin": {
+    "name": "Glenn Dubin",
+    "role": "Business Associate"
+  },
+  "eva_dubin": {
+    "name": "Eva Andersson-Dubin",
+    "role": "Associate"
+  },
+  "steven_hoffenberg": {
+    "name": "Steven Hoffenberg",
+    "role": "Business Associate"
+  },
+  "leon_black": {
+    "name": "Leon Black",
+    "role": "Business Associate"
+  },
+  "jes_staley": {
+    "name": "Jes Staley",
+    "role": "Business Associate"
+  },
+  "jean_luc_brunel": {
+    "name": "Jean-Luc Brunel",
+    "role": "Associate"
+  },
+  "bill_clinton": {
+    "name": "Bill Clinton",
+    "role": "Political Figure"
+  },
+  "donald_trump": {
+    "name": "Donald Trump",
+    "role": "Political Figure"
+  },
+  "prince_andrew": {
+    "name": "Prince Andrew",
+    "role": "Political Figure"
+  },
+  "ehud_barak": {
+    "name": "Ehud Barak",
+    "role": "Political Figure"
+  },
+  "bill_richardson": {
+    "name": "Bill Richardson",
+    "role": "Political Figure"
+  },
+  "george_mitchell": {
+    "name": "George Mitchell",
+    "role": "Political Figure"
+  },
+  "kevin_spacey": {
+    "name": "Kevin Spacey",
+    "role": "Entertainment Figure"
+  },
+  "chris_tucker": {
+    "name": "Chris Tucker",
+    "role": "Entertainment Figure"
+  },
+  "naomi_campbell": {
+    "name": "Naomi Campbell",
+    "role": "Entertainment Figure"
+  },
+  "heidi_klum": {
+    "name": "Heidi Klum",
+    "role": "Entertainment Figure"
+  },
+  "stephen_hawking": {
+    "name": "Stephen Hawking",
+    "role": "Academic"
+  },
+  "lawrence_krauss": {
+    "name": "Lawrence Krauss",
+    "role": "Academic"
+  },
+  "marvin_minsky": {
+    "name": "Marvin Minsky",
+    "role": "Academic"
+  },
+  "martin_nowak": {
+    "name": "Martin Nowak",
+    "role": "Academic"
+  },
+  "robert_maxwell": {
+    "name": "Robert Maxwell",
+    "role": "Family"
+  },
+  "isabel_maxwell": {
+    "name": "Isabel Maxwell",
+    "role": "Family"
+  },
+  "christine_maxwell": {
+    "name": "Christine Maxwell",
+    "role": "Family"
+  },
+  "ian_maxwell": {
+    "name": "Ian Maxwell",
+    "role": "Family"
+  },
+  "kevin_maxwell": {
+    "name": "Kevin Maxwell",
+    "role": "Family"
+  },
+  "maurene_comey": {
+    "name": "Maurene Comey",
+    "role": "Prosecutor"
+  },
+  "alison_moe": {
+    "name": "Alison Moe",
+    "role": "Prosecutor"
+  },
+  "michael_reiter": {
+    "name": "Michael Reiter",
+    "role": "Law Enforcement"
+  },
+  "joe_recarey": {
+    "name": "Joe Recarey",
+    "role": "Law Enforcement"
+  },
+  "thomas_pritzker": {
+    "name": "Thomas Pritzker",
+    "role": "Business Associate"
+  },
+  "mort_zuckerman": {
+    "name": "Mort Zuckerman",
+    "role": "Business Associate"
+  },
+  "courtney_wild": {
+    "name": "Courtney Wild",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "michelle_licata": {
+    "name": "Michelle Licata",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "haley_robson": {
+    "name": "Haley Robson",
+    "role": "Witness"
+  },
+  "jay_lefkowitz": {
+    "name": "Jay Lefkowitz",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "kenneth_starr": {
+    "name": "Kenneth Starr",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "martin_weinberg": {
+    "name": "Martin Weinberg",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "gerald_lefcourt": {
+    "name": "Gerald Lefcourt",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "jack_goldberger": {
+    "name": "Jack Goldberger",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "guy_lewis": {
+    "name": "Guy Lewis",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "jane_raskin": {
+    "name": "Jane Raskin",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "robert_josefsberg": {
+    "name": "Robert Josefsberg",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "jane_doe_1": {
+    "name": "Jane Doe 1",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "jane_doe_2": {
+    "name": "Jane Doe 2",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "cimberly_espinosa": {
+    "name": "Cimberly Espinosa",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "deidre_stratton": {
+    "name": "Deidre Stratton",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "jan_olsen": {
+    "name": "Jan Olsen",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "alfredo_rodriguez": {
+    "name": "Alfredo Rodriguez",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "tony_figueroa": {
+    "name": "Tony Figueroa",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "stuart_pivar": {
+    "name": "Stuart Pivar",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "henry_rosovsky": {
+    "name": "Henry Rosovsky",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "edgar_bronfman_jr": {
+    "name": "Edgar Bronfman Jr",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "ted_waitt": {
+    "name": "Ted Waitt",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "larry_summers": {
+    "name": "Larry Summers",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "robert_triefus": {
+    "name": "Robert Triefus",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "andrew_farkas": {
+    "name": "Andrew Farkas",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "shelby_bryan": {
+    "name": "Shelby Bryan",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "doug_band": {
+    "name": "Doug Band",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "gavin_de_becker": {
+    "name": "Gavin De Becker",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "casey_wasserman": {
+    "name": "Casey Wasserman",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "peter_soros": {
+    "name": "Peter Soros",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "david_copperfield": {
+    "name": "David Copperfield",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "woody_allen": {
+    "name": "Woody Allen",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "alec_baldwin": {
+    "name": "Alec Baldwin",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "ralph_fiennes": {
+    "name": "Ralph Fiennes",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "ted_kennedy": {
+    "name": "Ted Kennedy",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "john_roberts": {
+    "name": "John Roberts",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "katie_couric": {
+    "name": "Katie Couric",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "george_stephanopoulos": {
+    "name": "George Stephanopoulos",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "charlie_rose": {
+    "name": "Charlie Rose",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "mike_wallace": {
+    "name": "Mike Wallace",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "barbara_walters": {
+    "name": "Barbara Walters",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  },
+  "mick_jagger": {
+    "name": "Mick Jagger",
+    "role": "Associate",
+    "summary": "Individual mentioned in connection with case"
+  }
+}

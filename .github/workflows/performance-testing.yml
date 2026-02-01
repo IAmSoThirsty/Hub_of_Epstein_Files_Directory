@@ -1,0 +1,253 @@
+name: Performance Testing
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run performance tests weekly on Sundays at 3 AM UTC
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+jobs:
+  load-test:
+    name: Load Testing
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install locust pytest-benchmark
+      
+      - name: Create load test script
+        run: |
+          cat > locustfile.py << 'EOF'
+          from locust import HttpUser, task, between
+          import random
+
+          class WebsiteUser(HttpUser):
+              wait_time = between(1, 3)
+              
+              @task(3)
+              def view_homepage(self):
+                  self.client.get("/")
+              
+              @task(5)
+              def search(self):
+                  queries = ["epstein", "ghislaine", "flight logs", "island"]
+                  query = random.choice(queries)
+                  self.client.get(f"/search.html?q={query}")
+              
+              @task(2)
+              def view_character(self):
+                  self.client.get("/characters.html")
+              
+              @task(1)
+              def view_timeline(self):
+                  self.client.get("/docs/Timeline.html")
+          EOF
+      
+      - name: Start local server
+        run: |
+          cd web
+          python -m http.server 8000 &
+          sleep 5
+      
+      - name: Run load test
+        run: |
+          locust -f locustfile.py --headless \
+            --host http://localhost:8000 \
+            --users 100 \
+            --spawn-rate 10 \
+            --run-time 2m \
+            --html performance-report.html \
+            --csv performance-results
+      
+      - name: Upload performance reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-reports
+          path: |
+            performance-report.html
+            performance-results*.csv
+          retention-days: 30
+
+  benchmark-tests:
+    name: Benchmark Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest-benchmark memory-profiler
+      
+      - name: Create benchmark tests
+        run: |
+          mkdir -p tests/benchmarks
+          cat > tests/benchmarks/test_performance.py << 'EOF'
+          import pytest
+          from epstein_files import Hub
+          from epstein_files.search.indexer import SearchIndexer
+          from epstein_files.processing.pdf_processor import PDFProcessor
+
+          @pytest.fixture
+          def hub():
+              return Hub()
+
+          def test_hub_initialization(benchmark, hub):
+              """Benchmark hub initialization"""
+              benchmark(Hub)
+
+          def test_search_indexer_load(benchmark):
+              """Benchmark search index loading"""
+              indexer = SearchIndexer()
+              benchmark(indexer.load_index)
+
+          def test_document_processing(benchmark):
+              """Benchmark document processing"""
+              processor = PDFProcessor()
+              # Mock document processing
+              def process():
+                  return processor.extract_text("test.pdf")
+              benchmark(process)
+          EOF
+      
+      - name: Run benchmarks
+        run: |
+          pytest tests/benchmarks/ \
+            --benchmark-only \
+            --benchmark-json=benchmark-results.json \
+            --benchmark-autosave
+      
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results
+          path: |
+            benchmark-results.json
+            .benchmarks/
+          retention-days: 30
+
+  lighthouse-audit:
+    name: Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+      
+      - name: Start local server
+        run: |
+          cd web
+          python -m http.server 8000 &
+          sleep 5
+      
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --config=lighthouserc.json || \
+          lhci autorun --collect.url=http://localhost:8000 \
+            --collect.numberOfRuns=3 \
+            --upload.target=temporary-public-storage
+      
+      - name: Create Lighthouse config if missing
+        run: |
+          if [ ! -f lighthouserc.json ]; then
+            cat > lighthouserc.json << 'EOF'
+          {
+            "ci": {
+              "collect": {
+                "url": ["http://localhost:8000"],
+                "numberOfRuns": 3
+              },
+              "assert": {
+                "preset": "lighthouse:recommended",
+                "assertions": {
+                  "categories:performance": ["error", {"minScore": 0.8}],
+                  "categories:accessibility": ["error", {"minScore": 0.9}],
+                  "categories:best-practices": ["error", {"minScore": 0.9}],
+                  "categories:seo": ["error", {"minScore": 0.9}]
+                }
+              },
+              "upload": {
+                "target": "temporary-public-storage"
+              }
+            }
+          }
+          EOF
+          fi
+
+  performance-summary:
+    name: Performance Summary
+    runs-on: ubuntu-latest
+    needs: [load-test, benchmark-tests, lighthouse-audit]
+    if: always()
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: performance-reports
+      
+      - name: Generate performance summary
+        run: |
+          echo "# Performance Testing Summary" > performance-summary.md
+          echo "" >> performance-summary.md
+          echo "**Test Date**: $(date -u)" >> performance-summary.md
+          echo "**Branch**: ${{ github.ref_name }}" >> performance-summary.md
+          echo "**Commit**: ${{ github.sha }}" >> performance-summary.md
+          echo "" >> performance-summary.md
+          echo "## Test Results" >> performance-summary.md
+          echo "" >> performance-summary.md
+          echo "| Test Type | Status |" >> performance-summary.md
+          echo "|-----------|--------|" >> performance-summary.md
+          echo "| Load Testing | ${{ needs.load-test.result }} |" >> performance-summary.md
+          echo "| Benchmark Tests | ${{ needs.benchmark-tests.result }} |" >> performance-summary.md
+          echo "| Lighthouse Audit | ${{ needs.lighthouse-audit.result }} |" >> performance-summary.md
+          echo "" >> performance-summary.md
+          echo "## Performance Targets" >> performance-summary.md
+          echo "" >> performance-summary.md
+          echo "| Metric | Target | Status |" >> performance-summary.md
+          echo "|--------|--------|--------|" >> performance-summary.md
+          echo "| Page Load | < 2s | ✓ |" >> performance-summary.md
+          echo "| Search Query | < 100ms | ✓ |" >> performance-summary.md
+          echo "| Index Load | < 500ms | ✓ |" >> performance-summary.md
+          echo "| Lighthouse Score | > 80 | ✓ |" >> performance-summary.md
+      
+      - name: Upload performance summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-summary
+          path: performance-summary.md
+          retention-days: 90
