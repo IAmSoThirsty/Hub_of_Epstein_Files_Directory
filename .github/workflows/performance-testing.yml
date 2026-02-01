@@ -10,10 +10,15 @@ on:
     - cron: '0 3 * * 0'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   load-test:
     name: Load Testing
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout code
@@ -86,6 +91,8 @@ jobs:
   benchmark-tests:
     name: Benchmark Tests
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout code
@@ -152,6 +159,8 @@ jobs:
   lighthouse-audit:
     name: Lighthouse Performance Audit
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout code
@@ -208,6 +217,8 @@ jobs:
   performance-summary:
     name: Performance Summary
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     needs: [load-test, benchmark-tests, lighthouse-audit]
     if: always()
     
