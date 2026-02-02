@@ -1,0 +1,215 @@
+{
+  "little_st_james": {
+    "name": "Little St. James Island",
+    "type": "Private Island",
+    "location": "U.S. Virgin Islands",
+    "coordinates": "18.300\u00b0N 64.825\u00b0W",
+    "size": "70-78 acres",
+    "nickname": "Pedophile Island",
+    "acquired": "1998",
+    "sold": "2023",
+    "description": "Private island owned by Jeffrey Epstein from 1998 until his death. The island featured a main compound, guest houses, and became central to trafficking allegations.",
+    "key_features": [
+      "Main residence compound",
+      "Guest villas",
+      "Temple-like structure",
+      "Helipad",
+      "Private beaches",
+      "Dock facilities"
+    ],
+    "significance": "Central location in trafficking allegations. Multiple victims reported being taken to the island.",
+    "timeline": [
+      {
+        "date": "1998",
+        "event": "Purchased by Epstein for $7.95 million"
+      },
+      {
+        "date": "2019",
+        "event": "FBI raid following Epstein's arrest"
+      },
+      {
+        "date": "2023",
+        "event": "Sold by estate"
+      }
+    ],
+    "related_characters": [
+      "jeffrey_epstein",
+      "ghislaine_maxwell"
+    ],
+    "images": [
+      "little_st_james_aerial.jpg",
+      "temple_structure.jpg"
+    ]
+  },
+  "great_st_james": {
+    "name": "Great St. James Island",
+    "type": "Private Island",
+    "location": "U.S. Virgin Islands",
+    "acquired": "2016",
+    "size": "165 acres",
+    "description": "Larger island adjacent to Little St. James, purchased by Epstein in 2016.",
+    "timeline": [
+      {
+        "date": "2016",
+        "event": "Purchased by Epstein"
+      },
+      {
+        "date": "2023",
+        "event": "Sold by estate"
+      }
+    ],
+    "related_characters": [
+      "jeffrey_epstein"
+    ]
+  },
+  "palm_beach": {
+    "name": "Palm Beach Residence",
+    "type": "Private Residence",
+    "location": "358 El Brillo Way, Palm Beach, Florida",
+    "acquired": "1990",
+    "description": "Epstein's Florida mansion where many of the initial allegations originated. This was a key location in the 2005 police investigation.",
+    "key_features": [
+      "Large mansion",
+      "Multiple bedrooms",
+      "Pool area",
+      "Security systems"
+    ],
+    "significance": "Site of initial 2005 investigation. Multiple victims recruited from the area.",
+    "timeline": [
+      {
+        "date": "1990",
+        "event": "Purchased by Epstein"
+      },
+      {
+        "date": "2005",
+        "event": "Police investigation begins"
+      },
+      {
+        "date": "2019",
+        "event": "Property inventoried after arrest"
+      }
+    ],
+    "related_characters": [
+      "jeffrey_epstein",
+      "ghislaine_maxwell",
+      "virginia_giuffre"
+    ],
+    "images": [
+      "palm_beach_exterior.jpg"
+    ]
+  },
+  "new_york": {
+    "name": "Manhattan Townhouse",
+    "type": "Private Residence",
+    "location": "9 East 71st Street, Manhattan, New York",
+    "acquired": "1996",
+    "size": "21,000 square feet",
+    "description": "Epstein's massive Manhattan townhouse, one of the largest private residences in New York City. Originally owned by Leslie Wexner.",
+    "key_features": [
+      "7 floors",
+      "40 rooms",
+      "Elevator",
+      "Extensive art collection",
+      "Security systems"
+    ],
+    "significance": "Major location for meetings with high-profile individuals. Site of alleged abuse.",
+    "timeline": [
+      {
+        "date": "1989",
+        "event": "Purchased by Leslie Wexner"
+      },
+      {
+        "date": "1996",
+        "event": "Transferred to Epstein"
+      },
+      {
+        "date": "2019",
+        "event": "FBI search after arrest"
+      }
+    ],
+    "related_characters": [
+      "jeffrey_epstein",
+      "leslie_wexner",
+      "ghislaine_maxwell"
+    ],
+    "images": [
+      "nyc_townhouse.jpg"
+    ]
+  },
+  "paris": {
+    "name": "Paris Apartment",
+    "type": "Private Residence",
+    "location": "Avenue Foch, Paris, France",
+    "description": "Luxury apartment in one of Paris's most exclusive neighborhoods.",
+    "related_characters": [
+      "jeffrey_epstein",
+      "jean_luc_brunel"
+    ]
+  },
+  "new_mexico": {
+    "name": "Zorro Ranch",
+    "type": "Ranch",
+    "location": "Stanley, New Mexico",
+    "size": "7,500 acres",
+    "acquired": "1993",
+    "description": "Sprawling ranch in New Mexico where Epstein allegedly planned to seed the human race with his DNA.",
+    "key_features": [
+      "Main residence",
+      "Airstrip",
+      "Equestrian facilities",
+      "Guest houses"
+    ],
+    "significance": "Location of alleged abuse. Epstein spoke of creating a 'baby ranch' here.",
+    "timeline": [
+      {
+        "date": "1993",
+        "event": "Purchased by Epstein"
+      }
+    ],
+    "related_characters": [
+      "jeffrey_epstein"
+    ]
+  },
+  "mar_a_lago": {
+    "name": "Mar-a-Lago Club",
+    "type": "Private Club/Resort",
+    "location": "Palm Beach, Florida",
+    "description": "Exclusive resort where Virginia Giuffre was recruited while working as a spa attendant.",
+    "significance": "Location where Ghislaine Maxwell recruited Virginia Giuffre in 1998.",
+    "timeline": [
+      {
+        "date": "1998",
+        "event": "Virginia Giuffre recruited here"
+      }
+    ],
+    "related_characters": [
+      "virginia_giuffre",
+      "ghislaine_maxwell",
+      "donald_trump"
+    ]
+  },
+  "manhattan_jail": {
+    "name": "Metropolitan Correctional Center",
+    "type": "Federal Prison",
+    "location": "Manhattan, New York",
+    "description": "Federal detention facility where Epstein was held and died in 2019.",
+    "significance": "Site of Epstein's death on August 10, 2019.",
+    "timeline": [
+      {
+        "date": "2019-07-06",
+        "event": "Epstein detained here"
+      },
+      {
+        "date": "2019-07-23",
+        "event": "Found injured in cell"
+      },
+      {
+        "date": "2019-08-10",
+        "event": "Found dead in cell"
+      }
+    ],
+    "related_characters": [
+      "jeffrey_epstein"
+    ]
+  }
+}

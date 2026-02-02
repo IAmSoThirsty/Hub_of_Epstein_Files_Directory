@@ -88,7 +88,7 @@ jobs:
           fi
       
       - name: Upload Audit Reports as Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: audit-reports-${{ github.run_number }}
           path: |
@@ -426,7 +426,7 @@ jobs:
           cat logs/security_audit.txt
       
       - name: Upload Security Audit
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: security-audit-${{ github.run_number }}
           path: logs/security_audit.txt

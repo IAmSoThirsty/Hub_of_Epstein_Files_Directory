@@ -1,0 +1,134 @@
+[
+  {
+    "id": "adriana_ross",
+    "name": "Adriana Ross",
+    "role": "Associate",
+    "summary": "Former assistant..."
+  },
+  {
+    "id": "alan_dershowitz",
+    "name": "Alan Dershowitz",
+    "role": "Legal Counsel",
+    "summary": "Harvard Law professor who represented Epstein and faced allegations...."
+  },
+  {
+    "id": "alexander_acosta",
+    "name": "Alexander Acosta",
+    "role": "Legal Personnel",
+    "summary": "Former prosecutor criticized for lenient Epstein plea deal...."
+  },
+  {
+    "id": "chris_tucker",
+    "name": "Chris Tucker",
+    "role": "Associate",
+    "summary": "Actor who flew on Epstein's plane..."
+  },
+  {
+    "id": "donald_trump",
+    "name": "Donald Trump",
+    "role": "Political Figure",
+    "summary": "Former US President who knew Epstein socially in New York...."
+  },
+  {
+    "id": "ehud_barak",
+    "name": "Ehud Barak",
+    "role": "Political Figure",
+    "summary": "Former Israeli PM..."
+  },
+  {
+    "id": "eva_dubin",
+    "name": "Eva Dubin",
+    "role": "Associate",
+    "summary": "Former Epstein girlfriend..."
+  },
+  {
+    "id": "ghislaine_maxwell",
+    "name": "Ghislaine Maxwell",
+    "role": "Primary Subject",
+    "summary": "British socialite convicted of recruiting and grooming minors for Jeffrey Epstein...."
+  },
+  {
+    "id": "glenn_dubin",
+    "name": "Glenn Dubin",
+    "role": "Business Associate",
+    "summary": "Hedge fund manager..."
+  },
+  {
+    "id": "jean_luc_brunel",
+    "name": "Jean-Luc Brunel",
+    "role": "Associate",
+    "summary": "French modeling agent accused of supplying young women to Epstein...."
+  },
+  {
+    "id": "jeffrey_epstein",
+    "name": "Jeffrey Edward Epstein",
+    "role": "Primary Subject",
+    "summary": "American financier and convicted sex offender who cultivated relationships with powerful individuals..."
+  },
+  {
+    "id": "juan_alessi",
+    "name": "Juan Alessi",
+    "role": "Witness",
+    "summary": "Former house manager..."
+  },
+  {
+    "id": "kevin_spacey",
+    "name": "Kevin Spacey",
+    "role": "Associate",
+    "summary": "Actor who flew on Epstein's plane..."
+  },
+  {
+    "id": "lesley_groff",
+    "name": "Lesley Groff",
+    "role": "Associate",
+    "summary": "Former executive assistant..."
+  },
+  {
+    "id": "leslie_wexner",
+    "name": "Leslie Wexner",
+    "role": "Business Associate",
+    "summary": "Billionaire businessman who was Epstein's most prominent client...."
+  },
+  {
+    "id": "nadia_marcinkova",
+    "name": "Nadia Marcinkova",
+    "role": "Associate",
+    "summary": "Former associate..."
+  },
+  {
+    "id": "naomi_campbell",
+    "name": "Naomi Campbell",
+    "role": "Associate",
+    "summary": "Model connected to Epstein..."
+  },
+  {
+    "id": "prince_andrew",
+    "name": "Prince Andrew, Duke of York",
+    "role": "Associate",
+    "summary": "Member of British Royal Family accused of sexual assault by Virginia Giuffre...."
+  },
+  {
+    "id": "sarah_kellen",
+    "name": "Sarah Kellen",
+    "role": "Associate",
+    "summary": "Former assistant to Epstein..."
+  },
+  {
+    "id": "steven_hoffenberg",
+    "name": "Steven Hoffenberg",
+    "role": "Business Associate",
+    "summary": "Former business partner..."
+  },
+  {
+    "id": "virginia_giuffre",
+    "name": "Virginia Giuffre",
+    "role": "Victim & Witness",
+    "summary": "One of the first victims to publicly speak about Epstein's trafficking network...."
+  },
+  {
+    "id": "bill_clinton",
+    "name": "William Jefferson Clinton",
+    "role": "Political Figure",
+    "summary": "Former US President who flew on Epstein's plane multiple times...."
+  }
+]

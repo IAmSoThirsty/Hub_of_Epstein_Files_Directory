@@ -1,5 +1,19 @@
 # Epstein Files Codex - Hub Directory
 
+<div align="center">
+  
+# 🌐 [**VISIT LIVE WEBSITE**](https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/) 🌐
+
+**Complete web interface with 100+ character profiles, search, documents, timelines & more!**
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen)](https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/)
+[![Profiles](https://img.shields.io/badge/Profiles-100+-blue)](https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/characters.html)
+
+</div>
+
+---
+
 ## 📋 Overview
 
 This repository serves as a comprehensive directory and organizational hub for Epstein-related files and documentation with a full web interface, automated workflows, and AI agent infrastructure.
@@ -11,7 +25,9 @@ This repository serves as a comprehensive directory and organizational hub for E
 
 ## 🚀 Quick Start
 
-**Website:** 
+**🌐 LIVE WEBSITE:** **[https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/](https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/)**
+
+**📺 Access the full web interface now!** All features available online. 
 
 **Features:**
 - 🔍 Advanced search with 15+ filters
