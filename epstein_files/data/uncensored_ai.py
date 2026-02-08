@@ -56,8 +56,15 @@ class UncensoredAIManager:
         
         # Setup HTTP session
         self.session = requests.Session()
+        
+        # Get user agent from config or use default
+        user_agent = self.config.get(
+            "user_agent",
+            "Mozilla/5.0 (compatible; EpsteinFilesBot/1.0)"
+        )
+        
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (compatible; EpsteinFilesBot/1.0; +https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory)',
+            'User-Agent': user_agent,
             'Accept': 'application/json',
         })
         
@@ -500,7 +507,8 @@ class UncensoredAIManager:
                         meta = json.load(f)
                         if meta.get('hash') == item_hash or meta.get('sha256') == item_hash:
                             return True
-                except:
+                except (json.JSONDecodeError, IOError, OSError):
+                    # Skip corrupted or unreadable metadata files
                     pass
         
         return False
