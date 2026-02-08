@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to contribute to the Epstein Files Hub">
+    <title>Contribute - Epstein Files Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.svg">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Epstein Files Hub</h1>
+                <p class="tagline">Comprehensive Directory & Research Portal</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Character Guide</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="infographics.html">Infographics</a></li>
+                <li><a href="slideshow.html">Slideshows</a></li>
+                <li><a href="codex.html">Browse Codex</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>How to Contribute</h1>
+            <p class="subtitle">Help us maintain and expand this public archive</p>
+        </header>
+
+        <section class="content-section">
+            <h2>Ways to Contribute</h2>
+            <p>There are many ways to contribute to the Epstein Files Hub, regardless of your technical expertise:</p>
+        </section>
+
+        <section class="content-section">
+            <div class="contribution-grid">
+                <div class="contribution-card">
+                    <div class="contribution-icon">📄</div>
+                    <h3>Submit Documents</h3>
+                    <p>Share publicly available documents that should be in the archive.</p>
+                    <a href="upload.html" class="btn btn-primary">Upload Document</a>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">🐛</div>
+                    <h3>Report Issues</h3>
+                    <p>Found an error, broken link, or missing information?</p>
+                    <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/issues/new" class="btn btn-primary" target="_blank">Report Issue</a>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">✏️</div>
+                    <h3>Improve Content</h3>
+                    <p>Help improve documentation, profiles, or timeline entries.</p>
+                    <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory" class="btn btn-primary" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">🤝</div>
+                    <h3>Volunteer</h3>
+                    <p>Join our team to help with organization and verification.</p>
+                    <a href="volunteer.html" class="btn btn-primary">Become a Volunteer</a>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">💻</div>
+                    <h3>Code Contributions</h3>
+                    <p>Improve the website, search functionality, or processing tools.</p>
+                    <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/pulls" class="btn btn-primary" target="_blank">Submit Pull Request</a>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">💡</div>
+                    <h3>Suggest Features</h3>
+                    <p>Share ideas for new features or improvements.</p>
+                    <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/discussions" class="btn btn-primary" target="_blank">Start Discussion</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Document Submission Guidelines</h2>
+            <p>When submitting documents, please follow these guidelines:</p>
+
+            <h3>Acceptable Documents</h3>
+            <ul>
+                <li>Court filings from public dockets (PACER, CM/ECF)</li>
+                <li>Government releases (FBI, DOJ, FAA, etc.)</li>
+                <li>Documents from verified archives (DocumentCloud, Internet Archive)</li>
+                <li>Media reports with original source documents</li>
+                <li>Public records requests (FOIA) responses</li>
+            </ul>
+
+            <h3>Document Requirements</h3>
+            <ul>
+                <li><strong>Public:</strong> Must be publicly available or released</li>
+                <li><strong>Relevant:</strong> Must relate to the Epstein case</li>
+                <li><strong>Verified:</strong> Include source information and verification</li>
+                <li><strong>Quality:</strong> Clear, readable PDFs or images</li>
+                <li><strong>Complete:</strong> Full documents preferred over excerpts</li>
+            </ul>
+
+            <h3>What NOT to Submit</h3>
+            <div class="notice notice-warning">
+                <ul>
+                    <li>Sealed court documents</li>
+                    <li>Documents with victim identifying information</li>
+                    <li>Unverified or anonymous submissions</li>
+                    <li>Documents from unreliable sources</li>
+                    <li>Personal theories or speculation</li>
+                    <li>Copyright-protected media without permission</li>
+                </ul>
+            </div>
+
+            <h3>Submission Process</h3>
+            <ol>
+                <li><strong>Prepare Document:</strong> Ensure it meets all requirements above</li>
+                <li><strong>Gather Source Info:</strong> Document URL, case number, date, source</li>
+                <li><strong>Upload:</strong> Use our <a href="upload.html">upload page</a> or GitHub</li>
+                <li><strong>Review:</strong> Our team will verify and process (1-7 days)</li>
+                <li><strong>Publication:</strong> Approved documents are added to the archive</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>Contributing Code</h2>
+            <p>Technical contributors can help improve the codebase:</p>
+
+            <h3>Development Setup</h3>
+            <pre><code># Clone repository
+git clone https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory.git
+cd Hub_of_Epstein_Files_Directory
+
+# Install dependencies
+pip install -e .
+
+# Run tests
+pytest tests/
+
+# Start local server
+python -m http.server 8000 --directory web</code></pre>
+
+            <h3>Areas for Contribution</h3>
+            <ul>
+                <li><strong>Search Improvements:</strong> Enhance Lunr.js search functionality</li>
+                <li><strong>UI/UX:</strong> Improve design, accessibility, mobile experience</li>
+                <li><strong>Processing Tools:</strong> Better PDF parsing, OCR, metadata extraction</li>
+                <li><strong>AI Agents:</strong> New agents for specialized tasks</li>
+                <li><strong>Documentation:</strong> Improve guides and inline documentation</li>
+                <li><strong>Testing:</strong> Add tests for new features</li>
+            </ul>
+
+            <h3>Pull Request Process</h3>
+            <ol>
+                <li>Fork the repository</li>
+                <li>Create a feature branch (<code>git checkout -b feature/amazing-feature</code>)</li>
+                <li>Make your changes and commit (<code>git commit -m 'Add amazing feature'</code>)</li>
+                <li>Push to your fork (<code>git push origin feature/amazing-feature</code>)</li>
+                <li>Open a Pull Request with detailed description</li>
+                <li>Wait for review and address feedback</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>Content Guidelines</h2>
+            <p>All contributions must adhere to our content guidelines:</p>
+
+            <h3>Quality Standards</h3>
+            <ul>
+                <li>Accurate and verifiable information only</li>
+                <li>Clear citations and source attribution</li>
+                <li>Professional, objective tone</li>
+                <li>Proper grammar and spelling</li>
+                <li>Consistent formatting</li>
+            </ul>
+
+            <h3>Ethical Requirements</h3>
+            <ul>
+                <li>Respect victim privacy and court orders</li>
+                <li>No speculation or unverified claims</li>
+                <li>Appropriate handling of sensitive material</li>
+                <li>Focus on public interest and accountability</li>
+                <li>Transparent about limitations and uncertainties</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Recognition</h2>
+            <p>We value all contributions to this project:</p>
+            <ul>
+                <li><strong>Contributors List:</strong> All GitHub contributors are listed in our repository</li>
+                <li><strong>Changelog Credits:</strong> Significant contributions are noted in our changelog</li>
+                <li><strong>Community Recognition:</strong> Active contributors may be invited to join our volunteer team</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Code of Conduct</h2>
+            <div class="notice">
+                <h3>Expected Behavior</h3>
+                <p>All contributors are expected to:</p>
+                <ul>
+                    <li>Be respectful and professional in all interactions</li>
+                    <li>Focus on the facts and avoid speculation</li>
+                    <li>Respect victim privacy and dignity</li>
+                    <li>Provide constructive feedback</li>
+                    <li>Follow our methodology and quality standards</li>
+                    <li>Report violations to project maintainers</li>
+                </ul>
+
+                <h3>Unacceptable Behavior</h3>
+                <p>The following will not be tolerated:</p>
+                <ul>
+                    <li>Harassment or discriminatory language</li>
+                    <li>Submission of false or misleading information</li>
+                    <li>Violation of privacy or confidentiality</li>
+                    <li>Disrespectful treatment of victims or families</li>
+                    <li>Spam or promotional content</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Questions?</h2>
+            <p>If you have questions about contributing:</p>
+            <ul>
+                <li>Check our <a href="faq.html">FAQ page</a></li>
+                <li>Search existing <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/issues" target="_blank">GitHub Issues</a></li>
+                <li>Start a <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/discussions" target="_blank">GitHub Discussion</a></li>
+                <li>Review our <a href="methodology.html">Research Methodology</a></li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <div class="cta-section">
+                <h2>Ready to Contribute?</h2>
+                <p>Choose your path and help make this archive even better!</p>
+                <div class="cta-buttons">
+                    <a href="upload.html" class="btn btn-primary">Upload Document</a>
+                    <a href="volunteer.html" class="btn btn-secondary">Become a Volunteer</a>
+                    <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>A public resource for researchers, journalists, and the public to access verified information about the Epstein case.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="about.html">About This Project</a></li>
+                    <li><a href="contribute.html">Contribute</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Report issues or suggest improvements via <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/issues" target="_blank">GitHub Issues</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Epstein Files Hub. Public domain content. All information sourced from public records.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

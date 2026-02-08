@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Epstein Files by category - legal, financial, travel, and property documents">
+    <title>Browse by Category - Epstein Files Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.svg">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Epstein Files Hub</h1>
+                <p class="tagline">Comprehensive Directory & Research Portal</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Character Guide</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="infographics.html">Infographics</a></li>
+                <li><a href="slideshow.html">Slideshows</a></li>
+                <li><a href="codex.html">Browse Codex</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1 id="page-title">Browse by Category</h1>
+            <p class="subtitle" id="page-subtitle">Select a category to explore organized collections</p>
+        </header>
+
+        <section class="content-section" id="category-selector">
+            <h2>Document Categories</h2>
+            <div class="categories-grid">
+                <a href="category.html?cat=legal" class="category-card" data-category="legal">
+                    <div class="category-icon">⚖️</div>
+                    <h3>Legal Documents</h3>
+                    <p>Court filings, depositions, legal motions, judgments, and case documents</p>
+                    <span class="category-count">850+ documents</span>
+                </a>
+
+                <a href="category.html?cat=financial" class="category-card" data-category="financial">
+                    <div class="category-icon">💰</div>
+                    <h3>Financial Records</h3>
+                    <p>Banking records, transaction logs, property transfers, and financial statements</p>
+                    <span class="category-count">425+ documents</span>
+                </a>
+
+                <a href="category.html?cat=travel" class="category-card" data-category="travel">
+                    <div class="category-icon">✈️</div>
+                    <h3>Flight Logs & Travel</h3>
+                    <p>Aviation records, flight manifests, passenger lists, and travel documentation</p>
+                    <span class="category-count">320+ documents</span>
+                </a>
+
+                <a href="category.html?cat=property" class="category-card" data-category="property">
+                    <div class="category-icon">🏠</div>
+                    <h3>Property Records</h3>
+                    <p>Real estate documents, property deeds, ownership records, and related materials</p>
+                    <span class="category-count">280+ documents</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section" id="category-content" style="display: none;">
+            <div class="category-header">
+                <button onclick="clearCategory()" class="btn btn-secondary">← Back to Categories</button>
+            </div>
+
+            <div id="legal-content" class="category-detail" style="display: none;">
+                <h2>⚖️ Legal Documents</h2>
+                <p class="text-muted">Comprehensive collection of court filings, depositions, and legal proceedings</p>
+
+                <div class="info-box">
+                    <h3>About This Category</h3>
+                    <p>This collection includes all publicly available legal documents from federal and state court cases involving Jeffrey Epstein, Ghislaine Maxwell, and related civil litigation. All documents are sourced from official court records via PACER, court websites, and verified legal archives.</p>
+                </div>
+
+                <h3>Subcategories</h3>
+                <div class="categories-grid">
+                    <div class="collection-card">
+                        <h4>Criminal Cases</h4>
+                        <p>Federal criminal proceedings, indictments, plea agreements, and sentencing documents</p>
+                        <span class="collection-size">280+ files</span>
+                        <a href="search.html?category=legal&subcategory=criminal" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Civil Litigation</h4>
+                        <p>Civil lawsuits, victim compensation claims, defamation cases, and related proceedings</p>
+                        <span class="collection-size">350+ files</span>
+                        <a href="search.html?category=legal&subcategory=civil" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Depositions</h4>
+                        <p>Witness depositions, testimony transcripts, and sworn statements from various proceedings</p>
+                        <span class="collection-size">125+ files</span>
+                        <a href="search.html?category=legal&subcategory=deposition" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Motions & Briefs</h4>
+                        <p>Legal motions, memorandums of law, appellate briefs, and legal arguments</p>
+                        <span class="collection-size">95+ files</span>
+                        <a href="search.html?category=legal&subcategory=motions" class="feature-link">Browse →</a>
+                    </div>
+                </div>
+
+                <h3>Key Documents</h3>
+                <div class="document-list">
+                    <div class="feature-card">
+                        <h4>United States v. Ghislaine Maxwell (SDNY 2020)</h4>
+                        <p>Complete docket including indictment, trial transcripts, exhibits, and verdict</p>
+                        <span class="search-tag">Criminal</span>
+                        <span class="search-tag">SDNY</span>
+                        <a href="search.html?q=Maxwell+SDNY+2020" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Giuffre v. Maxwell Defamation Case (SDNY 2015-2017)</h4>
+                        <p>Extensive civil case documents including depositions and unsealed materials</p>
+                        <span class="search-tag">Civil</span>
+                        <span class="search-tag">Unsealed</span>
+                        <a href="search.html?q=Giuffre+Maxwell+defamation" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Florida Plea Agreement (2008)</h4>
+                        <p>Controversial 2008 non-prosecution agreement and related SDFL documents</p>
+                        <span class="search-tag">Criminal</span>
+                        <span class="search-tag">SDFL</span>
+                        <a href="search.html?q=Florida+plea+2008" class="feature-link">View Documents →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="financial-content" class="category-detail" style="display: none;">
+                <h2>💰 Financial Records</h2>
+                <p class="text-muted">Banking records, transactions, and financial documentation</p>
+
+                <div class="info-box">
+                    <h3>About This Category</h3>
+                    <p>Financial records sourced from court exhibits, government investigations, and publicly disclosed financial documents. These materials shed light on financial flows, business relationships, and asset holdings.</p>
+                </div>
+
+                <h3>Subcategories</h3>
+                <div class="categories-grid">
+                    <div class="collection-card">
+                        <h4>Banking Records</h4>
+                        <p>Account statements, wire transfers, and banking correspondence from various institutions</p>
+                        <span class="collection-size">180+ files</span>
+                        <a href="search.html?category=financial&subcategory=banking" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Business Entities</h4>
+                        <p>Corporate records, partnership agreements, and business formation documents</p>
+                        <span class="collection-size">95+ files</span>
+                        <a href="search.html?category=financial&subcategory=business" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Asset Documentation</h4>
+                        <p>Asset inventories, valuations, estate documents, and forfeiture proceedings</p>
+                        <span class="collection-size">85+ files</span>
+                        <a href="search.html?category=financial&subcategory=assets" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Compensation & Settlements</h4>
+                        <p>Victim compensation fund documents, settlement agreements, and payment records</p>
+                        <span class="collection-size">65+ files</span>
+                        <a href="search.html?category=financial&subcategory=settlements" class="feature-link">Browse →</a>
+                    </div>
+                </div>
+
+                <h3>Notable Collections</h3>
+                <div class="document-list">
+                    <div class="feature-card">
+                        <h4>Southern Trust Company Records</h4>
+                        <p>Banking records from Epstein's offshore accounts and financial vehicles</p>
+                        <span class="search-tag">Offshore</span>
+                        <span class="search-tag">Court Exhibit</span>
+                        <a href="search.html?q=Southern+Trust+banking" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Estate Liquidation Documents</h4>
+                        <p>Documents from the estate proceedings and asset liquidation process</p>
+                        <span class="search-tag">Estate</span>
+                        <span class="search-tag">Assets</span>
+                        <a href="search.html?q=estate+liquidation" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Victim Compensation Fund</h4>
+                        <p>Documents related to the victim compensation program and distributions</p>
+                        <span class="search-tag">Compensation</span>
+                        <span class="search-tag">Victims</span>
+                        <a href="search.html?q=victim+compensation+fund" class="feature-link">View Documents →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="travel-content" class="category-detail" style="display: none;">
+                <h2>✈️ Flight Logs & Travel Documents</h2>
+                <p class="text-muted">Aviation records, passenger manifests, and travel documentation</p>
+
+                <div class="info-box">
+                    <h3>About This Category</h3>
+                    <p>Comprehensive collection of flight logs from Epstein's private aircraft, including passenger manifests, flight plans, and related aviation documentation. All records are sourced from official FAA records, court exhibits, and verified public releases.</p>
+                </div>
+
+                <h3>Subcategories</h3>
+                <div class="categories-grid">
+                    <div class="collection-card">
+                        <h4>Flight Manifests</h4>
+                        <p>Passenger lists, crew information, and flight routes from private aircraft</p>
+                        <span class="collection-size">220+ files</span>
+                        <a href="search.html?category=travel&subcategory=manifests" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Aviation Records</h4>
+                        <p>Aircraft registration, maintenance logs, and FAA documentation</p>
+                        <span class="collection-size">45+ files</span>
+                        <a href="search.html?category=travel&subcategory=aviation" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Travel Itineraries</h4>
+                        <p>Trip schedules, destination information, and travel planning documents</p>
+                        <span class="collection-size">35+ files</span>
+                        <a href="search.html?category=travel&subcategory=itineraries" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Analysis & Reports</h4>
+                        <p>Analytical reports, passenger correlation studies, and pattern analysis</p>
+                        <span class="collection-size">20+ files</span>
+                        <a href="search.html?category=travel&subcategory=analysis" class="feature-link">Browse →</a>
+                    </div>
+                </div>
+
+                <h3>Key Collections</h3>
+                <div class="document-list">
+                    <div class="feature-card">
+                        <h4>Boeing 727 Flight Logs (N908JE)</h4>
+                        <p>Complete flight logs from Epstein's primary aircraft, often called the "Lolita Express"</p>
+                        <span class="search-tag">Boeing 727</span>
+                        <span class="search-tag">Primary Aircraft</span>
+                        <a href="search.html?q=N908JE+Boeing+727" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Gulfstream Flight Records</h4>
+                        <p>Flight logs from Epstein's Gulfstream aircraft operations</p>
+                        <span class="search-tag">Gulfstream</span>
+                        <span class="search-tag">Flight Logs</span>
+                        <a href="search.html?q=Gulfstream+flight+logs" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>International Travel Records</h4>
+                        <p>Documentation of international flights, customs records, and border crossings</p>
+                        <span class="search-tag">International</span>
+                        <span class="search-tag">Customs</span>
+                        <a href="search.html?q=international+travel" class="feature-link">View Documents →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="property-content" class="category-detail" style="display: none;">
+                <h2>🏠 Property Records</h2>
+                <p class="text-muted">Real estate documentation and property-related materials</p>
+
+                <div class="info-box">
+                    <h3>About This Category</h3>
+                    <p>Public records related to properties owned, leased, or controlled by Jeffrey Epstein and associated entities. Includes deeds, tax records, architectural documents, and related property documentation from various jurisdictions.</p>
+                </div>
+
+                <h3>Subcategories</h3>
+                <div class="categories-grid">
+                    <div class="collection-card">
+                        <h4>Deeds & Transfers</h4>
+                        <p>Property deeds, title transfers, and ownership documentation</p>
+                        <span class="collection-size">120+ files</span>
+                        <a href="search.html?category=property&subcategory=deeds" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Tax Records</h4>
+                        <p>Property tax assessments, valuations, and payment records</p>
+                        <span class="collection-size">75+ files</span>
+                        <a href="search.html?category=property&subcategory=tax" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Architectural & Plans</h4>
+                        <p>Building plans, permits, architectural drawings, and construction documents</p>
+                        <span class="collection-size">50+ files</span>
+                        <a href="search.html?category=property&subcategory=plans" class="feature-link">Browse →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <h4>Sales & Dispositions</h4>
+                        <p>Property sales, estate dispositions, and forfeiture proceedings</p>
+                        <span class="collection-size">35+ files</span>
+                        <a href="search.html?category=property&subcategory=sales" class="feature-link">Browse →</a>
+                    </div>
+                </div>
+
+                <h3>Major Properties</h3>
+                <div class="document-list">
+                    <div class="feature-card">
+                        <h4>Manhattan Townhouse (9 E 71st Street)</h4>
+                        <p>Records for the Upper East Side mansion, one of Manhattan's largest private residences</p>
+                        <span class="search-tag">Manhattan</span>
+                        <span class="search-tag">Primary Residence</span>
+                        <a href="search.html?q=71st+Street+Manhattan" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Little Saint James Island</h4>
+                        <p>Property records for the private island in the U.S. Virgin Islands</p>
+                        <span class="search-tag">USVI</span>
+                        <span class="search-tag">Island</span>
+                        <a href="search.html?q=Little+Saint+James" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Palm Beach Estate</h4>
+                        <p>Documentation for the Florida oceanfront property where many allegations occurred</p>
+                        <span class="search-tag">Florida</span>
+                        <span class="search-tag">Palm Beach</span>
+                        <a href="search.html?q=Palm+Beach+estate" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>New Mexico Ranch</h4>
+                        <p>Records for the Zorro Ranch property in Stanley, New Mexico</p>
+                        <span class="search-tag">New Mexico</span>
+                        <span class="search-tag">Ranch</span>
+                        <a href="search.html?q=Zorro+Ranch" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Paris Apartment</h4>
+                        <p>Documentation for the luxury apartment in Paris, France</p>
+                        <span class="search-tag">International</span>
+                        <span class="search-tag">Paris</span>
+                        <a href="search.html?q=Paris+apartment" class="feature-link">View Documents →</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4>Great Saint James Island</h4>
+                        <p>Records for the second USVI island property purchased in 2016</p>
+                        <span class="search-tag">USVI</span>
+                        <span class="search-tag">Island</span>
+                        <a href="search.html?q=Great+Saint+James" class="feature-link">View Documents →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>A public resource for researchers, journalists, and the public to access verified information about the Epstein case.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="about.html">About This Project</a></li>
+                    <li><a href="contribute.html">Contribute</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Report issues or suggest improvements via <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/issues" target="_blank">GitHub Issues</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Epstein Files Hub. Public domain content. All information sourced from public records.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Category page functionality
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function clearCategory() {
+            // Update URL without page reload
+            window.history.pushState({}, '', 'category.html');
+            
+            // Show category selector, hide content
+            document.getElementById('category-selector').style.display = 'block';
+            document.getElementById('category-content').style.display = 'none';
+            
+            // Reset title
+            document.getElementById('page-title').textContent = 'Browse by Category';
+            document.getElementById('page-subtitle').textContent = 'Select a category to explore organized collections';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function loadCategory(category) {
+            if (!category) {
+                return;
+            }
+
+            // Hide selector, show content
+            document.getElementById('category-selector').style.display = 'none';
+            document.getElementById('category-content').style.display = 'block';
+
+            // Hide all category details
+            const allDetails = document.querySelectorAll('.category-detail');
+            allDetails.forEach(detail => detail.style.display = 'none');
+
+            // Show selected category
+            const categoryMap = {
+                'legal': { id: 'legal-content', title: 'Legal Documents', icon: '⚖️' },
+                'financial': { id: 'financial-content', title: 'Financial Records', icon: '💰' },
+                'travel': { id: 'travel-content', title: 'Flight Logs & Travel', icon: '✈️' },
+                'property': { id: 'property-content', title: 'Property Records', icon: '🏠' }
+            };
+
+            if (categoryMap[category]) {
+                document.getElementById(categoryMap[category].id).style.display = 'block';
+                document.getElementById('page-title').textContent = categoryMap[category].icon + ' ' + categoryMap[category].title;
+                document.getElementById('page-subtitle').textContent = 'Explore organized collections in this category';
+            }
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Load category on page load if parameter exists
+        document.addEventListener('DOMContentLoaded', function() {
+            const category = getUrlParameter('cat');
+            loadCategory(category);
+
+            // Add click handlers to category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const cat = this.getAttribute('data-category');
+                    window.history.pushState({}, '', 'category.html?cat=' + cat);
+                    loadCategory(cat);
+                });
+            });
+        });
+
+        // Handle browser back button
+        window.addEventListener('popstate', function() {
+            const category = getUrlParameter('cat');
+            if (category) {
+                loadCategory(category);
+            } else {
+                clearCategory();
+            }
+        });
+    </script>
+</body>
+</html>

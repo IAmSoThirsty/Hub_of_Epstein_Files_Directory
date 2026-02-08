@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Methodology and approach for the Epstein Files Hub research portal">
+    <title>Methodology - Epstein Files Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.svg">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Epstein Files Hub</h1>
+                <p class="tagline">Comprehensive Directory & Research Portal</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Character Guide</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="infographics.html">Infographics</a></li>
+                <li><a href="slideshow.html">Slideshows</a></li>
+                <li><a href="codex.html">Browse Codex</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Research Methodology</h1>
+            <p class="subtitle">Our approach to collecting, verifying, and presenting information</p>
+        </header>
+
+        <section class="content-section">
+            <h2>Overview</h2>
+            <p>The Epstein Files Hub employs a rigorous, multi-layered methodology to ensure accuracy, completeness, and ethical presentation of information. Our approach combines automated systems with human oversight to maintain the highest standards of research integrity.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Source Verification Process</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Source Identification</h3>
+                    <p>Documents are identified from public sources including court filings, government releases, and verified archives.</p>
+                    <ul>
+                        <li>Federal court systems (PACER, CM/ECF)</li>
+                        <li>Government websites (FBI.gov, Justice.gov)</li>
+                        <li>Verified archives (DocumentCloud, Internet Archive)</li>
+                        <li>Wikipedia (for biographical and chronological data)</li>
+                        <li>Uncensored.ai public database</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Authenticity Verification</h3>
+                    <p>Each document undergoes verification to confirm authenticity and public availability.</p>
+                    <ul>
+                        <li>Cross-reference with original source</li>
+                        <li>Verify PACER case numbers and docket entries</li>
+                        <li>Confirm document metadata (dates, signatures, stamps)</li>
+                        <li>Check for official government seals and formatting</li>
+                        <li>Compare with multiple independent sources when possible</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Privacy Screening</h3>
+                    <p>All documents are screened to ensure compliance with privacy protections and court orders.</p>
+                    <ul>
+                        <li>Identify and respect court-ordered redactions</li>
+                        <li>Remove or redact victim identifying information</li>
+                        <li>Verify public availability status</li>
+                        <li>Exclude sealed or restricted documents</li>
+                        <li>Maintain compliance with privacy regulations</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Categorization & Indexing</h3>
+                    <p>Documents are systematically categorized and indexed for discoverability.</p>
+                    <ul>
+                        <li>Assign document type (legal, financial, travel, etc.)</li>
+                        <li>Extract dates, locations, and entity mentions</li>
+                        <li>Generate searchable metadata</li>
+                        <li>Create cross-references and relationships</li>
+                        <li>Build full-text search index</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Quality Review</h3>
+                    <p>Human reviewers validate automated processing and ensure accuracy.</p>
+                    <ul>
+                        <li>Verify OCR accuracy for scanned documents</li>
+                        <li>Check metadata extraction completeness</li>
+                        <li>Validate categorization accuracy</li>
+                        <li>Review entity extraction and relationships</li>
+                        <li>Confirm source citations and links</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Publication & Updates</h3>
+                    <p>Approved documents are published and monitored for updates.</p>
+                    <ul>
+                        <li>Deploy to GitHub Pages with version control</li>
+                        <li>Update search indexes and metadata</li>
+                        <li>Monitor for document unsealing or new releases</li>
+                        <li>Track changes and maintain changelog</li>
+                        <li>Regenerate cross-references and relationships</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Automated Systems</h2>
+            <p>We employ 37+ AI agents and automated systems to maintain the archive efficiently:</p>
+            
+            <h3>Data Integration (5 Agents)</h3>
+            <ul>
+                <li><strong>Uncensored.ai Integration:</strong> Hourly extraction from public database (8,760 runs/year)</li>
+                <li><strong>API Coordinator:</strong> Manages external API integrations and data sync</li>
+                <li><strong>Batch Processing Manager:</strong> Handles large-scale operations efficiently</li>
+                <li><strong>Document Classifier:</strong> Categorizes documents by type and relevance</li>
+                <li><strong>Workflow Orchestrator:</strong> Coordinates multi-agent processing pipelines</li>
+            </ul>
+
+            <h3>Media Processing (5 Agents)</h3>
+            <ul>
+                <li><strong>Photo Collection Organizer:</strong> Catalogs and tags photo evidence</li>
+                <li><strong>Video Archive Manager:</strong> Processes video content and metadata</li>
+                <li><strong>Audio File Processor:</strong> Transcribes and catalogs audio recordings</li>
+                <li><strong>Media Metadata Extractor:</strong> Extracts EXIF and technical metadata</li>
+                <li><strong>Image Analysis:</strong> Performs content analysis and duplicate detection</li>
+            </ul>
+
+            <h3>Flight & Location Analysis (3 Agents)</h3>
+            <ul>
+                <li><strong>Flight Log Analyzer:</strong> Parses aviation records and manifests</li>
+                <li><strong>Passenger Correlator:</strong> Identifies patterns across multiple flights</li>
+                <li><strong>Location Tracker:</strong> Maps and tracks locations from all sources</li>
+            </ul>
+
+            <h3>Document Analysis (4 Agents)</h3>
+            <ul>
+                <li><strong>Court Document Specialist:</strong> Processes legal filings with citation expertise</li>
+                <li><strong>Financial Records Analyst:</strong> Analyzes banking and transaction documents</li>
+                <li><strong>Redaction Detector:</strong> Identifies and categorizes redacted content</li>
+                <li><strong>News Media Monitor:</strong> Tracks media coverage and public reporting</li>
+            </ul>
+
+            <h3>Quality & Integrity (5 Agents)</h3>
+            <ul>
+                <li><strong>Quality Assessor:</strong> Evaluates document quality and completeness</li>
+                <li><strong>Data Validator:</strong> Ensures data integrity and consistency</li>
+                <li><strong>Duplicate Detector:</strong> Identifies duplicate and near-duplicate files</li>
+                <li><strong>Source Attributor:</strong> Maintains provenance and chain of custody</li>
+                <li><strong>Privacy Protector:</strong> Ensures victim privacy compliance</li>
+            </ul>
+
+            <h3>Intelligence & Analysis (4 Agents)</h3>
+            <ul>
+                <li><strong>Relationship Mapper:</strong> Builds network graphs connecting entities</li>
+                <li><strong>DateTime Extractor:</strong> Extracts and normalizes temporal data</li>
+                <li><strong>Report Generator:</strong> Creates comprehensive reports and summaries</li>
+                <li><strong>Archive Maintainer:</strong> Manages long-term archive optimization</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Quality Control Measures</h2>
+            <div class="quality-grid">
+                <div class="quality-card">
+                    <h3>📋 Daily Audits</h3>
+                    <p>Automated system audits run daily at 6 AM UTC to check infrastructure, data integrity, and workflow health.</p>
+                </div>
+                <div class="quality-card">
+                    <h3>🔍 Weekly Deep Inspections</h3>
+                    <p>Comprehensive inspections every Sunday examine all 9 system sections for issues and optimization opportunities.</p>
+                </div>
+                <div class="quality-card">
+                    <h3>✅ Duplicate Detection</h3>
+                    <p>Advanced hashing and similarity algorithms identify duplicates across all media types to maintain archive cleanliness.</p>
+                </div>
+                <div class="quality-card">
+                    <h3>🎯 Accuracy Validation</h3>
+                    <p>Cross-referencing with multiple sources and human review ensures high accuracy rates.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Research Standards</h2>
+            <p>We adhere to the following standards in all research activities:</p>
+            
+            <h3>Verification Requirements</h3>
+            <ul>
+                <li>At least one primary source (court document, government record)</li>
+                <li>Two independent sources for biographical information</li>
+                <li>Three sources for controversial or disputed claims</li>
+                <li>Clear attribution for all information</li>
+                <li>Links to original sources when publicly available</li>
+            </ul>
+
+            <h3>Exclusion Criteria</h3>
+            <p>We do not include:</p>
+            <ul>
+                <li>Unverified claims or rumors</li>
+                <li>Sealed court documents or restricted materials</li>
+                <li>Victim identifying information (per court orders)</li>
+                <li>Speculative analysis or commentary</li>
+                <li>Information from unreliable or biased sources</li>
+            </ul>
+
+            <h3>Update Protocol</h3>
+            <ul>
+                <li><strong>Hourly:</strong> Uncensored.ai database extraction</li>
+                <li><strong>Daily:</strong> Safe source monitoring (FBI, DOJ, Archives)</li>
+                <li><strong>Weekly:</strong> Wikipedia data integration and system audits</li>
+                <li><strong>Monthly:</strong> FBI Vault document releases</li>
+                <li><strong>As Available:</strong> New court unsealing and government releases</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Ethical Guidelines</h2>
+            <div class="notice">
+                <h3>Our Ethical Framework</h3>
+                <p>We are committed to ethical research and presentation:</p>
+                <ul>
+                    <li><strong>Victim-Centered:</strong> Prioritize victim privacy, dignity, and well-being in all decisions</li>
+                    <li><strong>Factual:</strong> Present only verified information without speculation or sensationalism</li>
+                    <li><strong>Transparent:</strong> Clearly cite sources and acknowledge limitations</li>
+                    <li><strong>Accountable:</strong> Open to corrections and committed to accuracy</li>
+                    <li><strong>Respectful:</strong> Handle sensitive material with appropriate gravity</li>
+                    <li><strong>Public Interest:</strong> Focus on information relevant to public interest and accountability</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Technology Infrastructure</h2>
+            <p>Our technology choices support our methodology:</p>
+            
+            <h3>God Tier Architecture</h3>
+            <ul>
+                <li><strong>Git LFS:</strong> Unlimited large file support (PDFs, images, videos)</li>
+                <li><strong>Hourly CI/CD:</strong> Continuous integration with 8,760 runs per year</li>
+                <li><strong>Monolithic Codebase:</strong> Single unified system for maximum efficiency</li>
+                <li><strong>Client-Side Search:</strong> Private, fast search with no tracking</li>
+                <li><strong>GitHub Pages:</strong> Transparent, version-controlled hosting</li>
+                <li><strong>Cloudflare CDN:</strong> Global delivery with SSL/TLS encryption</li>
+            </ul>
+
+            <h3>Performance Metrics</h3>
+            <ul>
+                <li>Search response time: &lt; 100ms</li>
+                <li>Page load time: &lt; 2 seconds</li>
+                <li>Uptime: 99.9%+</li>
+                <li>Processing capacity: 100,000+ operations/day</li>
+                <li>Storage: Unlimited with Git LFS</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Continuous Improvement</h2>
+            <p>We continuously evaluate and improve our methodology:</p>
+            <ul>
+                <li>Regular review of quality metrics and error rates</li>
+                <li>User feedback integration via GitHub Issues</li>
+                <li>Technology upgrades as new tools become available</li>
+                <li>Process optimization based on audit findings</li>
+                <li>Expansion of automated capabilities while maintaining human oversight</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Limitations & Disclaimers</h2>
+            <div class="notice">
+                <p>Users should be aware of the following limitations:</p>
+                <ul>
+                    <li>This archive contains only publicly available information</li>
+                    <li>Redactions in original documents may limit available information</li>
+                    <li>Document availability depends on government release schedules</li>
+                    <li>Some information may be outdated as new documents emerge</li>
+                    <li>We cannot verify information that is sealed or classified</li>
+                    <li>Our analysis is limited to publicly verifiable facts</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>A public resource for researchers, journalists, and the public to access verified information about the Epstein case.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="about.html">About This Project</a></li>
+                    <li><a href="contribute.html">Contribute</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Report issues or suggest improvements via <a href="https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/issues" target="_blank">GitHub Issues</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Epstein Files Hub. Public domain content. All information sourced from public records.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
