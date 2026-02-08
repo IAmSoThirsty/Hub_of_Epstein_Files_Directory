@@ -1,0 +1,251 @@
+# Epstein Files Hub - Web Directory
+
+This directory contains the complete multi-page GitHub Pages website for the Epstein Files Hub.
+
+## 📊 Site Structure
+
+### Core Pages (7)
+- **index.html** - Home page with overview and navigation
+- **about.html** - Comprehensive about page with mission and technology
+- **methodology.html** - Detailed research methodology and verification process
+- **contribute.html** - Contribution guidelines and submission process
+- **faq.html** - Extensive FAQ covering all aspects
+- **privacy.html** - Privacy policy emphasizing client-side search
+- **disclaimer.html** - Legal disclaimer and terms of use
+
+### Feature Pages (8)
+- **search.html** - Advanced search with 15+ filters
+- **characters.html** - 350+ character profiles
+- **locations.html** - 50+ location guides
+- **codex.html** - Document browser and archive
+- **infographics.html** - Visual relationship maps and timelines
+- **slideshow.html** - Curated presentations
+- **upload.html** - PDF submission interface
+- **volunteer.html** - Volunteer management and signup
+
+### Organization Pages (4)
+- **category.html** - Dynamic category browsing (legal, financial, travel, property)
+- **updates.html** - Timeline of updates and releases
+- **changelog.html** - Detailed project changelog
+- **sources.html** - Complete source documentation and references
+
+### Infrastructure (3)
+- **404.html** - Custom error page with navigation
+- **sitemap.xml** - Complete sitemap for SEO
+- **robots.txt** - Search engine optimization configuration
+
+## 🎨 Design System
+
+### Color Palette
+```css
+--primary-color: #1a1a2e (Dark Navy)
+--secondary-color: #16213e (Darker Navy)
+--accent-color: #0f3460 (Deep Blue)
+--highlight-color: #e94560 (Red/Pink)
+--text-color: #f0f0f0 (Light Gray)
+--background: #0f0f1e (Almost Black)
+```
+
+### Typography
+- Font Family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+- Base Font Size: 16px
+- Line Height: 1.6
+
+### Components
+- Navigation bar (sticky)
+- Hero sections
+- Feature cards
+- Stats grids
+- Process steps
+- FAQ items
+- Notice boxes (success, warning, danger, info)
+- CTA sections
+- Footer
+
+## 🔍 Search Functionality
+
+The search is **client-side** using Lunr.js:
+- No server queries
+- Private and fast (< 100ms)
+- 15+ filters available
+- Offline capability
+
+### Search Files
+- `js/search.js` - Search implementation
+- `js/search-index.js` - Pre-generated search index
+- `js/search-metadata.json` - Search metadata
+- `js/search-stats.json` - Search statistics
+
+## 📱 Responsive Design
+
+All pages are mobile-first and responsive:
+- Desktop: 1400px max width
+- Tablet: 768px breakpoint
+- Mobile: 320px minimum
+
+## 🚀 Performance
+
+- Static site generation
+- Client-side search (no API calls)
+- Cloudflare CDN
+- Optimized assets
+- Progressive enhancement
+- < 2 second load time target
+
+## 🔗 Navigation Structure
+
+```
+Home (index.html)
+├── About (about.html)
+├── Methodology (methodology.html)
+├── Contribute (contribute.html)
+├── FAQ (faq.html)
+├── Privacy (privacy.html)
+└── Disclaimer (disclaimer.html)
+
+Features
+├── Search (search.html)
+├── Characters (characters.html)
+│   └── Profiles (profiles/)
+├── Locations (locations.html)
+│   └── Location Pages (locations/)
+├── Codex (codex.html)
+├── Infographics (infographics.html)
+├── Slideshows (slideshow.html)
+├── Upload (upload.html)
+└── Volunteer (volunteer.html)
+
+Organization
+├── Categories (category.html)
+│   ├── Legal (?cat=legal)
+│   ├── Financial (?cat=financial)
+│   ├── Travel (?cat=travel)
+│   └── Property (?cat=property)
+├── Updates (updates.html)
+├── Changelog (changelog.html)
+└── Sources (sources.html)
+
+Staff Area
+├── Tasks (staff/tasks.html)
+└── Calendar (staff/calendar.html)
+```
+
+## 🛠️ Development
+
+### Local Development
+```bash
+# Start a local server
+python -m http.server 8000 --directory web
+
+# Or use Node.js
+npx http-server web -p 8000
+
+# Visit http://localhost:8000
+```
+
+### File Organization
+```
+web/
+├── *.html           # 20 HTML pages
+├── css/
+│   └── styles.css   # Main stylesheet (1300+ lines)
+├── js/
+│   ├── main.js      # Core JavaScript
+│   ├── search.js    # Search functionality
+│   ├── characters.js
+│   ├── locations.js
+│   └── particles.js
+├── assets/
+│   └── favicon.svg  # Site favicon
+├── profiles/        # Character profile pages
+├── locations/       # Location detail pages
+├── staff/          # Staff area pages
+├── data/           # Data files
+├── sitemap.xml     # SEO sitemap
+└── robots.txt      # Search engine config
+```
+
+## 📝 Content Management
+
+### Adding a New Page
+1. Create HTML file using existing template
+2. Include navigation and footer
+3. Use design system components
+4. Update sitemap.xml
+5. Add links from relevant pages
+6. Test all links
+
+### Updating Styles
+- Main styles: `css/styles.css`
+- Component styles: Inline or in styles.css
+- Maintain design system consistency
+
+### Search Index
+- Generated by: `scripts/generate-search-index.py`
+- Frequency: Automated via GitHub Actions
+- Manual: Run script and commit changes
+
+## 🔐 Security
+
+- HTTPS enforced (GitHub Pages + Cloudflare)
+- No user authentication
+- No data collection
+- Client-side search (private)
+- Regular security scans via GitHub Actions
+
+## ♿ Accessibility
+
+- Semantic HTML5
+- ARIA labels where needed
+- Keyboard navigation support
+- High contrast colors
+- Responsive text sizing
+- Alt text for images
+
+## 📊 Analytics
+
+We use minimal analytics:
+- GitHub Pages basic stats
+- No Google Analytics
+- No user tracking
+- Privacy-first approach
+
+## 🚢 Deployment
+
+Deployed via GitHub Pages:
+- Branch: `main` or `gh-pages`
+- Directory: `/web` or root
+- URL: https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/
+- CDN: Cloudflare (optional)
+
+### Deployment Workflow
+```yaml
+# .github/workflows/deploy-pages.yml
+- Build site (if needed)
+- Generate search index
+- Deploy to GitHub Pages
+- Clear Cloudflare cache (if configured)
+```
+
+## 📚 Documentation
+
+- [Architecture Guide](../docs/GOD_TIER_ARCHITECTURE.md)
+- [Library Documentation](../docs/LIBRARY_DOCUMENTATION.md)
+- [Free Tier Setup](../docs/FREE_TIER_SETUP.md)
+- [Deployment Guide](../docs/DEPLOYMENT_GUIDE.md)
+
+## 🤝 Contributing
+
+See [contribute.html](contribute.html) and [../CONTRIBUTING.md](../CONTRIBUTING.md)
+
+## 📄 License
+
+Public domain content. All information sourced from public records.
+
+---
+
+**Last Updated:** February 8, 2024
+**Version:** 2.0.0
+**Status:** ✅ Production Ready
+**Total Pages:** 20
+**Total Size:** ~500KB (excluding data)
