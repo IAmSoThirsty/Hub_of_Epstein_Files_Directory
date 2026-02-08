@@ -45,6 +45,7 @@ class Hub:
         # Initialize subsystems (lazy loading)
         self._public_files = None
         self._wikipedia = None
+        self._uncensored_ai = None
         self._pdf_processor = None
         self._search_indexer = None
         self._agents = None
@@ -82,6 +83,14 @@ class Hub:
             from ..data.wikipedia import WikipediaManager
             self._wikipedia = WikipediaManager(self.config, self.data, self.cache)
         return self._wikipedia
+    
+    @property
+    def uncensored_ai(self):
+        """Lazy load Uncensored.ai module."""
+        if self._uncensored_ai is None:
+            from ..data.uncensored_ai import UncensoredAIManager
+            self._uncensored_ai = UncensoredAIManager(self.config, self.data, self.cache)
+        return self._uncensored_ai
     
     @property
     def pdf_processor(self):
@@ -149,6 +158,28 @@ class Hub:
         results = self.wikipedia.fetch_all()
         
         self.logger.info(f"Fetched data for {results.get('total_entries', 0)} entries")
+        return results
+    
+    def fetch_uncensored_files(self, categories: Optional[List[str]] = None,
+                               force_refresh: bool = False) -> Dict[str, Any]:
+        """
+        Fetch Epstein files from Uncensored.ai.
+        
+        Args:
+            categories: Optional list of categories to fetch
+            force_refresh: Force refresh even if cached
+            
+        Returns:
+            Dictionary with fetch results
+        """
+        self.logger.info("Fetching Uncensored.ai files...")
+        
+        if force_refresh:
+            self.cache.clear("uncensored_ai")
+        
+        results = self.uncensored_ai.fetch_all(categories)
+        
+        self.logger.info(f"Fetched {results.get('total_files', 0)} files from Uncensored.ai")
         return results
     
     def process_documents(self, input_dir: Optional[Path] = None,
@@ -224,10 +255,15 @@ class Hub:
             force_refresh=force_refresh
         )
         
-        # Step 3: Process documents
+        # Step 3: Fetch Uncensored.ai files
+        pipeline_results["steps"]["fetch_uncensored"] = self.fetch_uncensored_files(
+            force_refresh=force_refresh
+        )
+        
+        # Step 4: Process documents
         pipeline_results["steps"]["process_documents"] = self.process_documents()
         
-        # Step 4: Generate search index
+        # Step 5: Generate search index
         pipeline_results["steps"]["generate_index"] = self.generate_search_index(
             force_rebuild=force_refresh
         )

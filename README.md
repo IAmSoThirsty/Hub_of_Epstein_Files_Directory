@@ -20,6 +20,7 @@ This repository serves as a comprehensive directory and organizational hub for E
 
 **🆕 WIKIPEDIA INTEGRATION - Comprehensive data on dates, times, locations, characters!**
 **🔍 SAFE SOURCE EXPANSION - 5+ official sources monitored daily!**
+**🌐 UNCENSORED.AI INTEGRATION - Continuous Epstein files data extraction!**
 
 ---
 
@@ -37,6 +38,7 @@ This repository serves as a comprehensive directory and organizational hub for E
 - 📤 PDF upload with analysis
 - 🤖 37+ AI agents maintaining content (26 Copilot agents + 11 bots)
 - 🌐 Wikipedia data integration (weekly updates)
+- 🌐 Uncensored.ai continuous data extraction (daily)
 - 📡 Automated source discovery (daily)
 - 🛫 Flight log analysis and passenger tracking
 - 🎥 Video and audio file processing
@@ -98,6 +100,19 @@ Automatically fetches comprehensive data:
 **Script:** `scripts/fetch-wikipedia-data.py`
 **Schedule:** Weekly (Sundays)
 
+### Uncensored.ai Integration ✅ **NEW**
+Continuous data extraction from Uncensored.ai free database:
+- **Documents**: Court filings, depositions, legal documents
+- **Images**: Photos, scanned documents, evidence photos
+- **Flight Logs**: Aviation records and passenger manifests
+- **Financial Records**: Banking and transaction documents
+- **Auto-deduplication**: Intelligent duplicate detection
+- **Metadata Extraction**: Comprehensive file metadata
+
+**Script:** `scripts/fetch-uncensored-files.py`
+**Schedule:** Daily (2 AM UTC)
+**Documentation:** [data/uncensored_files/README.md](data/uncensored_files/README.md)
+
 ### Safe Source Expansion ✅
 Monitors 5 official sources daily:
 - **Internet Archive** - Public documents
@@ -118,6 +133,7 @@ Monitors 5 official sources daily:
 ✅ **Client-side search** - Lunr.js for fast, offline search
 ✅ **Automated updates** - GitHub Actions regenerate index
 ✅ **Wikipedia integration** - Weekly data fetching
+✅ **Uncensored.ai integration** - Daily file extraction
 ✅ **Source discovery** - Daily monitoring
 ✅ **FBI Vault fetching** - Monthly updates
 ✅ **Full functionality** - All 8 web pages working

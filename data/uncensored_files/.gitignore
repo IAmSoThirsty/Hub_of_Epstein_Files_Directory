@@ -1,0 +1,24 @@
+# Uncensored.ai Downloaded Files
+# Keep only metadata and manifests in version control
+# Actual files are typically too large for git
+
+# Ignore large downloaded files
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.mp4
+*.mov
+*.avi
+*.txt
+*.dat
+
+# Keep manifests and metadata
+!uncensored_manifest.json
+!fetch_results.json
+!integration_report.md
+!metadata/*.json
+
+# Keep README
+!README.md
