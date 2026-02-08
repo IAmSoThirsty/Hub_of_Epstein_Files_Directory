@@ -21,6 +21,10 @@ jobs:
   fetch-uncensored-files:
     runs-on: ubuntu-latest
     
+    permissions:
+      contents: write  # Required to commit and push changes
+      actions: read    # Required to read workflow files
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
