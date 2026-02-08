@@ -133,19 +133,7 @@ jobs:
         run: |
           # Add statistics if available
           if [ -f "data/uncensored_files/fetch_results.json" ]; then
-            python3 -c "
-import json
-with open('data/uncensored_files/fetch_results.json', 'r') as f:
-    data = json.load(f)
-    with open('data/uncensored_files/integration_report.md', 'a') as report:
-        report.write('### Fetch Results\n')
-        report.write(f\"- Total files fetched: {data.get('total_files', 0)}\n\")
-        report.write(f\"- Total files skipped: {data.get('total_skipped', 0)}\n\")
-        if 'categories' in data:
-            report.write('\n### By Category\n')
-            for cat, results in data['categories'].items():
-                report.write(f\"- **{cat.capitalize()}**: {results.get('files_fetched', 0)} fetched, {results.get('files_skipped', 0)} skipped\n\")
-            " || echo "Failed to generate statistics"
+            python3 scripts/generate-uncensored-report.py
             
             # Add to job summary
             cat data/uncensored_files/integration_report.md >> $GITHUB_STEP_SUMMARY
