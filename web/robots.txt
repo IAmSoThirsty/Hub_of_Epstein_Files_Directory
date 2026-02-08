@@ -1,0 +1,46 @@
+# Robots.txt for Epstein Files Hub
+# Last updated: 2024-02-08
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/sitemap.xml
+
+# Allow all search engines to index our public content
+# This is a public research archive
+
+# Crawl-delay for politeness (optional)
+# Crawl-delay: 1
+
+# Disallow certain file types to reduce crawler load
+Disallow: /*.json$
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /.git/
+
+# Allow access to all main content
+Allow: /index.html
+Allow: /search.html
+Allow: /characters.html
+Allow: /locations.html
+Allow: /codex.html
+Allow: /infographics.html
+Allow: /slideshow.html
+Allow: /about.html
+Allow: /contribute.html
+Allow: /volunteer.html
+
+# Allow important CSS and JS for rendering
+Allow: /css/
+Allow: /js/
+
+# Allow images for preview in search results
+Allow: /assets/
+Allow: /profiles/
+Allow: /locations/
+
+# Note: This is a public interest research archive
+# All content is sourced from public court documents and government records
+# For questions or concerns, visit:
+# https://github.com/IAmSoThirsty/Hub_of_Epstein_Files_Directory/issues
