@@ -93,7 +93,7 @@ python scripts/fetch-uncensored-files.py --all --non-interactive
 - ✅ Comprehensive error handling
 - ✅ Explicit workflow permissions (security best practice)
 
-**Schedule:** 
+**Schedule:**
 - Automated: Daily at 2:00 AM UTC
 - Manual: Via GitHub Actions UI
 
