@@ -232,15 +232,16 @@ Examples:
     if not args.all and not args.category and not args.non_interactive:
         # Interactive mode
         print("What would you like to fetch?")
-        print("1. All categories (documents, images, flight logs, financial)")
+        print("1. All categories (documents, images, videos, flight logs, financial)")
         print("2. Documents only")
         print("3. Images only")
-        print("4. Flight logs only")
-        print("5. Financial records only")
-        print("6. View statistics")
+        print("4. Videos only")
+        print("5. Flight logs only")
+        print("6. Financial records only")
+        print("7. View statistics")
         print("0. Exit")
         
-        choice = input("\nEnter your choice (0-6): ").strip()
+        choice = input("\nEnter your choice (0-7): ").strip()
         
         if choice == '0':
             print("Exiting...")
@@ -252,10 +253,12 @@ Examples:
         elif choice == '3':
             args.category = 'images'
         elif choice == '4':
-            args.category = 'flight_logs'
+            args.category = 'videos'
         elif choice == '5':
-            args.category = 'financial'
+            args.category = 'flight_logs'
         elif choice == '6':
+            args.category = 'financial'
+        elif choice == '7':
             integrator.get_statistics()
             return 0
         else:

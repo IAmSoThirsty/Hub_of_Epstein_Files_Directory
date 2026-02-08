@@ -109,11 +109,14 @@ jobs:
         run: |
           echo "Generating integration report..."
           
-          # Create report
-          cat > data/uncensored_files/integration_report.md << 'EOF'
+          # Get current date
+          REPORT_DATE=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          
+          # Create report header
+          cat > data/uncensored_files/integration_report.md << EOF
           # Uncensored.ai Integration Report
           
-          **Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          **Date:** $REPORT_DATE
           **Workflow:** ${{ github.workflow }}
           **Run:** ${{ github.run_number }}
           
@@ -121,30 +124,38 @@ jobs:
           
           EOF
           
+      - name: Generate report statistics
+        if: always()
+        run: |
           # Add statistics if available
           if [ -f "data/uncensored_files/fetch_results.json" ]; then
-            echo "### Fetch Results" >> data/uncensored_files/integration_report.md
             python3 -c "
-          import json
-          with open('data/uncensored_files/fetch_results.json', 'r') as f:
-              data = json.load(f)
-              print(f\"- Total files fetched: {data.get('total_files', 0)}\")
-              print(f\"- Total files skipped: {data.get('total_skipped', 0)}\")
-              if 'categories' in data:
-                  print('\n### By Category')
-                  for cat, results in data['categories'].items():
-                      print(f\"- **{cat.capitalize()}**: {results.get('files_fetched', 0)} fetched, {results.get('files_skipped', 0)} skipped\")
-          " >> data/uncensored_files/integration_report.md
-          fi
-          
-          # Add to job summary
-          if [ -f "data/uncensored_files/integration_report.md" ]; then
+import json
+with open('data/uncensored_files/fetch_results.json', 'r') as f:
+    data = json.load(f)
+    with open('data/uncensored_files/integration_report.md', 'a') as report:
+        report.write('### Fetch Results\n')
+        report.write(f\"- Total files fetched: {data.get('total_files', 0)}\n\")
+        report.write(f\"- Total files skipped: {data.get('total_skipped', 0)}\n\")
+        if 'categories' in data:
+            report.write('\n### By Category\n')
+            for cat, results in data['categories'].items():
+                report.write(f\"- **{cat.capitalize()}**: {results.get('files_fetched', 0)} fetched, {results.get('files_skipped', 0)} skipped\n\")
+            " || echo "Failed to generate statistics"
+            
+            # Add to job summary
             cat data/uncensored_files/integration_report.md >> $GITHUB_STEP_SUMMARY
           fi
       
       - name: Check for changes
         id: check_changes
         run: |
+          # Create timestamp file at start if it doesn't exist
+          TIMESTAMP_FILE=".workflow_start_time"
+          if [ ! -f "$TIMESTAMP_FILE" ]; then
+            touch "$TIMESTAMP_FILE"
+          fi
+          
           git add -N data/uncensored_files/
           if git diff --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
@@ -152,8 +163,8 @@ jobs:
           else
             echo "changed=true" >> $GITHUB_OUTPUT
             
-            # Count new files
-            NEW_FILES=$(find data/uncensored_files -type f -newer .git/FETCH_HEAD 2>/dev/null | wc -l || echo "0")
+            # Count new files by comparing modification times
+            NEW_FILES=$(find data/uncensored_files -type f -newer "$TIMESTAMP_FILE" 2>/dev/null | wc -l || echo "0")
             echo "new_files=$NEW_FILES" >> $GITHUB_OUTPUT
             echo "Found $NEW_FILES new files"
           fi

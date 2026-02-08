@@ -450,8 +450,16 @@ class UncensoredAIManager:
             
             except Exception as e:
                 if attempt < max_retries - 1:
+                    # Log retry attempt
+                    import logging
+                    logger = logging.getLogger("EpsteinHub.UncensoredAI")
+                    logger.warning(f"Download attempt {attempt + 1} failed for {url}: {e}")
                     time.sleep(retry_delay)
                 else:
+                    # Log final failure
+                    import logging
+                    logger = logging.getLogger("EpsteinHub.UncensoredAI")
+                    logger.error(f"Download failed after {max_retries} attempts for {url}: {e}")
                     return None
         
         return None
