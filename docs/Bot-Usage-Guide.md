@@ -4,7 +4,20 @@ This guide explains how the AI agents work and how to interact with them effecti
 
 ## Overview
 
-The Epstein Files Hub uses **26 specialized AI agents** that work 24/7 to maintain and organize over 30,000 documents and 20,000 images.
+The Epstein Files Hub uses **37+ specialized AI agents** (26 GitHub Copilot agents + 11 Python bots) that work 24/7 to maintain and organize over 30,000 documents and 20,000 images.
+
+### Recent Additions (February 2024)
+20 new specialized agents have been added to enhance data integration from Uncensored.ai and other sources:
+- Flight log analysis and passenger tracking
+- Video and audio file processing
+- Financial records analysis
+- Court document specialization
+- News and media monitoring
+- Enhanced privacy protection
+- Advanced relationship mapping
+- And more...
+
+**See the complete agent directory:** `.github/agents/AGENTS_DIRECTORY.md`
 
 ## Agent Categories
 

@@ -35,9 +35,11 @@ This repository serves as a comprehensive directory and organizational hub for E
 - 📍 50+ location guides
 - 📊 Infographics and timelines
 - 📤 PDF upload with analysis
-- 🤖 26 AI agents maintaining content
+- 🤖 37+ AI agents maintaining content (26 Copilot agents + 11 bots)
 - 🌐 Wikipedia data integration (weekly updates)
 - 📡 Automated source discovery (daily)
+- 🛫 Flight log analysis and passenger tracking
+- 🎥 Video and audio file processing
 
 ---
 
@@ -168,15 +170,24 @@ GitHub Actions (FREE) → Automated index updates
 Git LFS (FREE) → Large file storage (1GB)
 ```
 
-### AI Agent Infrastructure (27 Agents)
-- 7 Document agents (42K ops/day)
-- 5 Image agents (26K ops/day)
-- 3 Search agents (backend only)
-- 3 QC agents (fact-checking, verification)
-- 8 Support agents (organization, monitoring)
-- 1 Audit agent (continuous system inspection)
+### AI Agent Infrastructure (37+ Agents)
 
-**Total capacity:** 68,000+ operations/day
+**GitHub Copilot Agents (26):**
+- 5 Data Integration agents (Uncensored.ai, API, Batch, Classification, Orchestration)
+- 5 Media Processing agents (Photo, Video, Audio, Metadata, Image Analysis)
+- 3 Flight & Location agents (Flight Logs, Passengers, Locations)
+- 4 Document Analysis agents (Court, Financial, Redaction, News)
+- 5 Quality & Integrity agents (Quality, Validation, Duplicates, Source, Privacy)
+- 4 Analysis & Intelligence agents (Relationships, DateTime, Reports, Butler)
+
+**Python Bot Infrastructure (11):**
+- 7 Document bots (PDF, OCR, Indexing, Entity, Cross-reference, Summary, Fact-check)
+- 2 Image bots (Analysis, Verification)
+- 1 Search bot (Multi-engine)
+- 1 Audit bot (System monitoring)
+
+**Total capacity:** 100,000+ operations/day
+**Integration:** Uncensored.ai, Wikipedia, FBI Vault, DocumentCloud, Internet Archive
 **System Audits:** Daily automated + on-demand
 
 ---
@@ -353,7 +364,8 @@ This project is for educational and research purposes. All information sourced f
 
 ## 🌟 Acknowledgments
 
-- Maintained by 26 AI agents
+- Maintained by 37+ AI agents (26 Copilot + 11 Bots)
+- 20 new specialized agents for enhanced data integration
 - Powered by GitHub Pages (FREE)
 - Search by Lunr.js (FREE)
 - CDN by Cloudflare (FREE)
@@ -361,6 +373,7 @@ This project is for educational and research purposes. All information sourced f
 
 ---
 
-**Last Updated:** December 20, 2024
-**Version:** 1.0.0 (Free Tier)
+**Last Updated:** February 8, 2024
+**Version:** 1.1.0 (Enhanced Agent Infrastructure)
 **Status:** ✅ Production Ready
+**New Features:** 20 additional AI agents for comprehensive file integration
