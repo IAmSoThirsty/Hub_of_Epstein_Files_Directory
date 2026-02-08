@@ -2,8 +2,8 @@ name: Uncensored.ai Integration
 
 on:
   schedule:
-    # Run daily at 2 AM UTC for continuous data extraction
-    - cron: '0 2 * * *'
+    # Run hourly for continuous data extraction (God tier frequency)
+    - cron: '0 * * * *'
   workflow_dispatch:  # Allow manual trigger
     inputs:
       categories:
@@ -232,4 +232,4 @@ jobs:
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Next scheduled run:** Daily at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY
+          echo "**Next scheduled run:** Every hour (God tier continuous integration)" >> $GITHUB_STEP_SUMMARY

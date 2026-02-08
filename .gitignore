@@ -62,10 +62,15 @@ cache/*
 .env.local
 .env.*.local
 
-# Data files (large files that shouldn't be in repo)
-data/public_files/*
-data/processed/*
-data/wikipedia/*
+# Data files - Now tracked with Git LFS (see .gitattributes)
+# Large files (PDFs, images, videos) are in LFS, metadata stays in Git
+data/public_files/**/*.txt
+data/processed/**/*.txt
+data/wikipedia/**/*.txt
+data/uncensored_files/**/*.txt
+# Keep metadata and JSON files in normal Git for visibility
+!data/**/*.json
+!data/**/*.md
 !data/**/.gitkeep
 
 # Test coverage
