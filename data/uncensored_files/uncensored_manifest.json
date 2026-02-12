@@ -1,0 +1,44 @@
+{
+  "total_files": 0,
+  "total_skipped": 0,
+  "categories": {
+    "documents": {
+      "source": "Uncensored.ai - Documents",
+      "files_fetched": 0,
+      "files_skipped": 0,
+      "errors": [
+        "Exception: HTTPSConnectionPool(host='api.uncensored.ai', port=443): Max retries exceeded with url: /v1/epstein/documents?limit=100 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f6e00ebf140>: Failed to resolve 'api.uncensored.ai' ([Errno -2] Name or service not known)\"))"
+      ],
+      "files": []
+    },
+    "images": {
+      "source": "Uncensored.ai - Images",
+      "files_fetched": 0,
+      "files_skipped": 0,
+      "errors": [
+        "Exception: HTTPSConnectionPool(host='api.uncensored.ai', port=443): Max retries exceeded with url: /v1/epstein/images?limit=100 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f10c34d80b0>: Failed to resolve 'api.uncensored.ai' ([Errno -2] Name or service not known)\"))"
+      ],
+      "files": []
+    },
+    "flight_logs": {
+      "source": "Uncensored.ai - Flight Logs",
+      "files_fetched": 0,
+      "files_skipped": 0,
+      "errors": [
+        "Exception: HTTPSConnectionPool(host='api.uncensored.ai', port=443): Max retries exceeded with url: /v1/epstein/flight-logs (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f10c34d8470>: Failed to resolve 'api.uncensored.ai' ([Errno -2] Name or service not known)\"))"
+      ],
+      "files": []
+    },
+    "financial": {
+      "source": "Uncensored.ai - Financial Records",
+      "files_fetched": 0,
+      "files_skipped": 0,
+      "errors": [
+        "Exception: HTTPSConnectionPool(host='api.uncensored.ai', port=443): Max retries exceeded with url: /v1/epstein/financial?limit=50 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f10c3643440>: Failed to resolve 'api.uncensored.ai' ([Errno -2] Name or service not known)\"))"
+      ],
+      "files": []
+    }
+  },
+  "started_at": "2026-02-12T07:08:03.272258",
+  "completed_at": "2026-02-12T07:08:03.339187"
+}
