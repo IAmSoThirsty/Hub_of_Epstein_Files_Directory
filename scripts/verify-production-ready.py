@@ -101,9 +101,9 @@ class ProductionVerification:
                 char_count = len(char_data.get("characters", []))
                 self.check("density", "Character Database (100+)", char_count >= 100,
                           f"Found {char_count} characters in database")
-            except:
+            except (json.JSONDecodeError, IOError, KeyError) as e:
                 self.check("density", "Character Database Valid", False,
-                          "Failed to load character database")
+                          f"Failed to load character database: {str(e)}")
         
         # Check location pages
         locations_dir = self.repo_root / "web" / "locations"
@@ -125,9 +125,9 @@ class ProductionVerification:
                 source_count = len(manifest.get("sources", []))
                 self.check("density", "Documented Sources (10+)", source_count >= 10,
                           f"Found {source_count} documented sources")
-            except:
+            except (json.JSONDecodeError, IOError, KeyError) as e:
                 self.check("density", "Sources Manifest Valid", False,
-                          "Failed to load sources manifest")
+                          f"Failed to load sources manifest: {str(e)}")
     
     def verify_production_ready(self):
         """Verify production readiness."""

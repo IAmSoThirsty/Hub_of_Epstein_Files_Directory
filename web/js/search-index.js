@@ -1,13 +1,349 @@
+// Search Index - Generated 2026-02-01T17:09:35.089838
+// Total items: 37
+
 const SEARCH_INDEX = {
-  "documents": [],
+  "documents": [
+    {
+      "id": "download_manifest.json",
+      "name": "download_manifest.json",
+      "path": "data/public_files/download_manifest.json",
+      "type": ".json",
+      "size": 1520,
+      "modified": "2026-02-01T17:02:19.892123",
+      "category": "General Document"
+    }
+  ],
+  "characters": [
+    {
+      "id": "jeffrey_epstein",
+      "name": "Jeffrey Edward Epstein",
+      "role": "Primary Subject",
+      "summary": "American financier and convicted sex offender who cultivated relationships with powerful individuals before his arrest and death in 2019.",
+      "url": "profiles/jeffrey_epstein.html",
+      "connections": [
+        "ghislaine_maxwell",
+        "jean_luc_brunel",
+        "leslie_wexner"
+      ],
+      "searchable_text": "Jeffrey Edward Epstein Primary Subject American financier and convicted sex offender who cultivated relationships with powerful individuals before his arrest and death in 2019. Palm Beach New York Little St. James Paris Jeff Epstein"
+    },
+    {
+      "id": "ghislaine_maxwell",
+      "name": "Ghislaine Maxwell",
+      "role": "Primary Subject",
+      "summary": "British socialite convicted of recruiting and grooming minors for Jeffrey Epstein.",
+      "url": "profiles/ghislaine_maxwell.html",
+      "connections": [
+        "jeffrey_epstein",
+        "robert_maxwell"
+      ],
+      "searchable_text": "Ghislaine Maxwell Primary Subject British socialite convicted of recruiting and grooming minors for Jeffrey Epstein. New York London Little St. James"
+    },
+    {
+      "id": "virginia_giuffre",
+      "name": "Virginia Giuffre",
+      "role": "Victim & Witness",
+      "summary": "One of the first victims to publicly speak about Epstein's trafficking network.",
+      "url": "profiles/virginia_giuffre.html",
+      "connections": [
+        "jeffrey_epstein",
+        "ghislaine_maxwell",
+        "prince_andrew"
+      ],
+      "searchable_text": "Virginia Giuffre Victim & Witness One of the first victims to publicly speak about Epstein's trafficking network. Palm Beach New York London"
+    },
+    {
+      "id": "prince_andrew",
+      "name": "Prince Andrew, Duke of York",
+      "role": "Associate",
+      "summary": "Member of British Royal Family accused of sexual assault by Virginia Giuffre.",
+      "url": "profiles/prince_andrew.html",
+      "connections": [
+        "jeffrey_epstein",
+        "ghislaine_maxwell",
+        "virginia_giuffre"
+      ],
+      "searchable_text": "Prince Andrew, Duke of York Associate Member of British Royal Family accused of sexual assault by Virginia Giuffre. London New York"
+    },
+    {
+      "id": "leslie_wexner",
+      "name": "Leslie Wexner",
+      "role": "Business Associate",
+      "summary": "Billionaire businessman who was Epstein's most prominent client.",
+      "url": "profiles/leslie_wexner.html",
+      "connections": [
+        "jeffrey_epstein"
+      ],
+      "searchable_text": "Leslie Wexner Business Associate Billionaire businessman who was Epstein's most prominent client. New Albany, Ohio New York"
+    },
+    {
+      "id": "jean_luc_brunel",
+      "name": "Jean-Luc Brunel",
+      "role": "Associate",
+      "summary": "French modeling agent accused of supplying young women to Epstein.",
+      "url": "profiles/jean_luc_brunel.html",
+      "connections": [
+        "jeffrey_epstein",
+        "ghislaine_maxwell"
+      ],
+      "searchable_text": "Jean-Luc Brunel Associate French modeling agent accused of supplying young women to Epstein. Paris New York Little St. James"
+    },
+    {
+      "id": "alan_dershowitz",
+      "name": "Alan Dershowitz",
+      "role": "Legal Counsel",
+      "summary": "Harvard Law professor who represented Epstein and faced allegations.",
+      "url": "profiles/alan_dershowitz.html",
+      "connections": [
+        "jeffrey_epstein"
+      ],
+      "searchable_text": "Alan Dershowitz Legal Counsel Harvard Law professor who represented Epstein and faced allegations. Cambridge, MA New York"
+    },
+    {
+      "id": "alexander_acosta",
+      "name": "Alexander Acosta",
+      "role": "Legal Personnel",
+      "summary": "Former prosecutor criticized for lenient Epstein plea deal.",
+      "url": "profiles/alexander_acosta.html",
+      "connections": [
+        "jeffrey_epstein"
+      ],
+      "searchable_text": "Alexander Acosta Legal Personnel Former prosecutor criticized for lenient Epstein plea deal. Miami Washington DC"
+    },
+    {
+      "id": "bill_clinton",
+      "name": "William Jefferson Clinton",
+      "role": "Political Figure",
+      "summary": "Former US President who flew on Epstein's plane multiple times.",
+      "url": "profiles/bill_clinton.html",
+      "connections": [
+        "jeffrey_epstein"
+      ],
+      "searchable_text": "William Jefferson Clinton Political Figure Former US President who flew on Epstein's plane multiple times. New York Various international"
+    },
+    {
+      "id": "donald_trump",
+      "name": "Donald Trump",
+      "role": "Political Figure",
+      "summary": "Former US President who knew Epstein socially in New York.",
+      "url": "profiles/donald_trump.html",
+      "connections": [
+        "jeffrey_epstein"
+      ],
+      "searchable_text": "Donald Trump Political Figure Former US President who knew Epstein socially in New York. New York Palm Beach"
+    },
+    {
+      "id": "sarah_kellen",
+      "name": "Sarah Kellen",
+      "role": "Associate",
+      "summary": "Former assistant to Epstein",
+      "url": "profiles/sarah_kellen.html",
+      "connections": [],
+      "searchable_text": "Sarah Kellen Associate Former assistant to Epstein"
+    },
+    {
+      "id": "nadia_marcinkova",
+      "name": "Nadia Marcinkova",
+      "role": "Associate",
+      "summary": "Former associate",
+      "url": "profiles/nadia_marcinkova.html",
+      "connections": [],
+      "searchable_text": "Nadia Marcinkova Associate Former associate"
+    },
+    {
+      "id": "adriana_ross",
+      "name": "Adriana Ross",
+      "role": "Associate",
+      "summary": "Former assistant",
+      "url": "profiles/adriana_ross.html",
+      "connections": [],
+      "searchable_text": "Adriana Ross Associate Former assistant"
+    },
+    {
+      "id": "lesley_groff",
+      "name": "Lesley Groff",
+      "role": "Associate",
+      "summary": "Former executive assistant",
+      "url": "profiles/lesley_groff.html",
+      "connections": [],
+      "searchable_text": "Lesley Groff Associate Former executive assistant"
+    },
+    {
+      "id": "juan_alessi",
+      "name": "Juan Alessi",
+      "role": "Witness",
+      "summary": "Former house manager",
+      "url": "profiles/juan_alessi.html",
+      "connections": [],
+      "searchable_text": "Juan Alessi Witness Former house manager"
+    },
+    {
+      "id": "kevin_spacey",
+      "name": "Kevin Spacey",
+      "role": "Associate",
+      "summary": "Actor who flew on Epstein's plane",
+      "url": "profiles/kevin_spacey.html",
+      "connections": [],
+      "searchable_text": "Kevin Spacey Associate Actor who flew on Epstein's plane"
+    },
+    {
+      "id": "chris_tucker",
+      "name": "Chris Tucker",
+      "role": "Associate",
+      "summary": "Actor who flew on Epstein's plane",
+      "url": "profiles/chris_tucker.html",
+      "connections": [],
+      "searchable_text": "Chris Tucker Associate Actor who flew on Epstein's plane"
+    },
+    {
+      "id": "naomi_campbell",
+      "name": "Naomi Campbell",
+      "role": "Associate",
+      "summary": "Model connected to Epstein",
+      "url": "profiles/naomi_campbell.html",
+      "connections": [],
+      "searchable_text": "Naomi Campbell Associate Model connected to Epstein"
+    },
+    {
+      "id": "ehud_barak",
+      "name": "Ehud Barak",
+      "role": "Political Figure",
+      "summary": "Former Israeli PM",
+      "url": "profiles/ehud_barak.html",
+      "connections": [],
+      "searchable_text": "Ehud Barak Political Figure Former Israeli PM"
+    },
+    {
+      "id": "glenn_dubin",
+      "name": "Glenn Dubin",
+      "role": "Business Associate",
+      "summary": "Hedge fund manager",
+      "url": "profiles/glenn_dubin.html",
+      "connections": [],
+      "searchable_text": "Glenn Dubin Business Associate Hedge fund manager"
+    },
+    {
+      "id": "eva_dubin",
+      "name": "Eva Dubin",
+      "role": "Associate",
+      "summary": "Former Epstein girlfriend",
+      "url": "profiles/eva_dubin.html",
+      "connections": [],
+      "searchable_text": "Eva Dubin Associate Former Epstein girlfriend"
+    },
+    {
+      "id": "steven_hoffenberg",
+      "name": "Steven Hoffenberg",
+      "role": "Business Associate",
+      "summary": "Former business partner",
+      "url": "profiles/steven_hoffenberg.html",
+      "connections": [],
+      "searchable_text": "Steven Hoffenberg Business Associate Former business partner"
+    }
+  ],
+  "locations": [
+    {
+      "id": "little_st_james",
+      "name": "Little St. James Island",
+      "type": "Private Island",
+      "country": "US Virgin Islands",
+      "url": "locations/little_st_james.html"
+    },
+    {
+      "id": "great_st_james",
+      "name": "Great St. James Island",
+      "type": "Private Island",
+      "country": "US Virgin Islands",
+      "url": "locations/great_st_james.html"
+    },
+    {
+      "id": "palm_beach",
+      "name": "Palm Beach Residence",
+      "type": "Residence",
+      "country": "USA",
+      "url": "locations/palm_beach.html"
+    },
+    {
+      "id": "new_york",
+      "name": "New York Mansion",
+      "type": "Residence",
+      "country": "USA",
+      "url": "locations/new_york.html"
+    },
+    {
+      "id": "paris",
+      "name": "Paris Apartment",
+      "type": "Residence",
+      "country": "France",
+      "url": "locations/paris.html"
+    },
+    {
+      "id": "new_mexico",
+      "name": "Zorro Ranch",
+      "type": "Ranch",
+      "country": "USA",
+      "url": "locations/new_mexico.html"
+    },
+    {
+      "id": "mar_a_lago",
+      "name": "Mar-a-Lago",
+      "type": "Resort",
+      "country": "USA",
+      "url": "locations/mar_a_lago.html"
+    },
+    {
+      "id": "manhattan_jail",
+      "name": "Metropolitan Correctional Center",
+      "type": "Facility",
+      "country": "USA",
+      "url": "locations/manhattan_jail.html"
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-06-30",
+      "title": "Epstein Plea Deal",
+      "description": "Pleaded guilty to state prostitution charges"
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Epstein Arrested",
+      "description": "Arrested on federal sex trafficking charges"
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Death",
+      "description": "Found dead in Manhattan jail"
+    },
+    {
+      "date": "2020-07-02",
+      "title": "Maxwell Arrested",
+      "description": "Ghislaine Maxwell arrested in New Hampshire"
+    },
+    {
+      "date": "2021-12-29",
+      "title": "Maxwell Convicted",
+      "description": "Convicted on 5 of 6 counts"
+    },
+    {
+      "date": "2022-06-28",
+      "title": "Maxwell Sentenced",
+      "description": "Sentenced to 20 years in prison"
+    }
+  ],
   "metadata": {
-    "total_documents": 0,
-    "indexed_fields": [
-      "title",
-      "content",
-      "date",
-      "location",
-      "persons"
-    ]
+    "generated_at": "2026-02-01T17:09:35.089112",
+    "total_items": 37,
+    "version": "2.0"
   }
 };
+
+// Make available globally
+if (typeof window !== 'undefined') {
+    window.SEARCH_INDEX = SEARCH_INDEX;
+}
+
+// Export for modules
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = SEARCH_INDEX;
+}
