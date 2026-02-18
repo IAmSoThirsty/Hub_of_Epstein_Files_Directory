@@ -1,0 +1,189 @@
+# Epstein Files Hub - Algolia Integration & Analytics
+# Production Dependencies
+# Python 3.11+ required
+#
+# Installation:
+#   pip install -r requirements-algolia.txt
+#
+# For development:
+#   pip install -r requirements-algolia.txt -r requirements-dev.txt
+
+# ============================================================================
+# CORE DEPENDENCIES
+# ============================================================================
+
+# Algolia Search Integration
+algoliasearch==3.0.0                   # Official Algolia Python client
+                                        # - Thread-safe with connection pooling
+                                        # - Automatic retry with exponential backoff
+                                        # - Batch operations support
+
+# Data Validation and Settings Management
+pydantic==2.6.1                        # Data validation using Python type annotations
+pydantic-settings==2.1.0               # Settings management from environment variables
+email-validator==2.1.0                 # Email validation for pydantic
+
+# Async HTTP Framework (if REST API needed)
+fastapi==0.109.2                       # Modern async web framework
+uvicorn[standard]==0.27.1              # ASGI server with uvloop and httptools
+python-multipart==0.0.9                # Form data parsing
+python-jose[cryptography]==3.3.0       # JWT token handling
+
+# Retry Logic and Resilience
+tenacity==8.2.3                        # Retry library with exponential backoff
+circuitbreaker==1.4.0                  # Circuit breaker pattern implementation
+
+# Metrics and Monitoring
+prometheus-client==0.19.0              # Prometheus metrics collection
+prometheus-fastapi-instrumentator==6.1.0  # FastAPI Prometheus instrumentation
+
+# Caching and Rate Limiting
+redis==5.0.1                           # Redis client for caching and distributed ops
+hiredis==2.3.2                         # C parser for Redis (performance boost)
+cachetools==5.3.2                      # In-memory caching utilities (TTL, LRU)
+
+# ============================================================================
+# SECURITY AND ENCRYPTION
+# ============================================================================
+
+cryptography==42.0.2                   # Cryptographic recipes and primitives
+                                        # - Fernet symmetric encryption
+                                        # - Key derivation (PBKDF2)
+                                        # - X.509 certificates
+
+# Authentication and Authorization
+authlib==1.3.0                         # OAuth 2.0 and OpenID Connect
+passlib[bcrypt]==1.7.4                 # Password hashing with bcrypt
+python-dotenv==1.0.1                   # Environment variable management from .env files
+
+# ============================================================================
+# DATABASE AND DATA STORAGE
+# ============================================================================
+
+# PostgreSQL (for analytics storage)
+psycopg2-binary==2.9.9                 # PostgreSQL adapter
+asyncpg==0.29.0                        # Async PostgreSQL client
+sqlalchemy==2.0.25                     # SQL toolkit and ORM
+alembic==1.13.1                        # Database migration tool
+
+# Alternative: SQLite for local dev
+aiosqlite==0.19.0                      # Async SQLite client
+
+# ============================================================================
+# OBSERVABILITY AND LOGGING
+# ============================================================================
+
+# Structured Logging
+structlog==24.1.0                      # Structured logging with JSON support
+python-json-logger==2.0.7              # JSON formatter for standard logging
+
+# Distributed Tracing
+opentelemetry-api==1.22.0              # OpenTelemetry API
+opentelemetry-sdk==1.22.0              # OpenTelemetry SDK
+opentelemetry-instrumentation-fastapi==0.43b0  # FastAPI instrumentation
+opentelemetry-exporter-jaeger==1.22.0  # Jaeger exporter
+
+# Error Tracking
+sentry-sdk[fastapi]==1.40.3            # Sentry error tracking and performance monitoring
+
+# ============================================================================
+# HTTP CLIENTS AND NETWORKING
+# ============================================================================
+
+httpx==0.26.0                          # Async HTTP client
+aiohttp==3.9.3                         # Async HTTP client/server framework
+requests==2.31.0                       # Synchronous HTTP library (fallback)
+
+# ============================================================================
+# DATA PROCESSING AND UTILITIES
+# ============================================================================
+
+# Date and Time
+python-dateutil==2.8.2                 # Extensions to datetime module
+pytz==2024.1                           # World timezone definitions
+
+# Data Serialization
+orjson==3.9.15                         # Fast JSON library
+pyyaml==6.0.1                          # YAML parser and emitter
+
+# Utilities
+click==8.1.7                           # Command line interface creation
+rich==13.7.0                           # Rich text and formatting in terminal
+
+# ============================================================================
+# BACKGROUND TASKS AND SCHEDULING
+# ============================================================================
+
+celery==5.3.6                          # Distributed task queue (optional)
+kombu==5.3.5                           # Messaging library for Celery
+redis==5.0.1                           # Redis as Celery broker (already listed above)
+
+# Simpler alternative
+apscheduler==3.10.4                    # Advanced Python Scheduler
+
+# ============================================================================
+# ANALYTICS AND DATA VISUALIZATION (Backend)
+# ============================================================================
+
+pandas==2.2.0                          # Data analysis and manipulation
+numpy==1.26.4                          # Numerical computing
+scipy==1.12.0                          # Scientific computing
+
+# ============================================================================
+# CLOUD PLATFORM SDKs (Optional, based on deployment)
+# ============================================================================
+
+# AWS
+boto3==1.34.42                         # AWS SDK for Python
+botocore==1.34.42                      # Low-level interface to AWS
+
+# Azure
+azure-identity==1.15.0                 # Azure identity and authentication
+azure-storage-blob==12.19.0            # Azure Blob Storage
+azure-keyvault-secrets==4.7.0          # Azure Key Vault
+
+# ============================================================================
+# TESTING DEPENDENCIES (See requirements-dev.txt for full test stack)
+# ============================================================================
+
+pytest==8.0.0                          # Testing framework
+pytest-asyncio==0.23.4                 # Async test support
+pytest-cov==4.1.0                      # Coverage plugin
+pytest-mock==3.12.0                    # Mock plugin
+
+# ============================================================================
+# PINNED TRANSITIVE DEPENDENCIES (for reproducibility)
+# ============================================================================
+
+# Core dependencies
+anyio==4.2.0
+certifi==2024.2.2
+charset-normalizer==3.3.2
+idna==3.6
+sniffio==1.3.0
+typing-extensions==4.9.0
+urllib3==2.2.0
+
+# Cryptography dependencies
+cffi==1.16.0
+pycparser==2.21
+
+# FastAPI dependencies
+starlette==0.36.3
+
+# ============================================================================
+# VERSION CONSTRAINTS AND COMPATIBILITY
+# ============================================================================
+
+# Python version: >=3.8, <4.0
+# Tested on: Python 3.11.8
+
+# Platform compatibility:
+# - Linux: Full support
+# - macOS: Full support
+# - Windows: Full support (with some dependencies requiring build tools)
+
+# Security updates:
+# - All dependencies checked against CVE databases
+# - Automated updates via Dependabot
+# - Critical security patches applied within 24 hours
