@@ -46,13 +46,13 @@ cachetools==5.3.2                      # In-memory caching utilities (TTL, LRU)
 # SECURITY AND ENCRYPTION
 # ============================================================================
 
-cryptography==42.0.2                   # Cryptographic recipes and primitives
+cryptography==46.0.5                   # Cryptographic recipes and primitives
                                         # - Fernet symmetric encryption
                                         # - Key derivation (PBKDF2)
                                         # - X.509 certificates
 
 # Authentication and Authorization
-authlib==1.3.0                         # OAuth 2.0 and OpenID Connect
+authlib==1.6.6                         # OAuth 2.0 and OpenID Connect
 passlib[bcrypt]==1.7.4                 # Password hashing with bcrypt
 python-dotenv==1.0.1                   # Environment variable management from .env files
 
@@ -92,7 +92,7 @@ sentry-sdk[fastapi]==1.40.3            # Sentry error tracking and performance m
 
 httpx==0.26.0                          # Async HTTP client
 aiohttp==3.9.3                         # Async HTTP client/server framework
-requests==2.31.0                       # Synchronous HTTP library (fallback)
+requests==2.32.4                       # Synchronous HTTP library (fallback)
 
 # ============================================================================
 # DATA PROCESSING AND UTILITIES
@@ -103,7 +103,7 @@ python-dateutil==2.8.2                 # Extensions to datetime module
 pytz==2024.1                           # World timezone definitions
 
 # Data Serialization
-orjson==3.9.15                         # Fast JSON library
+orjson==3.11.5                         # Fast JSON library
 pyyaml==6.0.1                          # YAML parser and emitter
 
 # Utilities
@@ -138,7 +138,7 @@ boto3==1.34.42                         # AWS SDK for Python
 botocore==1.34.42                      # Low-level interface to AWS
 
 # Azure
-azure-identity==1.15.0                 # Azure identity and authentication
+azure-identity==1.16.1                 # Azure identity and authentication
 azure-storage-blob==12.19.0            # Azure Blob Storage
 azure-keyvault-secrets==4.7.0          # Azure Key Vault
 
@@ -157,19 +157,19 @@ pytest-mock==3.12.0                    # Mock plugin
 
 # Core dependencies
 anyio==4.2.0
-certifi==2024.2.2
+certifi==2024.7.4
 charset-normalizer==3.3.2
-idna==3.6
+idna==3.7
 sniffio==1.3.0
 typing-extensions==4.9.0
-urllib3==2.2.0
+urllib3==2.6.3
 
 # Cryptography dependencies
 cffi==1.16.0
 pycparser==2.21
 
 # FastAPI dependencies
-starlette==0.36.3
+starlette==0.49.1
 
 # ============================================================================
 # VERSION CONSTRAINTS AND COMPATIBILITY
