@@ -1,0 +1,371 @@
+{
+  "Palm Beach": {
+    "name": "Palm Beach",
+    "mentions": 2,
+    "sources": [
+      {
+        "title": "Jeffrey Epstein",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein"
+      },
+      {
+        "title": "Palm Beach, Florida",
+        "url": "https://en.wikipedia.org/wiki/Palm_Beach,_Florida"
+      }
+    ],
+    "associated_persons": [
+      "Bill Clinton",
+      "Donald Trump",
+      "Ghislaine Maxwell"
+    ],
+    "dates": [
+      "1976",
+      "2020",
+      "January",
+      "1894",
+      "1896",
+      "2019",
+      "1919",
+      "1953",
+      "2021",
+      "August",
+      "1902",
+      "1872",
+      "2025",
+      "1924",
+      "2016",
+      "2008",
+      "1880",
+      "July",
+      "2005",
+      "2017"
+    ]
+  },
+  "Florida": {
+    "name": "Florida",
+    "mentions": 2,
+    "sources": [
+      {
+        "title": "Jeffrey Epstein",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein"
+      },
+      {
+        "title": "Palm Beach, Florida",
+        "url": "https://en.wikipedia.org/wiki/Palm_Beach,_Florida"
+      }
+    ],
+    "associated_persons": [
+      "Bill Clinton",
+      "Donald Trump",
+      "Ghislaine Maxwell"
+    ],
+    "dates": [
+      "1976",
+      "2020",
+      "January",
+      "1894",
+      "1896",
+      "2019",
+      "1919",
+      "1953",
+      "2021",
+      "August",
+      "1902",
+      "1872",
+      "2025",
+      "1924",
+      "2016",
+      "2008",
+      "1880",
+      "July",
+      "2005",
+      "2017"
+    ]
+  },
+  "New York": {
+    "name": "New York",
+    "mentions": 6,
+    "sources": [
+      {
+        "title": "Jeffrey Epstein",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein"
+      },
+      {
+        "title": "Ghislaine Maxwell",
+        "url": "https://en.wikipedia.org/wiki/Ghislaine_Maxwell"
+      },
+      {
+        "title": "Jeffrey Epstein VI Foundation",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein_VI_Foundation"
+      },
+      {
+        "title": "Manhattan",
+        "url": "https://en.wikipedia.org/wiki/Manhattan"
+      },
+      {
+        "title": "Ghislaine Maxwell",
+        "url": "https://en.wikipedia.org/wiki/Ghislaine_Maxwell"
+      },
+      {
+        "title": "Southern District of New York",
+        "url": "https://en.wikipedia.org/wiki/Southern_District_of_New_York"
+      }
+    ],
+    "associated_persons": [
+      "Bill Clinton",
+      "Donald Trump",
+      "Ghislaine Maxwell",
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "1976",
+      "December",
+      "1626",
+      "2020",
+      "2024",
+      "January",
+      "2001",
+      "1624",
+      "2019",
+      "1785",
+      "1898",
+      "1953",
+      "2021",
+      "August",
+      "1790",
+      "2025",
+      "1664",
+      "2022",
+      "2008",
+      "1969",
+      "1961",
+      "July",
+      "2005",
+      "1991",
+      "2000"
+    ]
+  },
+  "London": {
+    "name": "London",
+    "mentions": 3,
+    "sources": [
+      {
+        "title": "Ghislaine Maxwell",
+        "url": "https://en.wikipedia.org/wiki/Ghislaine_Maxwell"
+      },
+      {
+        "title": "London",
+        "url": "https://en.wikipedia.org/wiki/London"
+      },
+      {
+        "title": "Ghislaine Maxwell",
+        "url": "https://en.wikipedia.org/wiki/Ghislaine_Maxwell"
+      }
+    ],
+    "associated_persons": [
+      "Bill Clinton",
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "1961",
+      "2023",
+      "December",
+      "2011",
+      "2012",
+      "2021",
+      "2020",
+      "2024",
+      "2025",
+      "1991",
+      "1965",
+      "2022"
+    ]
+  },
+  "Little Saint James": {
+    "name": "Little Saint James",
+    "mentions": 3,
+    "sources": [
+      {
+        "title": "Little Saint James",
+        "url": "https://en.wikipedia.org/wiki/Little_Saint_James"
+      },
+      {
+        "title": "Great Saint James",
+        "url": "https://en.wikipedia.org/wiki/Great_Saint_James"
+      },
+      {
+        "title": "Jeffrey Epstein VI Foundation",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein_VI_Foundation"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "2000",
+      "1998",
+      "2019"
+    ]
+  },
+  "Virgin Islands": {
+    "name": "Virgin Islands",
+    "mentions": 3,
+    "sources": [
+      {
+        "title": "Little Saint James",
+        "url": "https://en.wikipedia.org/wiki/Little_Saint_James"
+      },
+      {
+        "title": "Great Saint James",
+        "url": "https://en.wikipedia.org/wiki/Great_Saint_James"
+      },
+      {
+        "title": "Jeffrey Epstein VI Foundation",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein_VI_Foundation"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "2000",
+      "1998",
+      "2019"
+    ]
+  },
+  "Great Saint James": {
+    "name": "Great Saint James",
+    "mentions": 1,
+    "sources": [
+      {
+        "title": "Great Saint James",
+        "url": "https://en.wikipedia.org/wiki/Great_Saint_James"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein"
+    ],
+    "dates": []
+  },
+  "Manhattan": {
+    "name": "Manhattan",
+    "mentions": 3,
+    "sources": [
+      {
+        "title": "Manhattan",
+        "url": "https://en.wikipedia.org/wiki/Manhattan"
+      },
+      {
+        "title": "New Mexico",
+        "url": "https://en.wikipedia.org/wiki/New_Mexico"
+      },
+      {
+        "title": "Southern District of New York",
+        "url": "https://en.wikipedia.org/wiki/Southern_District_of_New_York"
+      }
+    ],
+    "associated_persons": [],
+    "dates": [
+      "1969",
+      "1898",
+      "2023",
+      "1626",
+      "1912",
+      "1610",
+      "2020",
+      "1790",
+      "1624",
+      "2024",
+      "1821",
+      "1848",
+      "2001",
+      "1785",
+      "January",
+      "1664"
+    ]
+  },
+  "Santa Fe": {
+    "name": "Santa Fe",
+    "mentions": 2,
+    "sources": [
+      {
+        "title": "New Mexico",
+        "url": "https://en.wikipedia.org/wiki/New_Mexico"
+      },
+      {
+        "title": "Zorro Ranch",
+        "url": "https://en.wikipedia.org/wiki/Zorro_Ranch"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "2023",
+      "1912",
+      "1610",
+      "1821",
+      "1848",
+      "January",
+      "2019"
+    ]
+  },
+  "New Mexico": {
+    "name": "New Mexico",
+    "mentions": 2,
+    "sources": [
+      {
+        "title": "New Mexico",
+        "url": "https://en.wikipedia.org/wiki/New_Mexico"
+      },
+      {
+        "title": "Zorro Ranch",
+        "url": "https://en.wikipedia.org/wiki/Zorro_Ranch"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "2023",
+      "1912",
+      "1610",
+      "1821",
+      "1848",
+      "January",
+      "2019"
+    ]
+  },
+  "Paris": {
+    "name": "Paris",
+    "mentions": 1,
+    "sources": [
+      {
+        "title": "Paris",
+        "url": "https://en.wikipedia.org/wiki/Paris"
+      }
+    ],
+    "associated_persons": [],
+    "dates": [
+      "2024",
+      "2026",
+      "1991"
+    ]
+  },
+  "Zorro Ranch": {
+    "name": "Zorro Ranch",
+    "mentions": 1,
+    "sources": [
+      {
+        "title": "Zorro Ranch",
+        "url": "https://en.wikipedia.org/wiki/Zorro_Ranch"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "2023",
+      "2019"
+    ]
+  }
+}
