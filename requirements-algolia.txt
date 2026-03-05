@@ -52,7 +52,7 @@ cryptography==46.0.5                   # Cryptographic recipes and primitives
                                         # - X.509 certificates
 
 # Authentication and Authorization
-authlib==1.6.6                         # OAuth 2.0 and OpenID Connect
+authlib==1.6.7                         # OAuth 2.0 and OpenID Connect
 passlib[bcrypt]==1.7.4                 # Password hashing with bcrypt
 python-dotenv==1.0.1                   # Environment variable management from .env files
 
