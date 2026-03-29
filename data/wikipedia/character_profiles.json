@@ -3,71 +3,74 @@
     "name": "Jeffrey Epstein",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein",
-    "summary": "Jeffrey Edward Epstein (January 20, 1953 – August 10, 2019) was an American financier and child sex offender. Over the course of several decades, he cultivated a vast, international network of prominent individuals from across Western high society, including notable figures in finance, business, politics, law, government, academia, royalty, entertainment, and other domains. He was indicted in 2019 for child sex trafficking in the U.S. Southern District of New York, but died in custody before his...",
+    "summary": "Jeffrey Edward Epstein (January 20, 1953 – August 10, 2019) was an American financier and child sex offender. He began his career as a math teacher at the Dalton School, before entering the banking and finance sector. Over several decades, he made much of his fortune providing tax and estate services to billionaires, and cultivated an elite social circle of prominent individuals. In 2008, he was convicted of soliciting a minor for prostitution, and was indicted in 2019 for sex trafficking minors...",
     "associated_dates": [
-      "1976",
-      "1953",
-      "2021",
-      "August",
-      "July",
       "2005",
+      "August",
+      "2021",
+      "2018",
+      "2002",
+      "1953",
       "January",
-      "2025",
-      "2019",
-      "2008"
+      "2008",
+      "2019"
     ],
     "associated_locations": [
-      "Palm Beach",
       "Florida",
-      "New York"
+      "New York",
+      "Palm Beach"
     ],
     "associated_persons": [
       "Bill Clinton",
       "Donald Trump",
+      "Prince Andrew",
       "Ghislaine Maxwell"
     ],
-    "last_updated": "2026-02-22T04:50:37.936286"
+    "last_updated": "2026-03-29T05:13:21.834729"
   },
   "Ghislaine Maxwell": {
     "name": "Ghislaine Maxwell",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Ghislaine_Maxwell",
-    "summary": "Ghislaine Noelle Marion Maxwell (born 25 December 1961) is a British former socialite. In 2021 she was found guilty of child sex trafficking and other offences in connection with the deceased American financier and convicted sex offender Jeffrey Epstein. In 2022 she was sentenced to 20 years of imprisonment in the United States.\nBorn in France and raised in Oxford, England, she attended Balliol College, Oxford, in the 1980s and became a prominent member of London's social scene. She is a natural...",
+    "summary": "Ghislaine Noelle Marion Maxwell ( gee-LEN; born 25 December 1961) is a British former socialite and convicted child sex offender. In 2021 she was convicted of child sex trafficking, and in 2022 was sentenced to 20 years in prison.\nBorn in France and raised in Oxford, England, she attended Balliol College, Oxford, in the 1980s and became a prominent member of London's social scene. She is a naturalised American citizen and retains both French and British citizenship. She worked for her father, th...",
     "associated_dates": [
-      "1961",
-      "December",
-      "2021",
-      "2020",
       "1991",
-      "2022"
+      "2021",
+      "1961",
+      "2022",
+      "December",
+      "2020"
     ],
     "associated_locations": [
-      "London",
-      "New York"
+      "New York",
+      "London"
     ],
     "associated_persons": [
+      "Prince Andrew",
       "Bill Clinton",
       "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:54.332931"
+    "last_updated": "2026-03-29T05:13:37.964343"
   },
   "Little Saint James": {
     "name": "Little Saint James",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Little_Saint_James",
-    "summary": "Little Saint James, also nicknamed as Epstein Island, is a small private island in the United States Virgin Islands, southeast of Saint Thomas. It was owned by American financier and convicted child sex offender Jeffrey Epstein from 1998 until his death in 2019. It was allegedly used as a base of operations for underage sex crimes.",
+    "summary": "Little Saint James, infamously nicknamed Epstein Island, is a small private island in the United States Virgin Islands southeast of Saint Thomas. It was owned by American financier and convicted child sex offender Jeffrey Epstein from 1998 until his death in 2019. \nThe island's reputation became controversial in 2015, when Virginia Giuffre alleged in a lawsuit that in the early 2000s, when she was 18, she participated in an orgy with Andrew Mountbatten-Windsor and eight girls who \"appeared to be...",
     "associated_dates": [
+      "2015",
       "1998",
       "2019"
     ],
     "associated_locations": [
-      "Little Saint James",
-      "Virgin Islands"
+      "Virgin Islands",
+      "Little Saint James"
     ],
     "associated_persons": [
+      "Virginia Giuffre",
       "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:40.083213"
+    "last_updated": "2026-03-29T05:13:23.964568"
   },
   "Great Saint James": {
     "name": "Great Saint James",
@@ -76,14 +79,14 @@
     "summary": "Great Saint James is a private island in the United States Virgin Islands, located off the east end of St. Thomas and belonging to subdistrict East End, Saint Thomas. The island is approximately 165 acres (67 ha) in size, and is located 0.4 kilometres (0.25 mi) southeast of Saint Thomas. The island was most notably owned by financier and sex offender Jeffrey Epstein, along with the neighboring Little Saint James island.\nThe cove on the west side of Great Saint James, Christmas Cove, is a popular...",
     "associated_dates": [],
     "associated_locations": [
+      "Virgin Islands",
       "Great Saint James",
-      "Little Saint James",
-      "Virgin Islands"
+      "Little Saint James"
     ],
     "associated_persons": [
       "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:41.152464"
+    "last_updated": "2026-03-29T05:13:25.034253"
   },
   "Jeffrey Epstein VI Foundation": {
     "name": "Jeffrey Epstein VI Foundation",
@@ -94,40 +97,40 @@
       "2000"
     ],
     "associated_locations": [
-      "Virgin Islands",
+      "New York",
       "Little Saint James",
-      "New York"
+      "Virgin Islands"
     ],
     "associated_persons": [
       "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:42.241449"
+    "last_updated": "2026-03-29T05:13:26.094591"
   },
   "Palm Beach, Florida": {
     "name": "Palm Beach, Florida",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Palm_Beach,_Florida",
-    "summary": "Palm Beach is an incorporated town in Palm Beach County, Florida, United States. Located on a barrier island in east-central Palm Beach County, the town is separated from West Palm Beach and Lake Worth Beach by the Intracoastal Waterway to its west and a small section of the Intracoastal Waterway and South Palm Beach to its south. It is part of the South Florida metropolitan area. As of the 2020 census, Palm Beach had a year-round population of 9,245.\nWhite Americans began to live in the area as...",
+    "summary": "Palm Beach is an incorporated town in the county of the same name, in the US state of Florida. Located on a barrier island in east-central Palm Beach County, the town is separated from West Palm Beach and Lake Worth Beach by the Intracoastal Waterway to its west and a small section of the Intracoastal Waterway and South Palm Beach to its south. It is part of the South Florida metropolitan area. As of the 2020 census, Palm Beach had a year-round population of 9,245.\nWhite Americans began to live ...",
     "associated_dates": [
-      "1919",
-      "1894",
       "1896",
-      "2020",
-      "1902",
       "1872",
+      "1894",
+      "1902",
+      "1919",
       "2017",
+      "1880",
       "1924",
       "2016",
-      "1880"
+      "2020"
     ],
     "associated_locations": [
-      "Palm Beach",
-      "Florida"
+      "Florida",
+      "Palm Beach"
     ],
     "associated_persons": [
       "Donald Trump"
     ],
-    "last_updated": "2026-02-22T04:50:43.314708"
+    "last_updated": "2026-03-29T05:13:27.182511"
   },
   "Manhattan": {
     "name": "Manhattan",
@@ -135,23 +138,23 @@
     "url": "https://en.wikipedia.org/wiki/Manhattan",
     "summary": "Manhattan is the most densely populated and geographically smallest of the five boroughs of New York City. Coextensive with New York County, Manhattan is the smallest county by area in the U.S. state of New York, and one of the smallest in the United States. Located almost entirely on Manhattan Island near the southern tip of the state, Manhattan is centrally located in the Northeast megalopolis and represents the urban core of the New York metropolitan area. Manhattan serves as New York City's ...",
     "associated_dates": [
-      "1898",
-      "1969",
-      "1626",
-      "1790",
-      "2020",
+      "1785",
       "1624",
       "2024",
+      "1664",
+      "1898",
       "2001",
-      "1785",
-      "1664"
+      "2020",
+      "1626",
+      "1790",
+      "1969"
     ],
     "associated_locations": [
       "Manhattan",
       "New York"
     ],
     "associated_persons": [],
-    "last_updated": "2026-02-22T04:50:44.455012"
+    "last_updated": "2026-03-29T05:13:28.251553"
   },
   "New Mexico": {
     "name": "New Mexico",
@@ -159,36 +162,36 @@
     "url": "https://en.wikipedia.org/wiki/New_Mexico",
     "summary": "New Mexico is a landlocked state in the Southwestern region of the United States. It is one of the Mountain States of the southern Rocky Mountains, sharing the Four Corners region with Utah, Colorado, and Arizona. It also borders the state of Texas to the east and southeast, Oklahoma to the northeast, and shares an international border with the Mexican states of Chihuahua and Sonora to the south. New Mexico's largest city is Albuquerque, and its state capital is Santa Fe, the oldest state capita...",
     "associated_dates": [
-      "2023",
-      "1912",
-      "1610",
-      "1821",
       "1848",
-      "January"
+      "1912",
+      "2023",
+      "1821",
+      "January",
+      "1610"
     ],
     "associated_locations": [
-      "Santa Fe",
+      "Manhattan",
       "New Mexico",
-      "Manhattan"
+      "Santa Fe"
     ],
     "associated_persons": [],
-    "last_updated": "2026-02-22T04:50:45.603666"
+    "last_updated": "2026-03-29T05:13:29.347576"
   },
   "Paris": {
     "name": "Paris",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Paris",
-    "summary": "Paris is the capital and largest city of France, with an estimated city population of 2,047,602 in an area of 105.4 km2 (40.7 sq mi), and a metropolitan population of 13,239,090 as of January 2026. Located on the river Seine in the centre of the Île-de-France region, it is the largest metropolitan area and fourth-most populous city in the European Union (EU). Nicknamed the City of Light, partly because of its role in the Age of Enlightenment, Paris has been one of the world's major centres of fi...",
+    "summary": "Paris is the capital and largest city of France, with an estimated city population of 2.04 million in an area of 105.4 km2 (40.7 sq mi), and a metropolitan population of 13.2 million as of January 2026. Located on the river Seine in the centre of the Île-de-France region, it is the largest metropolitan area and fourth-most populous city in the European Union (EU). Nicknamed the \"City of Light\", partly because of its role in the Age of Enlightenment, Paris has been one of the world's major centre...",
     "associated_dates": [
       "2024",
-      "2026",
-      "1991"
+      "1991",
+      "2026"
     ],
     "associated_locations": [
       "Paris"
     ],
     "associated_persons": [],
-    "last_updated": "2026-02-22T04:50:46.698475"
+    "last_updated": "2026-03-29T05:13:30.444404"
   },
   "London": {
     "name": "London",
@@ -196,64 +199,63 @@
     "url": "https://en.wikipedia.org/wiki/London",
     "summary": "London is the capital and largest city of both England and the United Kingdom, with a population of 9.1 million people in 2024. Its wider metropolitan area is the largest in Western Europe, with a population of 15.1 million. London stands on the River Thames in southeast England, at the head of a 50-mile (80 km) tidal estuary down to the North Sea, and has been a major settlement for nearly 2,000 years. Its ancient core and financial centre, the City of London, was founded by the Romans as Londi...",
     "associated_dates": [
-      "2023",
-      "2011",
       "2024",
       "2025",
       "1965",
+      "2011",
+      "2023",
       "2012"
     ],
     "associated_locations": [
       "London"
     ],
     "associated_persons": [],
-    "last_updated": "2026-02-22T04:50:47.786864"
+    "last_updated": "2026-03-29T05:13:31.533037"
   },
   "Zorro Ranch": {
     "name": "Zorro Ranch",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Zorro_Ranch",
-    "summary": "Rancho de San Rafael, formerly known as Zorro Ranch, is a large private property located near Stanley, New Mexico, United States, about 30 miles southeast of Santa Fe. It was owned by the financier and child sex offender Jeffrey Epstein from the early 1990s until his death in 2019, then by the estate of Jeffrey Epstein during a sale of the property concluding in 2023, and is now owned by the family of politician Don Huffines.",
+    "summary": "Zorro Ranch, renamed Rancho de San Rafael, is a large private property located near Stanley, New Mexico, United States, about 30 mi (48 km) south of Santa Fe. It was owned by the financier and child sex offender Jeffrey Epstein from the early 1990s until his death in 2019. The sprawling compound would eventually include a private airstrip, a helicopter pad, an airplane hangar for his jet and a mansion believed to be the largest in the state. The estate of Jeffrey Epstein sold off the property in...",
     "associated_dates": [
       "2023",
       "2019"
     ],
     "associated_locations": [
       "Santa Fe",
-      "New Mexico",
-      "Zorro Ranch"
+      "Zorro Ranch",
+      "New Mexico"
     ],
     "associated_persons": [
       "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:48.858392"
+    "last_updated": "2026-03-29T05:13:32.604581"
   },
   "Virginia Giuffre": {
     "name": "Virginia Giuffre",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Virginia_Giuffre",
-    "summary": "Virginia Louise Giuffre (, JOO-fray; née Roberts; August 9, 1983 – April 25, 2025) was an Australian and American advocate for survivors of sex trafficking and one of the most prominent accusers of Jeffrey Epstein. Giuffre provided detailed allegations to media outlets about Epstein and Ghislaine Maxwell. She first alleged that Epstein ran a trafficking ring, outsourcing girls for sexual services to other powerful men, in 2011.\nIn 2011, Giuffre first described meeting Andrew Mountbatten-Windsor ...",
+    "summary": "Virginia Louise Giuffre (, JOO-fray; née Roberts; August 9, 1983 – April 25, 2025) was an Australian and American advocate for survivors of sex trafficking and one of the most prominent accusers of Jeffrey Epstein. Giuffre provided detailed allegations to media outlets about Epstein and Ghislaine Maxwell. She alleged that Epstein ran a trafficking ring, outsourcing girls for sexual services.\nIn  March 2011, Giuffre first described meeting Andrew Mountbatten-Windsor to the Daily Mail, who reporte...",
     "associated_dates": [
+      "2026",
+      "2025",
+      "2015",
+      "2021",
       "1983",
       "2011",
-      "2015",
-      "April",
-      "August",
-      "2021",
-      "2014",
-      "2026",
+      "2022",
       "2017",
-      "2025"
+      "April",
+      "August"
     ],
     "associated_locations": [],
     "associated_persons": [
+      "Alan Dershowitz",
       "Prince Andrew",
       "Ghislaine Maxwell",
-      "Jeffrey Epstein",
-      "Virginia Giuffre",
-      "Alan Dershowitz"
+      "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:49.945955"
+    "last_updated": "2026-03-29T05:13:33.649958"
   },
   "Alan Dershowitz": {
     "name": "Alan Dershowitz",
@@ -262,69 +264,70 @@
     "summary": "Alan Morton Dershowitz ( DUR-shə-wits; born September 1, 1938) is an American lawyer and law professor known for his work in U.S. constitutional and criminal law. From 1964 to 2013, he taught at Harvard Law School, where he was appointed as the Felix Frankfurter Professor of Law in 1993. Dershowitz is a regular media contributor, political commentator, and legal analyst.\nDershowitz has taken on high-profile and often unpopular causes and clients. As of 2009, he had won 13 of the 15 murder and at...",
     "associated_dates": [
       "1964",
-      "1976",
-      "1990",
-      "2018",
-      "2020",
-      "1984",
+      "2006",
       "2013",
-      "September",
-      "1996",
-      "2019"
+      "1938",
+      "1984",
+      "2009",
+      "2019",
+      "2020",
+      "1976",
+      "2005"
     ],
     "associated_locations": [],
     "associated_persons": [
-      "Jeffrey Epstein",
-      "Donald Trump"
+      "Donald Trump",
+      "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:51.057741"
+    "last_updated": "2026-03-29T05:13:34.735697"
   },
   "Les Wexner": {
     "name": "Les Wexner",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Les_Wexner",
-    "summary": "Leslie Herbert Wexner (born September 8, 1937) is an American billionaire businessman and political activist. He is the co-founder and chair emeritus of Bath & Body Works, Inc. He has been the principal in Abercrombie & Fitch, Victoria's Secret and La Senza, amongst several other retail corporations.\nWexner is involved in politics. In 1991, with billionaire Charles Bronfman, Wexner formed the Mega Group, a club of some of the country's wealthiest and most influential businessmen. As a pro-Israel...",
+    "summary": "Leslie Herbert Wexner (born September 8, 1937) is an American billionaire businessman and political activist. He is the co-founder and chair emeritus of Bath & Body Works, Inc. He has been the principal in Abercrombie & Fitch, Victoria's Secret and La Senza, amongst several other retail corporations.\nIn 1991, Wexner and billionaire Charles Bronfman formed an informal pro-Israel lobby group, called the Study Group or 'Mega Group'. The organization is said to have lobbied for US foreign policy in ...",
     "associated_dates": [
-      "1987",
-      "1937",
-      "2003",
+      "1991",
       "2026",
       "September",
       "2007",
-      "1991",
-      "February"
+      "2008",
+      "1937",
+      "1987"
     ],
-    "associated_locations": [],
+    "associated_locations": [
+      "Florida"
+    ],
     "associated_persons": [
       "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:52.137917"
+    "last_updated": "2026-03-29T05:13:35.792193"
   },
   "Andrew Mountbatten-Windsor": {
     "name": "Andrew Mountbatten-Windsor",
     "source": "Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Andrew_Mountbatten-Windsor",
-    "summary": "Andrew Albert Christian Edward Mountbatten-Windsor (born 19 February 1960), formerly Prince Andrew, Duke of York, is a member of the House of Windsor. He is the third child and second son of Queen Elizabeth II and Prince Philip, Duke of Edinburgh, and a younger brother of King Charles III. Andrew was born second in the line of succession to the British throne and is eighth as of 2026.\nHe served in the Royal Navy from 1979 to 2001. He saw active duty as a helicopter pilot during the Falklands War...",
+    "summary": "Andrew Albert Christian Edward Mountbatten-Windsor (born 19 February 1960), formerly Prince Andrew, Duke of York, is the third child and second son of Queen Elizabeth II and Prince Philip, Duke of Edinburgh, and a younger brother of King Charles III. Andrew was born second in the line of succession to the British throne and is eighth as of 2026.\nServing in the Royal Navy from 1979 to 2001, he saw active duty as a helicopter pilot during the Falklands War; he later became a helicopter instructor ...",
     "associated_dates": [
-      "2011",
-      "1986",
-      "2014",
-      "2026",
       "February",
-      "1979",
-      "1960",
+      "2026",
+      "2025",
+      "2011",
       "1996",
+      "2022",
       "2001",
-      "2019"
+      "1979",
+      "1986",
+      "1960"
     ],
     "associated_locations": [],
     "associated_persons": [
       "Prince Andrew",
-      "Jeffrey Epstein",
       "Virginia Giuffre",
-      "Ghislaine Maxwell"
+      "Ghislaine Maxwell",
+      "Jeffrey Epstein"
     ],
-    "last_updated": "2026-02-22T04:50:53.250593"
+    "last_updated": "2026-03-29T05:13:36.890562"
   },
   "Southern District of New York": {
     "name": "Southern District of New York",
@@ -337,6 +340,6 @@
       "New York"
     ],
     "associated_persons": [],
-    "last_updated": "2026-02-22T04:50:55.418222"
+    "last_updated": "2026-03-29T05:13:39.023510"
   }
 }
