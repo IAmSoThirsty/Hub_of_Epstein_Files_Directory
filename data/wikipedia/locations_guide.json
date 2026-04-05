@@ -17,38 +17,79 @@
       }
     ],
     "associated_persons": [
-      "Prince Andrew",
-      "Ghislaine Maxwell",
-      "Bill Clinton",
       "Donald Trump",
-      "Jeffrey Epstein"
+      "Ghislaine Maxwell",
+      "Prince Andrew",
+      "Jeffrey Epstein",
+      "Bill Clinton"
     ],
     "dates": [
-      "2026",
-      "1896",
-      "1953",
-      "2017",
-      "2007",
-      "2019",
-      "1937",
-      "2020",
-      "1987",
-      "2005",
-      "September",
       "1880",
       "January",
-      "2008",
-      "1991",
-      "2021",
-      "1872",
-      "1894",
-      "1902",
-      "2018",
-      "1919",
-      "1924",
+      "1937",
+      "2007",
+      "1987",
       "2002",
+      "1919",
+      "2020",
+      "1902",
       "2016",
-      "August"
+      "September",
+      "1894",
+      "2019",
+      "2008",
+      "1896",
+      "August",
+      "2017",
+      "1872",
+      "1953",
+      "1924",
+      "2005",
+      "2026",
+      "2021",
+      "2018",
+      "1991"
+    ]
+  },
+  "Palm Beach": {
+    "name": "Palm Beach",
+    "mentions": 2,
+    "sources": [
+      {
+        "title": "Jeffrey Epstein",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein"
+      },
+      {
+        "title": "Palm Beach, Florida",
+        "url": "https://en.wikipedia.org/wiki/Palm_Beach,_Florida"
+      }
+    ],
+    "associated_persons": [
+      "Prince Andrew",
+      "Ghislaine Maxwell",
+      "Donald Trump",
+      "Bill Clinton"
+    ],
+    "dates": [
+      "1880",
+      "January",
+      "2002",
+      "1919",
+      "2020",
+      "1902",
+      "2016",
+      "1894",
+      "2019",
+      "2008",
+      "1896",
+      "August",
+      "2017",
+      "1872",
+      "1953",
+      "1924",
+      "2005",
+      "2021",
+      "2018"
     ]
   },
   "New York": {
@@ -81,78 +122,37 @@
       }
     ],
     "associated_persons": [
-      "Prince Andrew",
-      "Ghislaine Maxwell",
-      "Bill Clinton",
       "Donald Trump",
-      "Jeffrey Epstein"
-    ],
-    "dates": [
-      "1785",
-      "1664",
-      "1953",
-      "1624",
-      "2024",
-      "2019",
-      "2020",
-      "1898",
-      "2005",
-      "1961",
-      "January",
-      "December",
-      "2008",
-      "1790",
-      "1991",
-      "2021",
-      "2018",
-      "2022",
-      "2001",
-      "2002",
-      "1626",
-      "August",
-      "2000",
-      "1969"
-    ]
-  },
-  "Palm Beach": {
-    "name": "Palm Beach",
-    "mentions": 2,
-    "sources": [
-      {
-        "title": "Jeffrey Epstein",
-        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein"
-      },
-      {
-        "title": "Palm Beach, Florida",
-        "url": "https://en.wikipedia.org/wiki/Palm_Beach,_Florida"
-      }
-    ],
-    "associated_persons": [
-      "Donald Trump",
-      "Prince Andrew",
       "Ghislaine Maxwell",
+      "Prince Andrew",
+      "Jeffrey Epstein",
       "Bill Clinton"
     ],
     "dates": [
-      "1896",
-      "1953",
-      "2017",
-      "2019",
-      "2020",
-      "2005",
-      "1880",
+      "1898",
       "January",
-      "2008",
-      "2021",
-      "1872",
-      "1894",
-      "1902",
-      "2018",
-      "1919",
-      "1924",
+      "2000",
+      "2001",
+      "1790",
+      "1785",
+      "1624",
       "2002",
-      "2016",
-      "August"
+      "2020",
+      "1664",
+      "1969",
+      "2019",
+      "2008",
+      "August",
+      "December",
+      "2024",
+      "1953",
+      "2022",
+      "1961",
+      "2005",
+      "1626",
+      "2021",
+      "2018",
+      "1991"
     ]
   },
   "London": {
@@ -174,50 +174,22 @@
     ],
     "associated_persons": [
       "Prince Andrew",
-      "Bill Clinton",
-      "Jeffrey Epstein"
+      "Jeffrey Epstein",
+      "Bill Clinton"
     ],
     "dates": [
-      "1991",
-      "2024",
-      "2025",
-      "1965",
-      "2021",
-      "1961",
-      "2011",
-      "2023",
-      "2022",
-      "2012",
       "December",
-      "2020"
-    ]
-  },
-  "Virgin Islands": {
-    "name": "Virgin Islands",
-    "mentions": 3,
-    "sources": [
-      {
-        "title": "Little Saint James",
-        "url": "https://en.wikipedia.org/wiki/Little_Saint_James"
-      },
-      {
-        "title": "Great Saint James",
-        "url": "https://en.wikipedia.org/wiki/Great_Saint_James"
-      },
-      {
-        "title": "Jeffrey Epstein VI Foundation",
-        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein_VI_Foundation"
-      }
-    ],
-    "associated_persons": [
-      "Virginia Giuffre",
-      "Jeffrey Epstein"
-    ],
-    "dates": [
-      "2015",
-      "2000",
-      "1998",
-      "2019"
+      "2024",
+      "2023",
+      "2020",
+      "2022",
+      "1961",
+      "2025",
+      "2011",
+      "2021",
+      "1965",
+      "1991",
+      "2012"
     ]
   },
   "Little Saint James": {
@@ -238,14 +210,42 @@
       }
     ],
     "associated_persons": [
-      "Virginia Giuffre",
-      "Jeffrey Epstein"
+      "Jeffrey Epstein",
+      "Virginia Giuffre"
     ],
     "dates": [
-      "2015",
-      "2000",
       "1998",
-      "2019"
+      "2019",
+      "2000",
+      "2015"
+    ]
+  },
+  "Virgin Islands": {
+    "name": "Virgin Islands",
+    "mentions": 3,
+    "sources": [
+      {
+        "title": "Little Saint James",
+        "url": "https://en.wikipedia.org/wiki/Little_Saint_James"
+      },
+      {
+        "title": "Great Saint James",
+        "url": "https://en.wikipedia.org/wiki/Great_Saint_James"
+      },
+      {
+        "title": "Jeffrey Epstein VI Foundation",
+        "url": "https://en.wikipedia.org/wiki/Jeffrey_Epstein_VI_Foundation"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein",
+      "Virginia Giuffre"
+    ],
+    "dates": [
+      "1998",
+      "2019",
+      "2000",
+      "2015"
     ]
   },
   "Great Saint James": {
@@ -281,48 +281,22 @@
     ],
     "associated_persons": [],
     "dates": [
-      "1785",
-      "1624",
       "2024",
-      "1848",
-      "1664",
       "1912",
+      "2023",
       "1898",
-      "2023",
+      "1785",
+      "2020",
+      "January",
       "1821",
-      "2001",
-      "1969",
+      "1610",
+      "1664",
       "1626",
-      "January",
-      "1610",
-      "1790",
-      "2020"
-    ]
-  },
-  "New Mexico": {
-    "name": "New Mexico",
-    "mentions": 2,
-    "sources": [
-      {
-        "title": "New Mexico",
-        "url": "https://en.wikipedia.org/wiki/New_Mexico"
-      },
-      {
-        "title": "Zorro Ranch",
-        "url": "https://en.wikipedia.org/wiki/Zorro_Ranch"
-      }
-    ],
-    "associated_persons": [
-      "Jeffrey Epstein"
-    ],
-    "dates": [
+      "1969",
       "1848",
-      "1912",
-      "2023",
-      "1821",
-      "January",
-      "1610",
-      "2019"
+      "2001",
+      "1790",
+      "1624"
     ]
   },
   "Santa Fe": {
@@ -342,13 +316,43 @@
       "Jeffrey Epstein"
     ],
     "dates": [
-      "1848",
+      "1993",
       "1912",
+      "1999",
       "2023",
-      "1821",
+      "2019",
       "January",
+      "1821",
       "1610",
-      "2019"
+      "1848"
+    ]
+  },
+  "New Mexico": {
+    "name": "New Mexico",
+    "mentions": 2,
+    "sources": [
+      {
+        "title": "New Mexico",
+        "url": "https://en.wikipedia.org/wiki/New_Mexico"
+      },
+      {
+        "title": "Zorro Ranch",
+        "url": "https://en.wikipedia.org/wiki/Zorro_Ranch"
+      }
+    ],
+    "associated_persons": [
+      "Jeffrey Epstein"
+    ],
+    "dates": [
+      "1993",
+      "1912",
+      "1999",
+      "2023",
+      "2019",
+      "January",
+      "1821",
+      "1610",
+      "1848"
     ]
   },
   "Paris": {
@@ -380,8 +384,10 @@
       "Jeffrey Epstein"
     ],
     "dates": [
+      "2019",
       "2023",
-      "2019"
+      "1993",
+      "1999"
     ]
   }
 }

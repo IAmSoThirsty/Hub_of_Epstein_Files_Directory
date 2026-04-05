@@ -1,20 +1,22 @@
 {
   "title": "Zorro Ranch",
   "url": "https://en.wikipedia.org/wiki/Zorro_Ranch",
-  "last_modified": "2026-03-28T10:55:53Z",
-  "content": "Zorro Ranch, renamed Rancho de San Rafael, is a large private property located near Stanley, New Mexico, United States, about 30 mi (48 km) south of Santa Fe. It was owned by the financier and child sex offender Jeffrey Epstein from the early 1990s until his death in 2019. The sprawling compound would eventually include a private airstrip, a helicopter pad, an airplane hangar for his jet and a mansion believed to be the largest in the state. The estate of Jeffrey Epstein sold off the property in 2023 to Dallas real estate magnate and former state senator Don Huffines.\n\n",
+  "last_modified": "2026-03-31T17:07:26Z",
+  "content": "Zorro Ranch, renamed Rancho de San Rafael, is a large private property located near Stanley, New Mexico, United States, about 30 mi (48 km) south of Santa Fe. It was owned by the financier and child sex offender Jeffrey Epstein from 1993 until his death in 2019. \nIn 1999, Epstein built a mansion on the property. The sprawling compound eventually included a private airstrip, a helicopter pad, and an airplane hangar. The estate of Jeffrey Epstein sold off the property in 2023 to Dallas real estate magnate and former state senator Don Huffines.",
   "dates": [
+    "2019",
     "2023",
-    "2019"
+    "1993",
+    "1999"
   ],
   "locations": [
     "Santa Fe",
-    "Zorro Ranch",
-    "New Mexico"
+    "New Mexico",
+    "Zorro Ranch"
   ],
   "persons": [
     "Jeffrey Epstein"
   ],
-  "word_count": 100,
-  "fetched_at": "2026-03-29T05:13:32.604581"
+  "word_count": 93,
+  "fetched_at": "2026-04-05T04:02:45.862779"
 }

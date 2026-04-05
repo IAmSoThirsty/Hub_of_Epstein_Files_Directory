@@ -241,6 +241,12 @@
   },
   {
     "date": "1993",
+    "source": "Zorro Ranch",
+    "url": "https://en.wikipedia.org/wiki/Zorro_Ranch",
+    "context": "Mentioned in Wikipedia article"
+  },
+  {
+    "date": "1993",
     "source": "Alan Dershowitz",
     "url": "https://en.wikipedia.org/wiki/Alan_Dershowitz",
     "context": "Mentioned in Wikipedia article"
@@ -267,6 +273,12 @@
     "date": "1998",
     "source": "Little Saint James",
     "url": "https://en.wikipedia.org/wiki/Little_Saint_James",
+    "context": "Mentioned in Wikipedia article"
+  },
+  {
+    "date": "1999",
+    "source": "Zorro Ranch",
+    "url": "https://en.wikipedia.org/wiki/Zorro_Ranch",
     "context": "Mentioned in Wikipedia article"
   },
   {
