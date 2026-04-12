@@ -1,19 +1,19 @@
 {
   "title": "Manhattan",
   "url": "https://en.wikipedia.org/wiki/Manhattan",
-  "last_modified": "2026-04-02T02:53:37Z",
+  "last_modified": "2026-04-09T18:47:33Z",
   "content": "Manhattan is the most densely populated and geographically smallest of the five boroughs of New York City. Coextensive with New York County, Manhattan is the smallest county by area in the U.S. state of New York, and one of the smallest in the United States. Located almost entirely on Manhattan Island near the southern tip of the state, Manhattan is centrally located in the Northeast megalopolis and represents the urban core of the New York metropolitan area. Manhattan serves as New York City's economic and administrative center and has been described as the cultural, financial, media, and entertainment capital of the world.\nBefore European colonization, present-day Manhattan was part of Lenape territory. European settlement began with the establishment of a trading post by Dutch colonists in 1624 on Manhattan Island; the post was named New Amsterdam in 1626. The territory came under English control in 1664 and was renamed New York after King Charles II of England granted the lands to his brother, the Duke of York. New York, based in present-day Lower Manhattan, served as the capital of the United States from 1785 until 1790. The Statue of Liberty in New York Harbor greeted millions of arriving immigrants in the late 19th century and is a world symbol of the United States and its ideals. Manhattan became a borough during the consolidation of New York City in 1898, and houses New York City Hall, the seat of the city's government. Harlem in Upper Manhattan became the center of what is now known as the cultural Harlem Renaissance in the 1920s. The Stonewall Inn in Greenwich Village, part of the Stonewall National Monument, is considered the birthplace in 1969 of the modern gay-rights movement, cementing Manhattan's central role in LGBTQ culture. Lower Manhattan was the site of the original World Trade Center, which was destroyed during the September 11 terrorist attacks in 2001.\nSituated on one of the world's largest natural harbors, the borough is bounded by the Hudson, East, and Harlem rivers and includes several small adjacent islands, including Roosevelt, U Thant, and Randalls and Wards Islands. It also includes the small neighborhood of Marble Hill, now on the U.S. mainland. Manhattan Island is divided into three informally bounded components, each cutting across the borough's long axis: Lower Manhattan, Midtown, and Upper Manhattan. Manhattan is one of the most densely populated locations in the world, with a 2020 census population of 1,694,250 living in a land area of 22.66 square miles (58.69 km2), or 72,918 residents per square mile (28,154 residents/km2), and its residential property has the highest sale price per square foot in the United States.\nManhattan produces the highest U.S. county GDP by both absolute and per capita measures. The borough hosts Billionaires' Row and Wall Street, as well as the world's two largest stock exchanges by total market capitalization, the New York Stock Exchange and Nasdaq. Many multinational media conglomerates are based in Manhattan, as are numerous colleges and universities, such as Columbia University, New York University, Rockefeller University, and the City University of New York. The headquarters of the United Nations is located in the Turtle Bay neighborhood of Midtown Manhattan. Manhattan hosts three of the world's top 10 most-visited tourist attractions: Times Square, Central Park, and Grand Central Terminal. New York Penn Station is the busiest transportation hub in the Western Hemisphere.  Chinatown has the highest concentration of Chinese people in the Western Hemisphere. Fifth Avenue has been ranked as the most expensive shopping street in the world, before falling to second in 2024. The borough hosts many prominent bridges, tunnels, and skyscrapers including the Empire State Building, Chrysler Building, and One World Trade Center. It is also home to the National Basketball Association's New York Knicks and the National Hockey League's New York Rangers.\n\n",
   "dates": [
-    "2024",
-    "2001",
-    "1898",
     "2020",
-    "1664",
-    "1626",
-    "1790",
+    "2024",
+    "1624",
     "1969",
     "1785",
-    "1624"
+    "1626",
+    "1790",
+    "2001",
+    "1664",
+    "1898"
   ],
   "locations": [
     "New York",
@@ -21,5 +21,5 @@
   ],
   "persons": [],
   "word_count": 631,
-  "fetched_at": "2026-04-05T04:02:41.545839"
+  "fetched_at": "2026-04-12T05:26:37.069361"
 }

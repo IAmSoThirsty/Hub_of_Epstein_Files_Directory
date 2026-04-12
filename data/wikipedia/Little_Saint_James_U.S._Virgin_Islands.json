@@ -1,12 +1,12 @@
 {
   "title": "Little Saint James",
   "url": "https://en.wikipedia.org/wiki/Little_Saint_James",
-  "last_modified": "2026-03-31T23:15:50Z",
+  "last_modified": "2026-04-09T16:22:38Z",
   "content": "Little Saint James, infamously nicknamed Epstein Island, is a small private island in the United States Virgin Islands southeast of Saint Thomas. It was owned by American financier and convicted child sex offender Jeffrey Epstein from 1998 until his death in 2019. \nThe island's reputation became controversial in 2015, when Virginia Giuffre alleged in a lawsuit that in the early 2000s, when she was 18, she participated in an orgy with Andrew Mountbatten-Windsor and eight girls who \"appeared to be under the age of 18\" and did not speak English.",
   "dates": [
-    "1998",
     "2019",
-    "2015"
+    "2015",
+    "1998"
   ],
   "locations": [
     "Little Saint James",
@@ -17,5 +17,5 @@
     "Virginia Giuffre"
   ],
   "word_count": 90,
-  "fetched_at": "2026-04-05T04:02:37.253104"
+  "fetched_at": "2026-04-12T05:26:32.753320"
 }
