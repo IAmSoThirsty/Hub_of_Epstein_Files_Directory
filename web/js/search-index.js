@@ -1,5 +1,5 @@
 // Auto-generated search index for client-side search
-// Generated: 2026-04-05T04:02:54.443569
+// Generated: 2026-04-12T02:11:30.581313
 // Total documents: 8
 
 const SEARCH_DATA = [
