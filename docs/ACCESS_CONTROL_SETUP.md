@@ -135,12 +135,17 @@ Set up automated checks that must pass before PRs can be merged.
 2. Click **Edit** on your main branch protection rule
 3. Scroll to **Require status checks to pass before merging**
 4. Search and select checks to require:
-   - `volunteer-application` (if using volunteer system)
-   - `update-search-index` (if auto-generating index)
-   - Any other workflows you want to require
+      - `api-smoke` (**recommended** for backend API gating)
+      - `volunteer-application` (if using volunteer system)
+      - `update-search-index` (if auto-generating index)
+      - Any other workflows you want to require
 5. Click **Save changes**
 
 **Result:** PRs must pass automated checks before merging.
+
+> Tip: For backend/API changes, make `api-smoke` required so
+> `tests/unit/test_api_endpoints.py` and
+> `tests/integration/test_api_routes.py` must pass before merge.
 
 ---
 

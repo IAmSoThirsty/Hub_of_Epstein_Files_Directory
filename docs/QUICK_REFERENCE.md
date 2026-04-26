@@ -46,6 +46,28 @@ epstein-hub cleanup     # Cleanup temp files
 --debug                 # Enable debug mode
 ```
 
+## FastAPI Backend Quick Ops
+
+```bash
+# Run API locally
+python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+
+# API docs
+# http://localhost:8000/api/docs
+
+# Targeted API tests
+python -m pytest tests/unit/test_api_endpoints.py tests/integration/test_api_routes.py -v
+```
+
+### Key Environment Variables
+
+- `ADMIN_API_TOKEN` / `ADMIN_API_TOKENS`: admin auth tokens for upload endpoints
+- `AUTH_RATE_LIMIT_MAX_ATTEMPTS`: failed-auth limit per client window
+- `AUTH_RATE_LIMIT_WINDOW_SECONDS`: failed-auth rolling window in seconds
+- `UPLOAD_DIR`: location for uploaded PDFs
+- `JOB_STORE_PATH`: persistent upload-job state file (survives restarts)
+- `CORS_ALLOW_ORIGINS`: comma-separated allowed origins
+
 ## Context Manager
 
 ```python

@@ -6,9 +6,20 @@ The Epstein Files Hub provides a comprehensive API for accessing documents, sear
 
 ## Base URL
 
+```text
+Static Site (GitHub Pages): https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/
+Backend API (self-hosted): https://<your-api-host>/
+Local Development API: http://localhost:8000/
 ```
-Production: https://iamsothirsty.github.io/Hub_of_Epstein_Files_Directory/
-Local Development: http://localhost:8000/
+
+### FastAPI Docs Endpoints
+
+When running the backend locally or in a hosted environment:
+
+```text
+OpenAPI JSON: /api/openapi.json
+Swagger UI: /api/docs
+ReDoc: /api/redoc
 ```
 
 ## API Version
@@ -17,17 +28,102 @@ Current Version: **v1.0.0**
 
 ## Authentication
 
-Currently, the API is read-only and does not require authentication for public endpoints. Future versions may implement:
-- API keys for write operations
-- OAuth 2.0 for user-specific features
-- JWT tokens for session management
+Authentication is required for write/admin routes.
+
+### Public Endpoints (No Auth Required)
+
+- `GET /api/health`
+- `POST /api/v1/search`
+
+### Admin Endpoints (Auth Required)
+
+- `POST /api/v1/upload`
+- `GET /api/v1/upload/{job_id}`
+
+### Session Bootstrap Endpoints
+
+- `POST /api/v1/auth/session` (accepts admin token in request body and
+  issues secure HTTP-only cookie)
+- `DELETE /api/v1/auth/session` (clears session cookie)
+
+### Accepted Auth Headers
+
+- `Authorization: Bearer <token>`
+- `X-Admin-Token: <token>`
+
+### Accepted Admin Session Cookie
+
+- `epstein_admin_session` (name is configurable via
+  `ADMIN_SESSION_COOKIE_NAME`)
+
+Tokens are loaded from runtime configuration:
+
+- `ADMIN_API_TOKENS` (comma-separated list)
+- `ADMIN_API_TOKEN` (single token, also accepted)
 
 ## Rate Limiting
 
-Free Tier Limits:
-- **Requests per minute**: Unlimited (client-side)
-- **Search queries**: Unlimited (client-side)
-- **File uploads**: N/A (manual process)
+Authentication failures are rate-limited per client identifier (prefers
+`X-Forwarded-For`, falls back to client host):
+
+- `AUTH_RATE_LIMIT_MAX_ATTEMPTS` (default: `10`)
+- `AUTH_RATE_LIMIT_WINDOW_SECONDS` (default: `60`)
+- `AUTH_RATE_LIMIT_BACKEND` (`memory` or `redis`)
+- `AUTH_RATE_LIMIT_REDIS_URL` (required when backend is `redis`)
+- `AUTH_RATE_LIMIT_REDIS_PREFIX` (redis key namespace)
+
+After threshold is exceeded, auth-protected endpoints return `429 Too Many Requests`.
+
+## Backend Runtime Runbook (FastAPI)
+
+### Environment Variables
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `ENVIRONMENT` | `development` | Runtime mode; production/staging rejects default dev token |
+| `ADMIN_API_TOKEN` | `change-me-dev-token` | Single admin token |
+| `ADMIN_API_TOKENS` | `""` | Comma-separated admin token list |
+| `ADMIN_SESSION_SECRET` | `change-me-dev-session-secret` | Signing key for session cookie tokens |
+| `ADMIN_SESSION_TTL_SECONDS` | `3600` | Session cookie TTL in seconds |
+| `ADMIN_SESSION_COOKIE_NAME` | `epstein_admin_session` | Session cookie key |
+| `ADMIN_SESSION_COOKIE_SECURE` | `false` (dev) | Set `true` on HTTPS deployments |
+| `AUTH_RATE_LIMIT_MAX_ATTEMPTS` | `10` | Max failed auth attempts per window |
+| `AUTH_RATE_LIMIT_WINDOW_SECONDS` | `60` | Rate-limit rolling window in seconds |
+| `AUTH_RATE_LIMIT_BACKEND` | `memory` | Auth throttling store backend (`memory`/`redis`) |
+| `AUTH_RATE_LIMIT_REDIS_URL` | `""` | Redis connection URL for distributed throttling |
+| `AUTH_RATE_LIMIT_REDIS_PREFIX` | `epstein_auth_rl` | Redis key prefix for auth throttling entries |
+| `DATA_DIR` | `./data` | Root runtime data directory |
+| `UPLOAD_DIR` | `./data/uploads` | Upload destination directory |
+| `ENABLE_UPLOAD_QUARANTINE` | `true` | Save suspicious uploads for manual review |
+| `UPLOAD_QUARANTINE_DIR` | `./data/uploads/quarantine` | Quarantine storage path |
+| `ENABLE_MALWARE_SCAN` | `false` | Enable scanner command execution on saved uploads |
+| `MALWARE_SCAN_COMMAND` | `""` | Scanner command template (supports `{file}` placeholder) |
+| `MALWARE_SCAN_TIMEOUT_SECONDS` | `30` | Malware scanner command timeout |
+| `MALWARE_SCAN_FAIL_CLOSED` | `false` | Reject uploads when scanner errors/timeouts |
+| `MALWARE_SCAN_INFECTED_EXIT_CODES` | `1` | Comma-separated exit codes treated as detected malware |
+| `JOB_STORE_PATH` | `./data/uploads/jobs.json` | Persistent upload-job state store |
+| `CORS_ALLOW_ORIGINS` | `*` | Comma-separated CORS allowlist |
+
+### Start Commands
+
+```bash
+# Local API server
+python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+
+# Targeted endpoint tests
+python -m pytest tests/unit/test_api_endpoints.py tests/integration/test_api_routes.py -v
+```
+
+### Operational Notes
+
+- `X-Request-ID` is accepted from clients and always returned in response headers.
+- Validation errors are normalized to include `requestId` and `errors` details.
+- Upload jobs persist to disk and survive backend restarts via `JOB_STORE_PATH`.
+- Upload intake validates extension + MIME + PDF signature + parser structure.
+- Suspicious upload attempts can be quarantined for review when enabled.
+- Optional malware scanning runs after upload save and before job queueing.
+- Detected malware is quarantined and rejected; scanner errors can be fail-open
+  or fail-closed via `MALWARE_SCAN_FAIL_CLOSED`.
 
 ## Response Format
 

@@ -1,259 +1,142 @@
+/* eslint-env browser */
+/* global window, document, fetch, localStorage, alert */
 // Search functionality for Epstein Files Codex
+
+const SEARCH_API_BASE_URL = window.EPSTEIN_API_BASE_URL || "";
+let currentResults = [];
+
+function getSearchEndpoint(path) {
+    return `${SEARCH_API_BASE_URL}${path}`;
+}
 
 // Toggle advanced filters
 function toggleAdvanced() {
-    const advancedFilters = document.getElementById('advancedFilters');
-    const toggleText = document.getElementById('toggleText');
-    const toggleIcon = document.getElementById('toggleIcon');
-    
-    if (advancedFilters.style.display === 'none' || !advancedFilters.style.display) {
-        advancedFilters.style.display = 'block';
-        toggleText.textContent = 'Hide Advanced Filters';
-        toggleIcon.textContent = '▲';
+    const advancedFilters = document.getElementById("advancedFilters");
+    const toggleText = document.getElementById("toggleText");
+    const toggleIcon = document.getElementById("toggleIcon");
+
+    if (advancedFilters.style.display === "none" || !advancedFilters.style.display) {
+        advancedFilters.style.display = "block";
+        toggleText.textContent = "Hide Advanced Filters";
+        toggleIcon.textContent = "▲";
     } else {
-        advancedFilters.style.display = 'none';
-        toggleText.textContent = 'Show Advanced Filters';
-        toggleIcon.textContent = '▼';
+        advancedFilters.style.display = "none";
+        toggleText.textContent = "Show Advanced Filters";
+        toggleIcon.textContent = "▼";
     }
 }
 
 // Reset search form
 function resetSearch() {
-    document.getElementById('searchForm').reset();
-    document.getElementById('resultsContainer').style.display = 'none';
+    const form = document.getElementById("searchForm");
+    const container = document.getElementById("resultsContainer");
+    const list = document.getElementById("resultsList");
+    const count = document.getElementById("resultsCount");
+
+    if (form) {
+        form.reset();
+    }
+    if (container) {
+        container.style.display = "none";
+    }
+    if (list) {
+        list.innerHTML = "";
+    }
+    if (count) {
+        count.textContent = "0 Results Found";
+    }
+    currentResults = [];
 }
 
 // Handle form submission
-document.getElementById('searchForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    performSearch();
-});
+const searchForm = document.getElementById("searchForm");
+if (searchForm) {
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        performSearch();
+    });
+}
 
-// Perform search (connects to backend API in production)
-function performSearch() {
-    const resultsContainer = document.getElementById('resultsContainer');
-    const resultsList = document.getElementById('resultsList');
-    const resultsCount = document.getElementById('resultsCount');
+// Perform search (calls backend API)
+async function performSearch() {
+    const resultsContainer = document.getElementById("resultsContainer");
+    const resultsList = document.getElementById("resultsList");
+    const resultsCount = document.getElementById("resultsCount");
 
-    // Show loading state
-    resultsContainer.style.display = 'block';
+    resultsContainer.style.display = "block";
     resultsList.innerHTML = '<div class="loading-state">Searching files...</div>';
 
-    // Collect form data
-    const formData = {
-        keyword: document.getElementById('keyword').value,
-        documentType: document.getElementById('documentType').value,
-        dateFrom: document.getElementById('dateFrom').value,
-        dateTo: document.getElementById('dateTo').value,
-        location: document.getElementById('location').value,
-        locationKeyword: document.getElementById('locationKeyword').value,
-        redactionStatus: getSelectedCheckboxes('redaction'),
-        person: document.getElementById('person')?.value,
-        caseNumber: document.getElementById('caseNumber')?.value,
-        fileSource: document.getElementById('fileSource')?.value,
-        relevanceScore: document.getElementById('relevanceScore')?.value,
-        contentFlags: getSelectedCheckboxes('contentFlags')
-    };
+    const payload = collectFormData();
+    try {
+        const response = await fetch(getSearchEndpoint("/api/v1/search"), {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+        });
 
-    // In production, this would call the backend API
-    // For now, use mock data
-    setTimeout(() => {
-        const mockResults = generateMockResults(formData);
-        displayResults(mockResults);
-        resultsCount.textContent = `${mockResults.length} Result${mockResults.length !== 1 ? 's' : ''} Found`;
-    }, 1500);
+        if (!response.ok) {
+            const errorBody = await response
+                .json()
+                .catch(() => ({ detail: "Search service unavailable" }));
+            throw new Error(errorBody.detail || "Search request failed");
+        }
+
+        const responseBody = await response.json();
+        currentResults = Array.isArray(responseBody.results)
+            ? responseBody.results
+            : [];
+
+        displayResults(currentResults);
+        resultsCount.textContent =
+            `${responseBody.total} Result${responseBody.total !== 1 ? "s" : ""} Found`;
+    } catch (error) {
+        currentResults = [];
+        resultsCount.textContent = "0 Results Found";
+        resultsList.innerHTML = `
+            <div class="no-results">
+                <h3>Search temporarily unavailable</h3>
+                <p>${escapeHtml(error.message)}</p>
+                <button class="btn btn-primary" onclick="performSearch()">Retry</button>
+            </div>
+        `;
+    }
+}
+
+function collectFormData() {
+    const relevanceValue = document.getElementById("relevanceScore").value || "0";
+    const sortBy = document.getElementById("sortBy")?.value || "relevance";
+
+    return {
+        keyword: document.getElementById("keyword").value,
+        documentType: document.getElementById("documentType").value,
+        dateFrom: document.getElementById("dateFrom").value,
+        dateTo: document.getElementById("dateTo").value,
+        location: document.getElementById("location").value,
+        locationKeyword: document.getElementById("locationKeyword").value,
+        redactionStatus: getSelectedCheckboxes("redaction"),
+        person: document.getElementById("person")?.value || "",
+        caseNumber: document.getElementById("caseNumber")?.value || "",
+        fileSource: document.getElementById("fileSource")?.value || "",
+        relevanceScore: parseInt(relevanceValue, 10),
+        contentFlags: getSelectedCheckboxes("contentFlags"),
+        sortBy,
+        limit: 250,
+        offset: 0,
+    };
 }
 
 // Get selected checkbox values
 function getSelectedCheckboxes(name) {
     const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
-    return Array.from(checkboxes).map(cb => cb.value);
-}
-
-// Generate mock search results
-function generateMockResults(formData) {
-    const keyword = formData.keyword?.toLowerCase() || '';
-    
-    // If no search criteria, return empty
-    if (!keyword && !formData.dateFrom && !formData.location && !formData.person) {
-        return [];
-    }
-
-    // Mock results database
-    const allResults = [
-        {
-            id: 1,
-            title: 'Flight Log Entry - December 1999',
-            type: 'Flight Log',
-            date: '1999-12-15',
-            location: 'Little St. James Island',
-            redaction: 'Partially Redacted',
-            snippet: 'Flight manifest showing passengers traveling to Little St. James Island. Multiple redacted names present in passenger list. This document was obtained through FOIA requests and contains critical travel information.',
-            tags: ['Travel', 'Island', 'Witnesses', 'FOIA'],
-            relevance: 95,
-            source: 'Court Documents',
-            caseNumber: 'CV-2015-1234'
-        },
-        {
-            id: 2,
-            title: 'Property Deed - Manhattan Townhouse',
-            type: 'Property Record',
-            date: '1998-08-20',
-            location: 'Manhattan Townhouse (71st St)',
-            redaction: 'Unredacted',
-            snippet: 'Complete property transfer documentation for the Manhattan townhouse located at East 71st Street. Includes financial details, ownership structure, and transaction history.',
-            tags: ['Property', 'Real Estate', 'New York', 'Financial'],
-            relevance: 88,
-            source: 'Government Records',
-            caseNumber: null
-        },
-        {
-            id: 3,
-            title: 'Court Filing - Victim Testimony Excerpt',
-            type: 'Court Filing',
-            date: '2015-03-10',
-            location: 'Palm Beach Estate',
-            redaction: 'Redacted',
-            snippet: 'Testimony regarding incidents at the Palm Beach estate. Multiple names and identifying details redacted per court order. Contains allegations of criminal activity and witness statements.',
-            tags: ['Testimony', 'Legal', 'Evidence', 'Victim'],
-            relevance: 92,
-            source: 'Court Documents',
-            caseNumber: 'CV-2015-5678'
-        },
-        {
-            id: 4,
-            title: 'Email Correspondence - Foundation Business',
-            type: 'Email',
-            date: '2010-06-22',
-            location: 'New York',
-            redaction: 'Partially Redacted',
-            snippet: 'Email chain discussing foundation operations and scheduling. Some recipient names redacted. Discusses travel arrangements and business meetings.',
-            tags: ['Communication', 'Foundation', 'Business', 'Correspondence'],
-            relevance: 75,
-            source: 'Media Leaks',
-            caseNumber: null
-        },
-        {
-            id: 5,
-            title: 'Photographic Evidence - Island Facility',
-            type: 'Photo',
-            date: '2008-07-14',
-            location: 'Little St. James Island',
-            redaction: 'Unredacted',
-            snippet: 'Aerial and ground-level photographs of structures and facilities on Little St. James Island. Shows property layout, buildings, and infrastructure. High-resolution images available.',
-            tags: ['Photos', 'Evidence', 'Property', 'Island'],
-            relevance: 85,
-            source: 'Law Enforcement',
-            caseNumber: 'INV-2019-9876'
-        },
-        {
-            id: 6,
-            title: 'Financial Transaction Records - 2005-2008',
-            type: 'Financial Record',
-            date: '2007-03-15',
-            location: 'New York',
-            redaction: 'Partially Redacted',
-            snippet: 'Banking records showing wire transfers and financial transactions. Some account numbers and recipient names redacted. Covers period of 2005-2008.',
-            tags: ['Financial', 'Banking', 'Transactions', 'Records'],
-            relevance: 82,
-            source: 'Government Records',
-            caseNumber: 'FIN-2019-4321'
-        },
-        {
-            id: 7,
-            title: 'Deposition Transcript - Associate Testimony',
-            type: 'Deposition',
-            date: '2016-04-18',
-            location: 'Florida',
-            redaction: 'Redacted',
-            snippet: 'Full deposition transcript from associate witness. Key names and sensitive details redacted per protective order. Contains information about business operations and travel.',
-            tags: ['Deposition', 'Witness', 'Legal', 'Testimony'],
-            relevance: 90,
-            source: 'Court Documents',
-            caseNumber: 'CV-2016-7890'
-        },
-        {
-            id: 8,
-            title: 'Property Inspection Report - New Mexico Ranch',
-            type: 'Property Record',
-            date: '2019-08-25',
-            location: 'New Mexico Ranch (Zorro Ranch)',
-            redaction: 'Unredacted',
-            snippet: 'Law enforcement inspection report of the New Mexico property (Zorro Ranch). Details property features, structures, and items seized during investigation.',
-            tags: ['Property', 'Investigation', 'Law Enforcement', 'Evidence'],
-            relevance: 87,
-            source: 'Law Enforcement',
-            caseNumber: 'INV-2019-5555'
-        }
-    ];
-
-    // Filter results based on search criteria
-    return allResults.filter(result => {
-        // Keyword search
-        if (keyword) {
-            const searchableText = `${result.title} ${result.snippet} ${result.tags.join(' ')}`.toLowerCase();
-            if (!searchableText.includes(keyword)) return false;
-        }
-
-        // Document type filter
-        if (formData.documentType && result.type.toLowerCase().replace(' ', '-') !== formData.documentType) {
-            return false;
-        }
-
-        // Date range filter
-        if (formData.dateFrom && result.date < formData.dateFrom) return false;
-        if (formData.dateTo && result.date > formData.dateTo) return false;
-
-        // Location filter
-        if (formData.location && !result.location.toLowerCase().includes(formData.location.replace('-', ' '))) {
-            return false;
-        }
-
-        // Location keyword
-        if (formData.locationKeyword && !result.location.toLowerCase().includes(formData.locationKeyword.toLowerCase())) {
-            return false;
-        }
-
-        // Redaction status filter
-        if (formData.redactionStatus.length > 0) {
-            const redactionMatch = formData.redactionStatus.some(status => {
-                if (status === 'unredacted') return result.redaction === 'Unredacted';
-                if (status === 'redacted') return result.redaction === 'Redacted';
-                if (status === 'partially-redacted') return result.redaction === 'Partially Redacted';
-                if (status === 'sealed') return result.redaction === 'Sealed';
-                return false;
-            });
-            if (!redactionMatch) return false;
-        }
-
-        // Person filter
-        if (formData.person && !result.snippet.toLowerCase().includes(formData.person.toLowerCase())) {
-            return false;
-        }
-
-        // Case number filter
-        if (formData.caseNumber && (!result.caseNumber || !result.caseNumber.includes(formData.caseNumber))) {
-            return false;
-        }
-
-        // File source filter
-        if (formData.fileSource && result.source.toLowerCase().replace(' ', '-') !== formData.fileSource) {
-            return false;
-        }
-
-        // Relevance score filter
-        if (formData.relevanceScore && result.relevance < parseInt(formData.relevanceScore)) {
-            return false;
-        }
-
-        return true;
-    });
+    return Array.from(checkboxes).map((checkbox) => checkbox.value);
 }
 
 // Display search results
 function displayResults(results) {
-    const resultsList = document.getElementById('resultsList');
-    
+    const resultsList = document.getElementById("resultsList");
+
     if (results.length === 0) {
         resultsList.innerHTML = `
             <div class="no-results">
@@ -264,89 +147,149 @@ function displayResults(results) {
         return;
     }
 
-    const resultsHTML = results.map(result => `
-        <article class="result-card">
-            <div class="result-header">
-                <h3 class="result-title">${result.title}</h3>
-                <span class="result-type-badge">${result.type}</span>
-            </div>
-            <div class="result-meta">
-                <span class="meta-item">
-                    <strong>📅 Date:</strong> ${formatDate(result.date)}
-                </span>
-                <span class="meta-item">
-                    <strong>📍 Location:</strong> ${result.location}
-                </span>
-                <span class="meta-item">
-                    <strong>🔒 Status:</strong> ${result.redaction}
-                </span>
-                <span class="meta-item">
-                    <strong>⭐ Relevance:</strong> ${result.relevance}%
-                </span>
-            </div>
-            ${result.caseNumber ? `<div class="result-case"><strong>Case Number:</strong> ${result.caseNumber}</div>` : ''}
-            <p class="result-snippet">${highlightKeywords(result.snippet)}</p>
-            <div class="result-tags">
-                ${result.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-            <div class="result-actions">
-                <button class="btn btn-sm btn-primary" onclick="viewDocument(${result.id})">View Document</button>
-                <button class="btn btn-sm btn-secondary" onclick="addToCollection(${result.id})">Add to Collection</button>
-            </div>
-        </article>
-    `).join('');
-    
-    resultsList.innerHTML = resultsHTML;
+    const resultsHtml = results
+        .map((result) => {
+            const title = escapeHtml(result.title || "Untitled");
+            const type = escapeHtml(result.type || "Document");
+            const location = escapeHtml(result.location || "Unknown");
+            const redaction = escapeHtml(result.redaction || "Unknown");
+            const caseNumber = result.caseNumber
+                ? `<div class="result-case"><strong>Case Number:</strong> ${escapeHtml(result.caseNumber)}</div>`
+                : "";
+            const snippet = highlightKeywords(result.snippet || "");
+            const tags = (result.tags || [])
+                .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
+                .join("");
+
+            return `
+                <article class="result-card">
+                    <div class="result-header">
+                        <h3 class="result-title">${title}</h3>
+                        <span class="result-type-badge">${type}</span>
+                    </div>
+                    <div class="result-meta">
+                        <span class="meta-item"><strong>📅 Date:</strong> ${formatDate(result.date)}</span>
+                        <span class="meta-item"><strong>📍 Location:</strong> ${location}</span>
+                        <span class="meta-item"><strong>🔒 Status:</strong> ${redaction}</span>
+                        <span class="meta-item"><strong>⭐ Relevance:</strong> ${result.relevance || 0}%</span>
+                    </div>
+                    ${caseNumber}
+                    <p class="result-snippet">${snippet}</p>
+                    <div class="result-tags">${tags}</div>
+                    <div class="result-actions">
+                        <button class="btn btn-sm btn-primary" onclick="viewDocument('${escapeHtml(result.id || "")}')">View Document</button>
+                        <button class="btn btn-sm btn-secondary" onclick="addToCollection('${escapeHtml(result.id || "")}')">Add to Collection</button>
+                    </div>
+                </article>
+            `;
+        })
+        .join("");
+
+    resultsList.innerHTML = resultsHtml;
 }
 
 // Format date for display
 function formatDate(dateString) {
+    if (!dateString) {
+        return "Unknown";
+    }
+
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    if (Number.isNaN(date.getTime())) {
+        return escapeHtml(dateString);
+    }
+
+    return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
 }
 
 // Highlight search keywords in results
 function highlightKeywords(text) {
-    const keyword = document.getElementById('keyword').value;
-    if (!keyword) return text;
-    
-    const regex = new RegExp(`(${keyword})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
+    const keyword = document.getElementById("keyword").value;
+    const escapedText = escapeHtml(text);
+    if (!keyword) {
+        return escapedText;
+    }
+
+    const safeKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`(${safeKeyword})`, "gi");
+    return escapedText.replace(regex, "<mark>$1</mark>");
 }
 
 // Sort results
 function sortResults() {
-    const sortBy = document.getElementById('sortBy').value;
-    console.log('Sorting by:', sortBy);
-    // In production, this would re-sort the actual results
-    // For now, just trigger a new search
-    performSearch();
+    const sortBy = document.getElementById("sortBy").value;
+    if (!currentResults.length) {
+        return;
+    }
+
+    const sorted = [...currentResults];
+    if (sortBy === "date-desc") {
+        sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+    } else if (sortBy === "date-asc") {
+        sorted.sort((a, b) => new Date(a.date) - new Date(b.date));
+    } else if (sortBy === "type") {
+        sorted.sort((a, b) => (a.type || "").localeCompare(b.type || ""));
+    } else if (sortBy === "location") {
+        sorted.sort((a, b) => (a.location || "").localeCompare(b.location || ""));
+    } else {
+        sorted.sort((a, b) => (b.relevance || 0) - (a.relevance || 0));
+    }
+
+    displayResults(sorted);
 }
 
-// View document (placeholder)
+// View document placeholder
 function viewDocument(id) {
-    alert(`Viewing document ${id}. In production, this would open the document viewer.`);
+    window.location.href = `codex.html#${encodeURIComponent(id)}`;
 }
 
-// Add to collection (placeholder)
+// Add to collection placeholder
 function addToCollection(id) {
-    alert(`Added document ${id} to your collection. In production, this would save to your research collection.`);
+    const key = "epstein_saved_documents";
+    const existing = JSON.parse(localStorage.getItem(key) || "[]");
+    if (!existing.includes(id)) {
+        existing.push(id);
+        localStorage.setItem(key, JSON.stringify(existing));
+    }
+    alert(`Saved ${id} to your local collection.`);
 }
 
 // Set search from example
 function setSearch(query) {
-    document.getElementById('keyword').value = query;
+    document.getElementById("keyword").value = query;
     performSearch();
 }
 
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
 // Update last updated timestamp
-document.addEventListener('DOMContentLoaded', function() {
-    const lastUpdatedEl = document.getElementById('lastUpdated');
-    if (lastUpdatedEl) {
-        lastUpdatedEl.textContent = new Date().toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
+document.addEventListener("DOMContentLoaded", () => {
+    const lastUpdatedElement = document.getElementById("lastUpdated");
+    if (lastUpdatedElement) {
+        lastUpdatedElement.textContent = new Date().toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
         });
     }
 });
+
+// Expose handlers for inline HTML bindings
+window.toggleAdvanced = toggleAdvanced;
+window.resetSearch = resetSearch;
+window.performSearch = performSearch;
+window.sortResults = sortResults;
+window.viewDocument = viewDocument;
+window.addToCollection = addToCollection;
+window.setSearch = setSearch;

@@ -36,6 +36,31 @@ This guide will walk you through publishing the Epstein Files Hub site on GitHub
 
 ---
 
+## Step 2.5: Backend API Runbook (Optional)
+
+If you are running the FastAPI backend (upload + job status APIs), use this quick runbook:
+
+```bash
+# Start backend locally
+python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+
+# Open interactive API docs
+# http://localhost:8000/api/docs
+
+# Run backend API smoke tests
+python -m pytest tests/unit/test_api_endpoints.py tests/integration/test_api_routes.py -v
+```
+
+Key runtime variables:
+
+- `ADMIN_API_TOKEN` / `ADMIN_API_TOKENS` for admin auth
+- `AUTH_RATE_LIMIT_MAX_ATTEMPTS` and `AUTH_RATE_LIMIT_WINDOW_SECONDS` for auth throttling
+- `UPLOAD_DIR` and `JOB_STORE_PATH` for persistent upload processing state
+
+For detailed endpoint/auth specifics, see `API_DOCUMENTATION.md`.
+
+---
+
 ## Step 3: Optional - Custom Domain (5 minutes)
 
 If you want a custom domain like `epsteinfiles.org`:

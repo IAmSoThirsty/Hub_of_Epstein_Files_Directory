@@ -8,6 +8,7 @@ Welcome to the Hub of Epstein Files Directory. This comprehensive index provides
 - [Character Directory](CharacterDirectory.md) - Key individuals
 - [Sources Index](SourcesIndex.md) - Document sources and verification
 - [Timeline](Timeline.md) - Chronological overview
+- [API Documentation](../API_DOCUMENTATION.md) - FastAPI endpoints and backend runbook
 - [Search Guide](../search/SearchGuide.md) - How to search the files
 
 ## Core Documentation

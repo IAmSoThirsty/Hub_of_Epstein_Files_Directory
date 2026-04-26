@@ -111,3 +111,10 @@ node_modules/
 # Package files
 *.tar.gz
 *.zip
+
+
+# Local tooling/runtime artifacts
+.codacy/
+.github/instructions/
+data/uploads/*
+!data/uploads/.gitkeep
