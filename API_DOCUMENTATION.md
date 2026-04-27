@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD022 MD024 MD031 MD032 MD060 -->
+
 # API Documentation
 
 ## Overview

@@ -51,7 +51,7 @@
                     <div class="upload-icon">📄</div>
                     <h2>Drag & Drop PDF Files Here</h2>
                     <p>or click to select files</p>
-                    <input type="file" id="pdf-upload" accept=".pdf" multiple style="display: none;">
+                    <input type="file" id="pdf-upload" accept=".pdf" multiple class="is-hidden" aria-label="Select PDF files to upload">
                     <button class="btn btn-primary" onclick="document.getElementById('pdf-upload').click()">
                         Choose PDF Files
                     </button>
@@ -66,12 +66,12 @@
                     </div>
                 </div>
 
-                <div id="upload-status" class="upload-status" style="display: none;">
+                <div id="upload-status" class="upload-status is-hidden">
                     <h3>Upload Status</h3>
                     <div id="status-messages"></div>
                 </div>
 
-                <div id="upload-queue" class="upload-queue" style="display: none;">
+                <div id="upload-queue" class="upload-queue is-hidden">
                     <h3>Upload Queue</h3>
                     <div id="queue-items"></div>
                 </div>
