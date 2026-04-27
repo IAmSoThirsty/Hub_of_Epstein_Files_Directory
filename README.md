@@ -69,6 +69,19 @@ This repository serves as a comprehensive directory and organizational hub for E
 
 ## 🆕 Latest Features
 
+### Security Hardening Release ✅ **NEW (April 2026)**
+
+Recent backend hardening updates now live in `main`:
+
+- **Session-based admin auth** with secure HTTP-only cookies
+- **Distributed auth throttling** with Redis-capable backend + resilient in-memory fallback
+- **Deep upload validation** (extension, MIME, PDF signature, parser-level structure)
+- **Quarantine workflow** for suspicious or failed uploads
+- **Optional malware scanning hook** with configurable fail-open/fail-closed behavior
+- **Expanded API/security tests** for auth, throttling, upload intake, and scanner outcomes
+
+See `API_DOCUMENTATION.md` for the latest runtime configuration details.
+
 ### God Tier Monolithic Architecture ✅ **NEW**
 Complete large file support with hourly continuous integration:
 - **Git LFS Integration**: 100% large file support (PDFs, images, videos)
@@ -436,7 +449,7 @@ This project is for educational and research purposes. All information sourced f
 
 ---
 
-**Last Updated:** February 12, 2026
-**Version:** 1.1.0 (Enhanced Agent Infrastructure)
+**Last Updated:** April 27, 2026
+**Version:** 1.2.0 (Security Hardening + Upload Safety)
 **Status:** ✅ Production Ready - Mythic Tier
-**New Features:** 20 additional AI agents for comprehensive file integration
+**New Features:** Security hardening wave complete (auth, throttling, upload validation, malware hook)
